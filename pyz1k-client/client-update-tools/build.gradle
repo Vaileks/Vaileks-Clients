@@ -1,0 +1,8 @@
+plugins { id 'java' }
+repositories { mavenCentral() }
+dependencies { implementation 'org.ow2.asm:asm:9.9'; implementation 'org.ow2.asm:asm-tree:9.9' }
+sourceSets.main.java { srcDirs = ['.']; include 'StripItemsRender.java', 'LootPolicy.java' }
+tasks.register('prepareTools') {
+ dependsOn classes
+ doLast { file('asm-path.txt').text = sourceSets.main.runtimeClasspath.asPath }
+}

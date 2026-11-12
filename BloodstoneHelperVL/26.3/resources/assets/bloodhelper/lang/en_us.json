@@ -1,0 +1,20 @@
+{
+  "key.bloodhelper.menu": "Open BloodstoneHelperVL",
+  "key.category.bloodhelper.main": "BloodstoneHelperVL",
+  "key.bloodhelper.music_toggle": "Music: play / pause",
+  "key.bloodhelper.music_previous": "Music: previous track",
+  "key.bloodhelper.music_next": "Music: next track",
+  "key.bloodhelper.music_backward": "Music: seek back 10 seconds",
+  "key.bloodhelper.music_forward": "Music: seek forward 10 seconds",
+  "bloodhelper.resource_pack.setup.title": "Bloodstone resource packs",
+  "bloodhelper.resource_pack.setup.instruction": "Bloodstone and BetterModel download in the background at startup. Join Bloodstone: matching versions use the cache, while new server packs download normally. Enabled on first launch; you can turn it off.",
+  "bloodhelper.resource_pack.setup.dismiss": "Got it",
+  "key.bloodhelper.ability_guide": "Ability Guide: open",
+  "key.bloodhelper.quick_commands": "Quick Commands: open wheel",
+  "key.bloodhelper.waypoint": "Waypoints: create a marker",
+  "key.bloodhelper.streamer_toggle": "Streamer Mode: toggle",
+  "key.bloodhelper.zoom": "Zoom: zoom in",
+  "key.bloodhelper.music_favorite": "Music: add to favorites",
+  "key.bloodhelper.quick_ping": "Quick ping / Shift: save waypoint",
+  "key.bloodhelper.freeLook": "FreeLook"
+}

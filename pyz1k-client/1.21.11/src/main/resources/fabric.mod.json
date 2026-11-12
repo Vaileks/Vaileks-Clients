@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "pyz1k_additions_build",
+  "version": "1.5.0-vaileks",
+  "name": "Pyz1k Extensions Build",
+  "environment": "client",
+  "mixins": [
+    "pyz1k-extensions.mixins.json",
+    "pyz1k-pvp.mixins.json"
+  ],
+  "entrypoints": {
+    "client": [
+      "pyz1k.extensions.ExtensionClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.18.1",
+    "minecraft": "1.21.11",
+    "java": ">=21"
+  }
+}

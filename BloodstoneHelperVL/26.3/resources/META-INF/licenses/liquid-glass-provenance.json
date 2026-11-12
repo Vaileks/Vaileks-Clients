@@ -1,0 +1,46 @@
+{
+  "reviewed": "2026-10-13",
+  "sources": [
+    {
+      "repository": "https://github.com/Hla-aung/liquid-glass",
+      "commit": "16e6c369a3f3d17857f830268a3e8713665cf7ab",
+      "license": "MIT",
+      "copyright": "Copyright (c) 2026 Htet Lin Aung",
+      "files": {
+        "liquid-glass/engine.ts": "186d54084a700d138ce7fbf015df46293d2d99a26ecea6ca2fcbd173a7bf5eff",
+        "liquid-glass/shaders.ts": "70eab21ae137c201d87d9b5f441a436bdf26f8d550ec9f4c1dd8a55bb44c2c22",
+        "LICENSE": "260119e0c28ebeb2c0abec9a6f802fa2624b51ea2bd97fe91a03c7f078cbbe0d"
+      },
+      "adapted": [
+        "ConvexCircle surface profile",
+        "surface-gradient normal and Snell refraction through glass thickness",
+        "chromatic channel splitting limited to refractive bezel"
+      ]
+    },
+    {
+      "repository": "https://github.com/ybouane/liquidglass",
+      "commit": "59af227103795f06421a96e2c7d3dceb081decd2",
+      "license": "MIT (README and package.json; no standalone LICENSE supplied)",
+      "files": {
+        "src/shaders.ts": "af0e7034a2f038d7ec06a25fd203179da2a6cfef363e93e7918fa7a120802d5c",
+        "package.json": "8d72fec650118873c8bf5202482b668cac2c2151c5bdeed95d956a45364bfa05",
+        "README.md": "65c3f90745d8c42419dd17db760a712d2afcc383763ef528b80796ab1644c723"
+      },
+      "adapted": [
+        "FS_BLUR nine-tap separable Gaussian weights",
+        "bevelHeight circular lens height and finite-difference gradient",
+        "sharp-rim blend of sharp and blurred scene samples",
+        "Fresnel and directional Blinn-Phong illumination structure"
+      ]
+    }
+  ],
+  "bloodhelper_specific": [
+    "Fabric 1.21.11 GPU pipelines and safe snapshot ownership",
+    "raw mip 0, half-resolution Gaussian mip 1, separate intermediate texture",
+    "Snell GLSL refract and Schlick Fresnel with IOR 1.48",
+    "explicit display RGB / linear RGB conversion",
+    "smoked HUD and darker single-sheet menu variants",
+    "fixed, restrained lights and subpixel dispersion; no animated glints/noise",
+    "normalization of smoothstep edge ordering"
+  ]
+}

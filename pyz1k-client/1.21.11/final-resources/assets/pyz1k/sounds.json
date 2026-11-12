@@ -1,0 +1,47 @@
+{
+  "killeffects.bats": {
+    "sounds": [
+      "pyz1k:killeffects/bats"
+    ]
+  },
+  "killeffects.orbit": {
+    "sounds": [
+      "pyz1k:killeffects/orbit"
+    ]
+  },
+  "killeffects.trapdoor": {
+    "sounds": [
+      "pyz1k:killeffects/trapdoor"
+    ]
+  },
+  "killeffects.train": {
+    "sounds": [
+      "pyz1k:killeffects/train"
+    ]
+  },
+  "killeffects.red_bomb": {
+    "sounds": [
+      "pyz1k:killeffects/red_bomb"
+    ]
+  },
+  "killeffects.tiny_copper_golem": {
+    "sounds": [
+      "pyz1k:killeffects/tiny_copper_golem"
+    ]
+  },
+  "killeffects.copper_golem_slap": {
+    "sounds": [
+      "pyz1k:killeffects/copper_golem_slap"
+    ]
+  },
+  "killeffects.robot_terminator": {
+    "sounds": [
+      "pyz1k:killeffects/robot_terminator"
+    ]
+  },
+  "killeffects.plant_kill_effect": {
+    "sounds": [
+      "pyz1k:killeffects/plant_kill_effect"
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Verity Full Model
+* source:	https://sketchfab.com/3d-models/verity-full-model-696156ec15c248098b87e6fc32dd34e7
+* author:	ChocoChip67 (https://sketchfab.com/ChocoChip67)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Verity Full Model" (https://sketchfab.com/3d-models/verity-full-model-696156ec15c248098b87e6fc32dd34e7) by ChocoChip67 (https://sketchfab.com/ChocoChip67) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

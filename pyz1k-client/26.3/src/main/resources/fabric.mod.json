@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "pyz1k",
+  "version": "1.5.0-vaileks",
+  "name": "pyz1k-client",
+  "description": "pyz1k-client с дополнениями Vaileks: ItemSkin, BetterNameVisibility, BloodSwordCooldown и настройками HUD.",
+  "authors": [
+    "Yz1kk (based Divine)",
+    "Vaileks"
+  ],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/pyz1k/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "main": [
+      "pyz1k.Pyz1k"
+    ],
+    "client": [
+      "pyz1k.extensions.ExtensionClient"
+    ]
+  },
+  "mixins": [
+    "pyz1k.mixins.json",
+    "pyz1k-extensions.mixins.json",
+    "pyz1k-pvp.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.20.1",
+    "fabric-api": "*",
+    "minecraft": "26.3",
+    "java": ">=25"
+  }
+}

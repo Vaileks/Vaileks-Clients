@@ -1,0 +1,63 @@
+{
+  "project": "Zoomify",
+  "author": "isXander",
+  "repository": "https://github.com/isXander/Zoomify",
+  "tag": "2.15.2+1.21.11",
+  "commit": "f5f923279401eac8bbb6b7ac406c869f7377c7b2",
+  "license": "LGPL-3.0-or-later",
+  "license_evidence": "build.gradle.kts at this commit: modLicense = \"LGPL-3.0-or-later\"",
+  "source_files": [
+    {
+      "source_path": "src/main/kotlin/dev/isxander/zoomify/zoom/ZoomHelper.kt",
+      "snapshot": "zoomify-upstream/ZoomHelper.kt",
+      "sha256": "dc35917866bbfc9bda407f53b06e3904ed7d2815de509b9b092ace2c38140bcf"
+    },
+    {
+      "source_path": "src/main/kotlin/dev/isxander/zoomify/zoom/Interpolator.kt",
+      "snapshot": "zoomify-upstream/Interpolator.kt",
+      "sha256": "3e01da78e1eb86266ab63cdfafc18de9472852e607762d220a423ca764d8dfb3"
+    },
+    {
+      "source_path": "src/main/java/dev/isxander/zoomify/mixins/zoom/GameRendererMixin.java",
+      "snapshot": "zoomify-upstream/GameRendererMixin.java",
+      "sha256": "c63161922e72ebc604dd9f05ef64731f0421ece30ed7bc6b08b9c120a4bb5d8e"
+    },
+    {
+      "source_path": "src/main/java/dev/isxander/zoomify/mixins/zoom/MouseMixin.java",
+      "snapshot": "zoomify-upstream/MouseMixin.java",
+      "sha256": "a06291df313c94f20f5b8dd64e512733a456b20c4330975624653b3e9eb8acc1"
+    },
+    {
+      "source_path": "src/main/kotlin/dev/isxander/zoomify/config/ZoomifySettings.kt",
+      "snapshot": "zoomify-upstream/ZoomifySettings.kt",
+      "sha256": "c5061bc0c165c2e6f2da4b51496154a9ba064c9540b26e2f894657bf1aa0d068"
+    },
+    {
+      "source_path": "src/main/kotlin/dev/isxander/zoomify/utils/TransitionType.kt",
+      "snapshot": "zoomify-upstream/TransitionType.kt",
+      "sha256": "3b47d293674dfa042354c687892dfb849c5413227cef2e1a9c66fef1b71fff2f"
+    }
+  ],
+  "adapted_files": [
+    "src/main/java/ru/bloodhelper/client/modules/ZoomState.java",
+    "src/main/java/ru/bloodhelper/client/mixin/ZoomGameRendererMixin.java",
+    "src/main/java/ru/bloodhelper/client/modules/ZoomInterpolation.java",
+    "src/main/java/ru/bloodhelper/client/mixin/ZoomCameraMixin.java"
+  ],
+  "changes": [
+    "Kotlin interpolation and geometric scroll zoom reimplemented as a Java frame-time state machine with configurable smooth durations.",
+    "Scale the incoming FOV by a zoom ratio; preserve other camera mods via non-cancelling ModifyReturnValue.",
+    "Use relative sensitivity on final mouse deltas without modifying Minecraft options.",
+    "Hold MMB default, remappable native key binding, deterministic Quick Commands collision handling.",
+    "Zoom is OFF by default; wheel bounds 1..100x; optional per-session retained tiers; release/focus/profile cancellation.",
+    "2026-10-14: restored Zoomify default affectHandFov behavior for both getFov paths; ported relative view bobbing injection and lerp formula.",
+    "Starting magnification and wheel now permit 100x; hand and bobbing behavior can be configured independently.",
+    "2026-10-15: ported TransitionInterpolator exponential in/out curves and inverse direction remapping from the pinned TransitionType.kt snapshot; normalized floating-point endpoints remove upstream integer-division endpoint discontinuity.",
+    "Initial zoom now defaults to 2.5x, with the upstream 1.0-second zoom-in and 0.5-second zoom-out transition times; zero duration remains explicitly instant.",
+    "Wheel interpolation is independent of the initial transition, operates in geometric tier space, and uses the continuous-time equivalent of the upstream 70% smoothing default to remain frame-rate independent.",
+    "Release folds current scroll and partial initial zoom into a continuous transition; repeated press/release and same-time renderer queries do not jump or accelerate it.",
+    "Camera animation no longer depends on the general GUI animations setting. The complete old 4x/0.20/0.15 default bundle migrates once; distinguishable custom configurations remain unchanged.",
+    "Minecraft 26.1 port: world and HUD FOV hooks moved from GameRenderer.getFov to Camera.calculateFov/calculateHudFov before projection caching; bob suppression uses CameraEntityRenderState.bob. All adaptation files remain LGPL-3.0-or-later."
+  ],
+  "date": "2026-10-15"
+}

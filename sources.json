@@ -1,0 +1,18 @@
+{
+  "pyz1k-client": {
+    "1.21.11": {
+      "src": "authored extensions",
+      "recovered-core-java": "decompiled final core"
+    },
+    "26.3": {
+      "src": "ported and authored sources"
+    }
+  },
+  "BloodstoneHelperVL": {
+    "patches": "authored ASM patches and helpers",
+    "1.21.11": "decompiled final sources",
+    "26.3": "decompiled final sources",
+    "1.21.11-lunarclient": "overrides relative to 1.21.11",
+    "personal-1.21.11": "overrides relative to 1.21.11"
+  }
+}

@@ -1,0 +1,1 @@
+{"schemaVersion":1,"id":"vl_smoke","version":"1","environment":"client","entrypoints":{"client":["vl.smoke.BloodSmoke"]}}

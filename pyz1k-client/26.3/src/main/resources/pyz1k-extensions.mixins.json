@@ -1,0 +1,24 @@
+{
+  "required": true,
+  "package": "pyz1k.extensions.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "client": [
+    "ModulesMixin",
+    "InterfaceMixin",
+    "ClientMixin",
+    "NamesMixin",
+    "SkinsMixin",
+    "WelcomeMixin",
+    "ItemCooldownEntryAccessor",
+    "ItemCooldownManagerAccessor",
+    "LootEntityMixin",
+    "GroundLootStateMixin",
+    "GroundLootRendererMixin",
+    "ModuleDescriptionMixin",
+    "MenuHelpMixin",
+    "ModuleHelpMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

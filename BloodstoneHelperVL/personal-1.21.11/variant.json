@@ -1,0 +1,5 @@
+{
+  "base": "../1.21.11",
+  "javaOverrides": "recovered-java-overrides",
+  "resourceOverrides": "resource-overrides"
+}

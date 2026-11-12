@@ -1,0 +1,10 @@
+{
+  "project": "https://github.com/RedxAx/ReGlass",
+  "commit": "352a67f8ccfbfaa709f60cc354d26ca4a5f3af78",
+  "license": "MIT",
+  "adapted": [
+    "src/main/resources/assets/reglass/shaders/program/liquid_glass_gui.fsh",
+    "src/main/java/restudio/reglass/client/api/ReGlassConfig.java"
+  ],
+  "integration": "Embedded per-surface optics using the existing shared capture/blur. External ReGlass API takes exclusive ownership when present."
+}

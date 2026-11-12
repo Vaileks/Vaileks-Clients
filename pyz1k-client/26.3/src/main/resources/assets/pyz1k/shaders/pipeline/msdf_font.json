@@ -1,0 +1,22 @@
+{
+  "vertex": "pyz1k:core/msdf_font",
+  "fragment": "pyz1k:core/msdf_font",
+  "samplers": [
+    "Sampler0"
+  ],
+  "attributes": [
+    "Position",
+    "UV0",
+    "Color"
+  ],
+  "uniforms": {
+    "ModelViewMat": {
+      "type": "matrix4x4",
+      "count": 1
+    },
+    "ProjMat": {
+      "type": "matrix4x4",
+      "count": 1
+    }
+  }
+}

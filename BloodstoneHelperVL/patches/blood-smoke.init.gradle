@@ -1,0 +1,30 @@
+gradle.projectsEvaluated {
+ def p=gradle.rootProject
+ def nativeVersion=p.name.contains('26.3') || p.projectDir.name.contains('26.3')
+ def base=new File(p.projectDir,'../../BloodstoneHelperVL/patches').canonicalFile
+ def src=new File(base,nativeVersion?'smoke26':'smoke21')
+ def variant=p.findProperty('bloodVariant') ?: (nativeVersion?'26.3':'1.21.11')
+ p.sourceSets.create('bloodSmoke') {
+  java.srcDir new File(src,'java');resources.srcDir new File(src,'resources')
+  compileClasspath += p.sourceSets.main.compileClasspath
+  runtimeClasspath += p.sourceSets.main.runtimeClasspath
+ }
+ def smoke=p.tasks.register('bloodSmokeJar',Jar) {
+  dependsOn p.tasks.named('bloodSmokeClasses');from p.sourceSets.bloodSmoke.output
+  archiveFileName='blood-smoke-named.jar';destinationDirectory=new File(base,nativeVersion?'build26':'build21')
+ }
+ def ready=smoke
+ if(!nativeVersion){
+  def remap=p.plugins.findPlugin('fabric-loom').class.classLoader.loadClass('net.fabricmc.loom.task.RemapJarTask')
+  ready=p.tasks.register('remapBloodSmokeJar',remap){dependsOn smoke;inputFile=smoke.flatMap{it.archiveFile};archiveFileName='blood-smoke.jar';destinationDirectory=new File(base,'build21');addNestedDependencies=false}
+ }
+ def loader=p.plugins.findPlugin(nativeVersion?'net.fabricmc.fabric-loom':'fabric-loom').class.classLoader
+ p.tasks.register('bloodProduction',loader.loadClass('net.fabricmc.loom.task.prod.ClientProductionRunTask')) {
+  dependsOn ready
+  mods.setFrom(p.files(new File(base,'dist/'+variant+'/BloodstoneHelperVL.jar'),ready.flatMap{it.archiveFile},p.configurations.smokeFabric))
+  if(p.hasProperty('personalTest'))jvmArgs.add('-Dvl.personalTest=true')
+  jvmArgs.add('-Duser.home='+new File(base,'runs/'+variant+'/home').absolutePath)
+  useXVFB=false;runDir.set(new File(base,'runs/'+variant))
+  javaLauncher.set(p.javaToolchains.launcherFor {languageVersion.set(JavaLanguageVersion.of(nativeVersion?25:23))})
+ }
+}

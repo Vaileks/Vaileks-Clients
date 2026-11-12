@@ -1,0 +1,20 @@
+{
+  "key.bloodhelper.menu": "Открыть BloodstoneHelperVL",
+  "key.category.bloodhelper.main": "BloodstoneHelperVL",
+  "key.bloodhelper.music_toggle": "Музыка: пауза / продолжить",
+  "key.bloodhelper.music_previous": "Музыка: предыдущий трек",
+  "key.bloodhelper.music_next": "Музыка: следующий трек",
+  "key.bloodhelper.music_backward": "Музыка: назад на 10 секунд",
+  "key.bloodhelper.music_forward": "Музыка: вперёд на 10 секунд",
+  "bloodhelper.resource_pack.setup.title": "Ресурспаки Bloodstone",
+  "bloodhelper.resource_pack.setup.instruction": "Bloodstone и BetterModel скачиваются в фоне при запуске. Зайдите на Bloodstone: совпадающие версии применятся из кэша, новые сервер загрузит автоматически. Модуль включён при первом запуске; его можно отключить.",
+  "bloodhelper.resource_pack.setup.dismiss": "Понятно",
+  "key.bloodhelper.ability_guide": "Справочник способностей: открыть",
+  "key.bloodhelper.quick_commands": "Быстрые команды: открыть колесо",
+  "key.bloodhelper.waypoint": "Метки: создать метку",
+  "key.bloodhelper.streamer_toggle": "Streamer Mode: включить / выключить",
+  "key.bloodhelper.zoom": "Приближение: приблизить",
+  "key.bloodhelper.music_favorite": "Музыка: добавить в избранное",
+  "key.bloodhelper.quick_ping": "Быстрая метка / Shift: сохранить точку",
+  "key.bloodhelper.freeLook": "Свободный взгляд"
+}
