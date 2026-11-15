@@ -14,8 +14,10 @@ for jar in sorted(out.glob('*/BloodstoneHelperVL.jar')):
   assert set(originalmixins)-set(mixins)=={'LootGlowMixin','LootColorMixin','LegendaryItemModelMixin','LegendaryItemRenderStateMixin'}
   for name in ['LootGlowMixin','LootColorMixin','LegendaryItemModelMixin','LegendaryItemRenderStateMixin']:assert 'ru/bloodhelper/client/mixin/'+name+'.class' not in z.namelist()
   base='ru/bloodhelper/client/'
-  for name in ['visuals/LegendaryVisuals','modules/OpponentCooldownTracker','modules/VisualHitboxes','modules/BetterNameVisibilityModule','circles/BloodstoneCircles','gui/BloodHelperScreen$Module','modules/BindManagerModel$Filter','access/ClientControlService','access/ServiceTransport','config/ConfigStore']:
+  for name in ['visuals/LegendaryVisuals','modules/OpponentCooldownTracker','modules/VisualHitboxes','modules/BetterNameVisibilityModule','circles/BloodstoneCircles','modules/BindManagerModel$Filter','access/ClientControlService','access/ServiceTransport','config/ConfigStore']:
    assert old.read(base+name+'.class')==z.read(base+name+'.class'),'Unintended change '+name
+  if variant=='26.3':
+   for removed in ['modules/LegendarySizeModule','modules/HandItemScaleScreen','modules/HandItemScaleScreen$Knob','modules/HandItemScaleScreen$Row']:assert base+removed+'.class' not in z.namelist()
   screen=z.read(base+'gui/BloodHelperScreen.class')
   for url in [b'https://boosty.to/bloodhelper/',b'https://discord.gg/QWcgKf9Md7',b'https://modrinth.com/mod/bloodhelper/versions']:assert url not in screen
   assert b'https://discord.gg/9kE6HNJEnZ' in screen

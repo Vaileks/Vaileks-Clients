@@ -22,6 +22,169 @@
  *  net.minecraft.world.item.Item
  *  net.minecraft.world.item.ItemStack
  *  net.minecraft.world.level.ItemLike
+ *  ru.bloodhelper.client.BloodHelperClient
+ *  ru.bloodhelper.client.assistant.AssistantActions
+ *  ru.bloodhelper.client.assistant.AssistantActions$Controls
+ *  ru.bloodhelper.client.assistant.AssistantActions$Request
+ *  ru.bloodhelper.client.assistant.AssistantActions$Result
+ *  ru.bloodhelper.client.assistant.AssistantKnowledge
+ *  ru.bloodhelper.client.assistant.AssistantService
+ *  ru.bloodhelper.client.community.CommunityPanels
+ *  ru.bloodhelper.client.compat.ClientDistribution
+ *  ru.bloodhelper.client.compat.ExternalChatPatches
+ *  ru.bloodhelper.client.compat.ExternalHudMods
+ *  ru.bloodhelper.client.config.AspectRatioSettings
+ *  ru.bloodhelper.client.config.BackgroundAlertsSettings
+ *  ru.bloodhelper.client.config.BlastLeggingsSettings
+ *  ru.bloodhelper.client.config.ChatMentionsSettings
+ *  ru.bloodhelper.client.config.CirclesSettings
+ *  ru.bloodhelper.client.config.ClientConfig
+ *  ru.bloodhelper.client.config.ClientConfig$ArmorSettings
+ *  ru.bloodhelper.client.config.ClientConfig$ChatToolsSettings
+ *  ru.bloodhelper.client.config.ClientConfig$CooldownSettings
+ *  ru.bloodhelper.client.config.ClientConfig$DeathRecapSettings
+ *  ru.bloodhelper.client.config.ClientConfig$EffectsSettings
+ *  ru.bloodhelper.client.config.ClientConfig$HudPosition
+ *  ru.bloodhelper.client.config.ClientConfig$ItemCounterSettings
+ *  ru.bloodhelper.client.config.ClientConfig$LegendarySoundSettings
+ *  ru.bloodhelper.client.config.ClientConfig$MusicSettings
+ *  ru.bloodhelper.client.config.ClientConfig$NotificationSettings
+ *  ru.bloodhelper.client.config.ClientConfig$OpponentCooldownSettings
+ *  ru.bloodhelper.client.config.ClientConfig$PerformanceSettings
+ *  ru.bloodhelper.client.config.ClientConfig$PvpSettings
+ *  ru.bloodhelper.client.config.ClientConfig$SessionSettings
+ *  ru.bloodhelper.client.config.ClientConfig$WidgetSettings
+ *  ru.bloodhelper.client.config.CombatHudSettings
+ *  ru.bloodhelper.client.config.CombatTimelineSettings
+ *  ru.bloodhelper.client.config.ConfigStore
+ *  ru.bloodhelper.client.config.CooldownReadySettings
+ *  ru.bloodhelper.client.config.CrosshairSettings
+ *  ru.bloodhelper.client.config.DeathScreenshotSettings
+ *  ru.bloodhelper.client.config.DiscordPresenceSettings
+ *  ru.bloodhelper.client.config.GeneralHudSettings$Metric
+ *  ru.bloodhelper.client.config.InventoryUiSettings$Position
+ *  ru.bloodhelper.client.config.LegendarySizeSettings
+ *  ru.bloodhelper.client.config.LegendaryVisualSettings
+ *  ru.bloodhelper.client.config.MenuState
+ *  ru.bloodhelper.client.config.MotionBlurSettings
+ *  ru.bloodhelper.client.config.MusicDuckingSettings
+ *  ru.bloodhelper.client.config.NameVisibilitySettings
+ *  ru.bloodhelper.client.config.OptimizerSettings
+ *  ru.bloodhelper.client.config.PlayerDisplaySettings$CombatMetric
+ *  ru.bloodhelper.client.config.PlayerDisplaySettings$FreeLook
+ *  ru.bloodhelper.client.config.PlayerDisplaySettings$Hitboxes
+ *  ru.bloodhelper.client.config.PlayerDisplaySettings$OtherTiers
+ *  ru.bloodhelper.client.config.PlayerDisplaySettings$Saturation
+ *  ru.bloodhelper.client.config.ShulkerPreviewSettings
+ *  ru.bloodhelper.client.config.SizeTimerSettings
+ *  ru.bloodhelper.client.config.SkinsSettings
+ *  ru.bloodhelper.client.config.StreamerSettings
+ *  ru.bloodhelper.client.config.WatermarkSettings
+ *  ru.bloodhelper.client.config.WaypointSettings
+ *  ru.bloodhelper.client.config.ZoomSettings
+ *  ru.bloodhelper.client.cosmetic.CosmeticNames
+ *  ru.bloodhelper.client.cosmetic.NicknamePalette
+ *  ru.bloodhelper.client.discord.DiscordPresenceModule
+ *  ru.bloodhelper.client.discord.DiscordPresenceScreen
+ *  ru.bloodhelper.client.gui.AiAssistantPanel
+ *  ru.bloodhelper.client.gui.BackgroundMenuScreen
+ *  ru.bloodhelper.client.gui.BloodHelperScreen$2
+ *  ru.bloodhelper.client.gui.BloodHelperScreen$Card
+ *  ru.bloodhelper.client.gui.BloodHelperScreen$ClipArea
+ *  ru.bloodhelper.client.gui.BloodHelperScreen$Dropdown
+ *  ru.bloodhelper.client.gui.BloodHelperScreen$FieldHit
+ *  ru.bloodhelper.client.gui.BloodHelperScreen$Hit
+ *  ru.bloodhelper.client.gui.BloodHelperScreen$ItemPreset
+ *  ru.bloodhelper.client.gui.BloodHelperScreen$Page
+ *  ru.bloodhelper.client.gui.BloodHelperScreen$Row
+ *  ru.bloodhelper.client.gui.BloodHelperScreen$RowDraw
+ *  ru.bloodhelper.client.gui.BloodHelperScreen$SettingHit
+ *  ru.bloodhelper.client.gui.BloodHelperScreen$Slider
+ *  ru.bloodhelper.client.gui.BloodstonePackNotice
+ *  ru.bloodhelper.client.gui.BrandLogo
+ *  ru.bloodhelper.client.gui.CustomFont
+ *  ru.bloodhelper.client.gui.GuiTextField
+ *  ru.bloodhelper.client.gui.LiquidGlass
+ *  ru.bloodhelper.client.gui.MenuAvatar
+ *  ru.bloodhelper.client.gui.MenuBackdrop
+ *  ru.bloodhelper.client.gui.ModuleCategory
+ *  ru.bloodhelper.client.gui.ModuleGroupLayout
+ *  ru.bloodhelper.client.gui.ModuleGroupLayout$Entry
+ *  ru.bloodhelper.client.gui.ModuleGroupLayout$Header
+ *  ru.bloodhelper.client.gui.ModuleGroupLayout$Layout
+ *  ru.bloodhelper.client.gui.ModuleGroupLayout$Position
+ *  ru.bloodhelper.client.gui.OutlineSurface
+ *  ru.bloodhelper.client.gui.ReGlassCompat
+ *  ru.bloodhelper.client.gui.RenderMetrics
+ *  ru.bloodhelper.client.gui.RenderMetrics$Snapshot
+ *  ru.bloodhelper.client.gui.RenderQuality
+ *  ru.bloodhelper.client.gui.ScrollBarDrag
+ *  ru.bloodhelper.client.gui.ThemeColorPicker
+ *  ru.bloodhelper.client.gui.ThemeColors
+ *  ru.bloodhelper.client.gui.UiDraw
+ *  ru.bloodhelper.client.gui.UiIcons
+ *  ru.bloodhelper.client.gui.UiLanguage
+ *  ru.bloodhelper.client.hud.CooldownWidget
+ *  ru.bloodhelper.client.hud.HudMotion
+ *  ru.bloodhelper.client.hud.HudMotion$Value
+ *  ru.bloodhelper.client.hud.NotificationInbox
+ *  ru.bloodhelper.client.hud.NotificationWidget
+ *  ru.bloodhelper.client.hud.SessionTracker
+ *  ru.bloodhelper.client.lyrics.LyricsService
+ *  ru.bloodhelper.client.lyrics.LyricsService$Issue
+ *  ru.bloodhelper.client.lyrics.LyricsService$Status
+ *  ru.bloodhelper.client.lyrics.LyricsService$Variant
+ *  ru.bloodhelper.client.modules.AbilityGuideModule
+ *  ru.bloodhelper.client.modules.AppearanceShareScreen
+ *  ru.bloodhelper.client.modules.BackgroundAlerts
+ *  ru.bloodhelper.client.modules.BindManagerScreen
+ *  ru.bloodhelper.client.modules.ChatTools
+ *  ru.bloodhelper.client.modules.CombatHudModule
+ *  ru.bloodhelper.client.modules.ConfigProfilesScreen
+ *  ru.bloodhelper.client.modules.CooldownReadyModule
+ *  ru.bloodhelper.client.modules.CrosshairScreen
+ *  ru.bloodhelper.client.modules.DeathRecapModule
+ *  ru.bloodhelper.client.modules.DeathScreenshotModule
+ *  ru.bloodhelper.client.modules.DropGuardModule
+ *  ru.bloodhelper.client.modules.DroppedItemFilterScreen
+ *  ru.bloodhelper.client.modules.FreeLookModule
+ *  ru.bloodhelper.client.modules.HeadsModule
+ *  ru.bloodhelper.client.modules.HudItemControlsScreen
+ *  ru.bloodhelper.client.modules.HudItemControlsScreen$Page
+ *  ru.bloodhelper.client.modules.ItemSearchQuery
+ *  ru.bloodhelper.client.modules.KillEffectSoundCatalog
+ *  ru.bloodhelper.client.modules.KillEffectSoundScreen
+ *  ru.bloodhelper.client.modules.LegendaryItemCatalog
+ *  ru.bloodhelper.client.modules.LegendaryItemCatalog$Weapon
+ *  ru.bloodhelper.client.modules.LegendarySoundCatalog
+ *  ru.bloodhelper.client.modules.LegendarySoundCatalog$Entry
+ *  ru.bloodhelper.client.modules.LegendarySoundCatalog$Weapon
+ *  ru.bloodhelper.client.modules.LegendarySoundVolume
+ *  ru.bloodhelper.client.modules.LocalMusicScreen
+ *  ru.bloodhelper.client.modules.MediaSourceScreen
+ *  ru.bloodhelper.client.modules.MusicPlayerScreen
+ *  ru.bloodhelper.client.modules.NotificationHistoryScreen
+ *  ru.bloodhelper.client.modules.NotificationSoundSettingsScreen
+ *  ru.bloodhelper.client.modules.QuickCommandsModule
+ *  ru.bloodhelper.client.modules.SizeTimerModule
+ *  ru.bloodhelper.client.modules.StreamerMode
+ *  ru.bloodhelper.client.modules.ThemePreviewScreen
+ *  ru.bloodhelper.client.modules.VisualHitboxes
+ *  ru.bloodhelper.client.modules.WaypointsModule
+ *  ru.bloodhelper.client.modules.WorldVisualSettingsScreen
+ *  ru.bloodhelper.client.modules.WorldVisualSettingsScreen$Section
+ *  ru.bloodhelper.client.modules.ZoomModule
+ *  ru.bloodhelper.client.music.MediaSources
+ *  ru.bloodhelper.client.policy.ClientControlPolicy
+ *  ru.bloodhelper.client.policy.ReleaseAnnouncement
+ *  ru.bloodhelper.client.policy.RemoteModulePolicy
+ *  ru.bloodhelper.client.resourcepack.BloodstoneResourcePack
+ *  ru.bloodhelper.client.resourcepack.BloodstoneResourcePack$Snapshot
+ *  ru.bloodhelper.client.resourcepack.BloodstoneResourcePack$State
+ *  ru.bloodhelper.client.skins.CustomModels
+ *  ru.bloodhelper.client.tiers.TierService
+ *  ru.bloodhelper.client.visuals.LegendaryVisuals
+ *  ru.bloodhelper.client.vl.VLRestrictions
  */
 package ru.bloodhelper.client.gui;
 
@@ -40,9 +203,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
+import java.util.UUID;
 import java.util.function.BooleanSupplier;
 import java.util.function.Consumer;
 import java.util.function.DoubleConsumer;
@@ -110,6 +273,7 @@ import ru.bloodhelper.client.discord.DiscordPresenceModule;
 import ru.bloodhelper.client.discord.DiscordPresenceScreen;
 import ru.bloodhelper.client.gui.AiAssistantPanel;
 import ru.bloodhelper.client.gui.BackgroundMenuScreen;
+import ru.bloodhelper.client.gui.BloodHelperScreen;
 import ru.bloodhelper.client.gui.BloodstonePackNotice;
 import ru.bloodhelper.client.gui.BrandLogo;
 import ru.bloodhelper.client.gui.CustomFont;
@@ -149,7 +313,6 @@ import ru.bloodhelper.client.modules.DeathScreenshotModule;
 import ru.bloodhelper.client.modules.DropGuardModule;
 import ru.bloodhelper.client.modules.DroppedItemFilterScreen;
 import ru.bloodhelper.client.modules.FreeLookModule;
-import ru.bloodhelper.client.modules.HandItemScaleScreen;
 import ru.bloodhelper.client.modules.HeadsModule;
 import ru.bloodhelper.client.modules.HudItemControlsScreen;
 import ru.bloodhelper.client.modules.ItemSearchQuery;
@@ -181,6 +344,9 @@ import ru.bloodhelper.client.tiers.TierService;
 import ru.bloodhelper.client.visuals.LegendaryVisuals;
 import ru.bloodhelper.client.vl.VLRestrictions;
 
+/*
+ * Exception performing whole class analysis ignored.
+ */
 public final class BloodHelperScreen
 extends Screen
 implements BackgroundMenuScreen {
@@ -273,7 +439,7 @@ implements BackgroundMenuScreen {
         if (this.indexingSettings) {
             this.settingIndex.add(new SettingHit(this.indexingModule, name, desc, row));
         }
-        return (Row)VLRestrictions.markRow(row, id);
+        return (Row)VLRestrictions.markRow((Object)row, (String)id);
     }
 
     /*
@@ -304,7 +470,7 @@ implements BackgroundMenuScreen {
         }
         if (!query.equals(this.lastSettingQuery) || this.indexedPage != this.page) {
             this.indexedPage = this.page;
-            this.matchedSettings = this.settingIndex.stream().filter(hit -> !BloodHelperScreen.isStaff(hit.module)).filter(hit -> ItemSearchQuery.matches(hit.name + " " + hit.description, query)).limit(60L).toList();
+            this.matchedSettings = this.settingIndex.stream().filter(hit -> !BloodHelperScreen.isStaff(hit.module)).filter(hit -> ItemSearchQuery.matches((String)(hit.name + " " + hit.description), (String)query)).limit(60L).toList();
             this.lastSettingQuery = query;
         }
         return VLRestrictions.cleanRows(this.matchedSettings);
@@ -318,7 +484,7 @@ implements BackgroundMenuScreen {
         super((Component)Component.literal((String)"BloodstoneHelperVL"));
         this.parent = parent;
         MenuState state = ConfigStore.menuState();
-        this.page = Page.valueOf(state.page);
+        this.page = Page.valueOf((String)state.page);
         this.restoredQuery = state.query;
         for (Module module : (Module[])VLRestrictions.visibleModules((Object[])Module.values())) {
             if (!state.expanded.contains(module.id)) continue;
@@ -341,7 +507,7 @@ implements BackgroundMenuScreen {
         state.profileScroll = this.profileScroll;
         state.expanded = this.expanded.stream().map(module -> module.id).toList();
         state.advanced = this.advanced.stream().sorted().toList();
-        ConfigStore.rememberMenuState(state);
+        ConfigStore.rememberMenuState((MenuState)state);
     }
 
     private ClientConfig cfg() {
@@ -361,19 +527,19 @@ implements BackgroundMenuScreen {
     }
 
     private int accent() {
-        return UiDraw.alpha(this.cfg().accent, 255);
+        return UiDraw.alpha((int)this.cfg().accent, (int)255);
     }
 
     private int softAccent() {
-        return UiDraw.blend(this.cfg().accent, 0xFFFFFF, 0.32);
+        return UiDraw.blend((int)this.cfg().accent, (int)0xFFFFFF, (double)0.32);
     }
 
     private double animate(String key, double target) {
-        return this.motion.value(key, target, this.frameNanos, this.cfg().animations, RenderQuality.animationMillis(140.0));
+        return this.motion.value(key, target, this.frameNanos, this.cfg().animations, RenderQuality.animationMillis((double)140.0));
     }
 
     private double animateLayout(String key, double target) {
-        return this.layoutMotion.value(key, target, this.frameNanos, this.cfg().animations && (!this.contentBar.active() || !key.endsWith(".scroll")), RenderQuality.animationMillis(150.0));
+        return this.layoutMotion.value(key, target, this.frameNanos, this.cfg().animations && (!this.contentBar.active() || !key.endsWith(".scroll")), RenderQuality.animationMillis((double)150.0));
     }
 
     private boolean hovered(int x, int y, int w, int h) {
@@ -402,7 +568,7 @@ implements BackgroundMenuScreen {
     private void liftedIcon(GuiGraphicsExtractor g, String icon, int x, int y, int size, int color, double hover) {
         g.pose().pushMatrix();
         g.pose().translate(0.0f, -this.lift(hover));
-        UiIcons.draw(g, icon, x, y, size, color);
+        UiIcons.draw((GuiGraphicsExtractor)g, (String)icon, (int)x, (int)y, (int)size, (int)color);
         g.pose().popMatrix();
     }
 
@@ -450,7 +616,7 @@ implements BackgroundMenuScreen {
         this.watermarkText.setTextSize(13.0f);
         this.watermarkText.setValue(this.cfg().watermark.text);
         this.watermarkText.setResponder(value -> {
-            this.cfg().watermark.text = WatermarkSettings.cleanText(value);
+            this.cfg().watermark.text = WatermarkSettings.cleanText((String)value);
         });
         this.violationPhrases = new GuiTextField(0, 0, 238, 20, this.tr("\u0441\u043b\u043e\u0432\u043e, \u0444\u0440\u0430\u0437\u0430", "word, phrase"));
         this.violationPhrases.setMaxLength(4096);
@@ -490,12 +656,12 @@ implements BackgroundMenuScreen {
         int totalWidth = this.assistantEnabled() ? 1132 : 800;
         double fit = Math.max(0.1, Math.min(((double)width - 12.0) / (double)totalWidth, ((double)height - 12.0) / (double)this.totalHeight()));
         double target = Math.min(BloodHelperScreen.fittedScale(width, height, this.cfg().guiScale), fit);
-        this.menuScale = this.motion.value("menu.scale", target, System.nanoTime(), this.cfg().animations, RenderQuality.animationMillis(150.0));
+        this.menuScale = this.motion.value("menu.scale", target, System.nanoTime(), this.cfg().animations, RenderQuality.animationMillis((double)150.0));
         this.menuScale = Math.min(this.menuScale, fit);
         this.originX = ((double)width - (double)totalWidth * this.menuScale) / 2.0;
         this.originY = ((double)height - (double)this.totalHeight() * this.menuScale) / 2.0 + (CommunityPanels.menuVisible() ? 79.0 * this.menuScale : 0.0);
         if (this.cfg().animations) {
-            double t = Math.clamp((double)(System.nanoTime() - this.openedAt) / (RenderQuality.animationMillis(180.0) * 1000000.0), 0.0, 1.0);
+            double t = Math.clamp((double)(System.nanoTime() - this.openedAt) / (RenderQuality.animationMillis((double)180.0) * 1000000.0), 0.0, 1.0);
             this.originY += 10.0 * Math.pow(1.0 - t, 3.0) * this.menuScale;
         }
     }
@@ -504,7 +670,7 @@ implements BackgroundMenuScreen {
         if (this.minecraft.level == null) {
             this.extractPanorama(g, delta);
         }
-        MenuBackdrop.render(g);
+        MenuBackdrop.render((GuiGraphicsExtractor)g);
         this.minecraft.gui.hud.extractDeferredSubtitles();
     }
 
@@ -517,7 +683,7 @@ implements BackgroundMenuScreen {
             this.renderMenu(g, mx, my, delta);
         }
         finally {
-            RenderMetrics.endMenu(measured);
+            RenderMetrics.endMenu((long)measured);
         }
     }
 
@@ -564,23 +730,23 @@ implements BackgroundMenuScreen {
                 this.about(g);
             }
         }
-        double entered = this.pageMotion.to(1.0, this.frameNanos, this.cfg().animations, RenderQuality.animationMillis(130.0));
+        double entered = this.pageMotion.to(1.0, this.frameNanos, this.cfg().animations, RenderQuality.animationMillis((double)130.0));
         if (entered < 0.999) {
-            UiDraw.rounded(g, 185, 73, 582, 405, 5, UiDraw.alpha(0x111215, (int)(48.0 * (1.0 - entered))));
+            UiDraw.rounded((GuiGraphicsExtractor)g, (int)185, (int)73, (int)582, (int)405, (int)5, (int)UiDraw.alpha((int)0x111215, (int)((int)(48.0 * (1.0 - entered)))));
         }
         if (this.focused != null && this.fields.stream().noneMatch(f -> f.box == this.focused)) {
             this.focus(null);
         }
-        String policyUpdate = RemoteModulePolicy.update("26.3", "1.3.8");
+        String policyUpdate = RemoteModulePolicy.update((String)"26.3", (String)"1.3.8");
         if (System.currentTimeMillis() >= this.noticeUntil) {
-            Object policyStatus = RemoteModulePolicy.status(this.ru());
+            Object policyStatus = RemoteModulePolicy.status((boolean)this.ru());
             if (!policyUpdate.isEmpty()) {
                 policyStatus = (String)policyStatus + this.tr(" \u00b7 \u041e\u0431\u043d\u043e\u0432\u043b\u0435\u043d\u0438\u0435 ", " \u00b7 Update ") + policyUpdate + " \u2014 Modrinth";
             }
             BloodHelperScreen.label(g, BloodHelperScreen.fit((String)policyStatus, 10.0f, 548.0f), 200.0f, 483.0f, 10.0f, -6775902);
         }
         if (System.currentTimeMillis() < this.noticeUntil) {
-            UiDraw.rounded(g, 190, 481, 568, 17, 3, ThemeColors.surface(-15132130));
+            UiDraw.rounded((GuiGraphicsExtractor)g, (int)190, (int)481, (int)568, (int)17, (int)3, (int)ThemeColors.surface((int)-15132130));
             BloodHelperScreen.label(g, BloodHelperScreen.fit(this.notice, 11.0f, 548.0f), 200.0f, 483.0f, 11.0f, -6775902);
         }
         if (this.dropdown != null) {
@@ -595,7 +761,7 @@ implements BackgroundMenuScreen {
             this.assistant.close();
         }
         this.releaseNotice(g);
-        CommunityPanels.menu(g, 800);
+        CommunityPanels.menu((GuiGraphicsExtractor)g, (int)800);
         this.drawDropdown(g);
         if (this.colorPicker != null) {
             g.nextStratum();
@@ -603,7 +769,7 @@ implements BackgroundMenuScreen {
         }
         g.pose().popMatrix();
         if (this.colorPicker == null && this.notificationPreviewUntil != 0L && System.nanoTime() < this.notificationPreviewUntil) {
-            NotificationWidget.render(g, this.cfg(), true);
+            NotificationWidget.render((GuiGraphicsExtractor)g, (ClientConfig)this.cfg(), (boolean)true);
         }
         g.pose().pushMatrix();
         g.pose().translate((float)this.originX, (float)this.originY);
@@ -615,42 +781,42 @@ implements BackgroundMenuScreen {
     private void menuSurface(GuiGraphicsExtractor g) {
         boolean glass = "LIQUID_GLASS".equals(this.cfg().surfaceStyle);
         if (glass) {
-            LiquidGlass.surfaceMenu(g, 0, 0, 800, 500, 15, ThemeColors.surface(-233564902), this.cfg());
+            LiquidGlass.surfaceMenu((GuiGraphicsExtractor)g, (int)0, (int)0, (int)800, (int)500, (int)15, (int)ThemeColors.surface((int)-233564902), (ClientConfig)this.cfg());
             if (ReGlassCompat.installed()) {
-                UiDraw.roundedSolid(g, 0, 0, 800, 500, 15, ThemeColors.surface(-2145377237));
+                UiDraw.roundedSolid((GuiGraphicsExtractor)g, (int)0, (int)0, (int)800, (int)500, (int)15, (int)ThemeColors.surface((int)-2145377237));
             }
             g.enableScissor(1, 1, 176, 499);
-            UiDraw.roundedSolid(g, 1, 1, 798, 498, 14, ThemeColors.surface(-2146430441));
+            UiDraw.roundedSolid((GuiGraphicsExtractor)g, (int)1, (int)1, (int)798, (int)498, (int)14, (int)ThemeColors.surface((int)-2146430441));
             g.disableScissor();
-            g.fill(176, 1, 177, 499, UiDraw.alpha(ThemeColors.line(), 150));
+            g.fill(176, 1, 177, 499, UiDraw.alpha((int)ThemeColors.line(), (int)150));
         } else if ("OUTLINE".equals(this.cfg().surfaceStyle)) {
-            OutlineSurface.draw(g, 0, 0, 800, 500, 8, 255, this.cfg(), true);
-            UiDraw.rounded(g, 1, 1, 175, 498, 7, UiDraw.alpha(ThemeColors.surface(-15724268), 88));
-            g.fill(176, 1, 177, 499, UiDraw.alpha(ThemeColors.icon(this.cfg().accent), 110));
+            OutlineSurface.draw((GuiGraphicsExtractor)g, (int)0, (int)0, (int)800, (int)500, (int)8, (int)255, (ClientConfig)this.cfg(), (boolean)true);
+            UiDraw.rounded((GuiGraphicsExtractor)g, (int)1, (int)1, (int)175, (int)498, (int)7, (int)UiDraw.alpha((int)ThemeColors.surface((int)-15724268), (int)88));
+            g.fill(176, 1, 177, 499, UiDraw.alpha((int)ThemeColors.icon((int)this.cfg().accent), (int)110));
         } else {
-            UiDraw.border(g, 0, 0, 800, 500, 6, ThemeColors.surface(-15461096), ThemeColors.surface(-13224133));
-            UiDraw.rounded(g, 1, 1, 175, 498, 5, ThemeColors.surface(-15724268));
-            g.fill(169, 1, 176, 499, ThemeColors.surface(-15724268));
+            UiDraw.border((GuiGraphicsExtractor)g, (int)0, (int)0, (int)800, (int)500, (int)6, (int)ThemeColors.surface((int)-15461096), (int)ThemeColors.surface((int)-13224133));
+            UiDraw.rounded((GuiGraphicsExtractor)g, (int)1, (int)1, (int)175, (int)498, (int)5, (int)ThemeColors.surface((int)-15724268));
+            g.fill(169, 1, 176, 499, ThemeColors.surface((int)-15724268));
             g.fill(176, 1, 177, 499, ThemeColors.line());
         }
-        g.fill(190, 60, 773, 61, UiDraw.alpha(ThemeColors.line(), glass ? 112 : 255));
-        g.fill(18, 433, 152, 434, UiDraw.alpha(ThemeColors.line(), glass ? 128 : 255));
+        g.fill(190, 60, 773, 61, UiDraw.alpha((int)ThemeColors.line(), (int)(glass ? 112 : 255)));
+        g.fill(18, 433, 152, 434, UiDraw.alpha((int)ThemeColors.line(), (int)(glass ? 128 : 255)));
     }
 
     private void frame(GuiGraphicsExtractor g, int x, int y, int w, int h, int radius) {
         if ("LIQUID_GLASS".equals(this.cfg().surfaceStyle)) {
             int corner = Math.max(8, Math.min(12, radius));
             if (RenderQuality.shadows()) {
-                UiDraw.rounded(g, x, y + 2, w, h, corner, 0x22000000);
+                UiDraw.rounded((GuiGraphicsExtractor)g, (int)x, (int)(y + 2), (int)w, (int)h, (int)corner, (int)0x22000000);
             }
-            UiDraw.rounded(g, x, y, w, h, corner, ThemeColors.surface(-719511513));
-            UiDraw.outline(g, x, y, w, h, corner, ThemeColors.surface(1413958744));
+            UiDraw.rounded((GuiGraphicsExtractor)g, (int)x, (int)y, (int)w, (int)h, (int)corner, (int)ThemeColors.surface((int)-719511513));
+            UiDraw.outline((GuiGraphicsExtractor)g, (int)x, (int)y, (int)w, (int)h, (int)corner, (int)ThemeColors.surface((int)1413958744));
         } else if ("OUTLINE".equals(this.cfg().surfaceStyle)) {
-            OutlineSurface.draw(g, x, y, w, h, Math.clamp((long)radius, 4, 8), 220, this.cfg(), true);
+            OutlineSurface.draw((GuiGraphicsExtractor)g, (int)x, (int)y, (int)w, (int)h, (int)Math.clamp((long)radius, 4, 8), (int)220, (ClientConfig)this.cfg(), (boolean)true);
         } else {
             int corner = Math.min(4, radius);
-            UiDraw.rounded(g, x, y, w, h, corner, ThemeColors.surface(-15132131));
-            UiDraw.outline(g, x, y, w, h, corner, ThemeColors.line());
+            UiDraw.rounded((GuiGraphicsExtractor)g, (int)x, (int)y, (int)w, (int)h, (int)corner, (int)ThemeColors.surface((int)-15132131));
+            UiDraw.outline((GuiGraphicsExtractor)g, (int)x, (int)y, (int)w, (int)h, (int)corner, (int)ThemeColors.line());
         }
     }
 
@@ -660,7 +826,7 @@ implements BackgroundMenuScreen {
     }
 
     private void logo(GuiGraphicsExtractor g, int x, int y, int w) {
-        BrandLogo.draw(g, x, y, w);
+        BrandLogo.draw((GuiGraphicsExtractor)g, (int)x, (int)y, (int)w);
     }
 
     private static void label(GuiGraphicsExtractor g, String s, float x, float y, float size, int color) {
@@ -679,21 +845,21 @@ implements BackgroundMenuScreen {
         Optional nicknamePalette;
         this.logo(g, 26, 13, 118);
         int selectedY = (int)Math.round(this.animate("nav.selection", 100 + this.page.ordinal() * 38));
-        UiDraw.rounded(g, 12, selectedY, 146, 34, 4, ThemeColors.selectedSurface());
-        UiDraw.rounded(g, 12, selectedY + 7, 2, 20, 1, this.accent());
+        UiDraw.rounded((GuiGraphicsExtractor)g, (int)12, (int)selectedY, (int)146, (int)34, (int)4, (int)ThemeColors.selectedSurface());
+        UiDraw.rounded((GuiGraphicsExtractor)g, (int)12, (int)(selectedY + 7), (int)2, (int)20, (int)1, (int)this.accent());
         this.nav(g, Page.VISUALS, this.tr("\u041c\u043e\u0434\u0443\u043b\u0438", "Modules"), "modules", 100);
         this.nav(g, Page.APPEARANCE, this.tr("\u041e\u0444\u043e\u0440\u043c\u043b\u0435\u043d\u0438\u0435", "Appearance"), "palette", 138);
         this.nav(g, Page.PROFILES, this.tr("\u041a\u043e\u043d\u0444\u0438\u0433\u0438", "Configs"), "profiles", 176);
         this.nav(g, Page.ABOUT, this.tr("\u041e \u043a\u043b\u0438\u0435\u043d\u0442\u0435", "About"), "about", 214);
-        this.button(g, "nav.binds", 18, 338, 134, 30, this.tr("\u0411\u0438\u043d\u0434\u044b", "Bind Manager"), () -> this.minecraft.gui.setScreen((Screen)new BindManagerScreen(this)));
-        this.button(g, "nav.hud", 18, 378, 134, 30, this.tr("\u0420\u0435\u0434\u0430\u043a\u0442\u043e\u0440 HUD", "HUD Editor"), () -> BloodHelperClient.openHudEditor(this));
+        this.button(g, "nav.binds", 18, 338, 134, 30, this.tr("\u0411\u0438\u043d\u0434\u044b", "Bind Manager"), () -> this.minecraft.gui.setScreen((Screen)new BindManagerScreen((Screen)this)));
+        this.button(g, "nav.hud", 18, 378, 134, 30, this.tr("\u0420\u0435\u0434\u0430\u043a\u0442\u043e\u0440 HUD", "HUD Editor"), () -> BloodHelperClient.openHudEditor((Screen)this));
         this.avatar.render(g, this.minecraft, 18, 452, 28);
         GameProfile profile = this.minecraft.player == null ? this.minecraft.getGameProfile() : this.minecraft.player.getGameProfile();
         String playerName = profile.name();
         boolean hideIdentity = StreamerMode.hideNickname();
-        int nicknameColor = ClientControlPolicy.enabled() ? CosmeticNames.displayColor(profile.id(), playerName, -2039324, hideIdentity) : -2039324;
-        String shownNickname = BloodHelperScreen.fit(StreamerMode.displayName(playerName), 13.0f, 102.0f);
-        Optional<Object> optional = nicknamePalette = ClientControlPolicy.enabled() ? CosmeticNames.palette(profile.id(), playerName, hideIdentity) : Optional.empty();
+        int nicknameColor = ClientControlPolicy.enabled() ? CosmeticNames.displayColor((UUID)profile.id(), (String)playerName, (int)-2039324, (boolean)hideIdentity) : -2039324;
+        String shownNickname = BloodHelperScreen.fit(StreamerMode.displayName((String)playerName), 13.0f, 102.0f);
+        Optional optional = nicknamePalette = ClientControlPolicy.enabled() ? CosmeticNames.palette((UUID)profile.id(), (String)playerName, (boolean)hideIdentity) : Optional.empty();
         if (nicknamePalette.isPresent() && ((NicknamePalette)nicknamePalette.get()).colors().size() > 1) {
             long time = System.nanoTime() / 1000000L;
             for (int i = 0; i < shownNickname.length(); ++i) {
@@ -702,21 +868,21 @@ implements BackgroundMenuScreen {
         } else {
             BloodHelperScreen.strong(g, shownNickname, 54.0f, 453.0f, 13.0f, nicknameColor);
         }
-        BloodHelperScreen.label(g, CosmeticNames.uidLabel(hideIdentity), 54.0f, 470.0f, 10.0f, -9275778);
+        BloodHelperScreen.label(g, CosmeticNames.uidLabel((boolean)hideIdentity), 54.0f, 470.0f, 10.0f, -9275778);
     }
 
     private void nav(GuiGraphicsExtractor g, Page target, String title, String icon, int y) {
         boolean active = this.page == target;
-        double selection = this.animate("nav.active." + String.valueOf((Object)target), active ? 1.0 : 0.0);
-        double hover = this.animate("nav.hover." + String.valueOf((Object)target), this.contains(12, y, 146, 34) ? 1.0 : 0.0);
+        double selection = this.animate("nav.active." + String.valueOf(target), active ? 1.0 : 0.0);
+        double hover = this.animate("nav.hover." + String.valueOf(target), this.contains(12, y, 146, 34) ? 1.0 : 0.0);
         if (hover > 0.01) {
-            UiDraw.rounded(g, 12, y, 146, 34, 4, UiDraw.alpha(2368811, (int)(90.0 * hover * (1.0 - selection))));
+            UiDraw.rounded((GuiGraphicsExtractor)g, (int)12, (int)y, (int)146, (int)34, (int)4, (int)UiDraw.alpha((int)2368811, (int)((int)(90.0 * hover * (1.0 - selection)))));
         }
-        this.liftedIcon(g, icon, 26, y + 8, 18, UiDraw.blend(-6775902, this.softAccent(), selection), hover);
-        BloodHelperScreen.strong(g, title, 56.0f, (float)(y + 9) - this.lift(hover), 14.0f, UiDraw.blend(-6775902, -2039324, selection));
+        this.liftedIcon(g, icon, 26, y + 8, 18, UiDraw.blend((int)-6775902, (int)this.softAccent(), (double)selection), hover);
+        BloodHelperScreen.strong(g, title, 56.0f, (float)(y + 9) - this.lift(hover), 14.0f, UiDraw.blend((int)-6775902, (int)-2039324, (double)selection));
         this.hit("nav." + target.name().toLowerCase(Locale.ROOT), 12, y, 146, 34, () -> {
             if (target == Page.PROFILES) {
-                this.minecraft.gui.setScreen((Screen)new ConfigProfilesScreen(this));
+                this.minecraft.gui.setScreen((Screen)new ConfigProfilesScreen((Screen)this));
                 return;
             }
             if (this.page == target) {
@@ -736,7 +902,7 @@ implements BackgroundMenuScreen {
     }
 
     private static boolean isStaff(Module m) {
-        return m != null && ModuleCategory.forModule(m.id) == ModuleCategory.STAFF;
+        return m != null && ModuleCategory.forModule((String)m.id) == ModuleCategory.STAFF;
     }
 
     private void header(GuiGraphicsExtractor g) {
@@ -749,20 +915,20 @@ implements BackgroundMenuScreen {
         };
         BloodHelperScreen.strong(g, title, 190.0f, 21.0f, 16.0f, -2039324);
         double paletteHover = this.animate("theme.palette.hover", this.hovered(470, 13, 32, 30) ? 1.0 : 0.0);
-        UiDraw.border(g, 470, 13, 32, 30, 4, ThemeColors.surface(-14408147), ThemeColors.icon(UiDraw.alpha(this.accent(), 120)));
+        UiDraw.border((GuiGraphicsExtractor)g, (int)470, (int)13, (int)32, (int)30, (int)4, (int)ThemeColors.surface((int)-14408147), (int)ThemeColors.icon((int)UiDraw.alpha((int)this.accent(), (int)120)));
         this.liftedIcon(g, "palette", 478, 20, 17, -2039324, paletteHover);
         this.hit("theme.palette", 470, 13, 32, 30, this::openThemePicker);
         this.languageButton(g);
-        UiDraw.border(g, 600, 13, 160, 30, 4, ThemeColors.surface(-15724268), UiDraw.blend(ThemeColors.line(), ThemeColors.icon(-9149068), this.animate("search.focus", this.focused == this.search ? 1.0 : 0.0)));
+        UiDraw.border((GuiGraphicsExtractor)g, (int)600, (int)13, (int)160, (int)30, (int)4, (int)ThemeColors.surface((int)-15724268), (int)UiDraw.blend((int)ThemeColors.line(), (int)ThemeColors.icon((int)-9149068), (double)this.animate("search.focus", this.focused == this.search ? 1.0 : 0.0)));
         this.field(g, this.search, 612, 19, 122, "search");
-        UiIcons.draw(g, "search", 739, 21, 15, -6775902);
+        UiIcons.draw((GuiGraphicsExtractor)g, (String)"search", (int)739, (int)21, (int)15, (int)-6775902);
         double closeHover = this.animate("close.hover", this.hovered(770, 12, 26, 32) ? 1.0 : 0.0);
-        this.liftedIcon(g, "close", 775, 22, 12, UiDraw.blend(-6775902, -2039324, closeHover), closeHover);
+        this.liftedIcon(g, "close", 775, 22, 12, UiDraw.blend((int)-6775902, (int)-2039324, (double)closeHover), closeHover);
         this.hit("close", 770, 12, 26, 32, this::onClose);
     }
 
     private void languageButton(GuiGraphicsExtractor g) {
-        UiDraw.border(g, 514, 13, 74, 30, 4, ThemeColors.surface(-15658475), ThemeColors.line());
+        UiDraw.border((GuiGraphicsExtractor)g, (int)514, (int)13, (int)74, (int)30, (int)4, (int)ThemeColors.surface((int)-15658475), (int)ThemeColors.line());
         this.hit("language", 514, 13, 74, 30, () -> this.setLanguage(this.ru() ? "en" : "ru"));
         this.languageSegment(g, "ru", "RU", 514, this.ru());
         this.languageSegment(g, "en", "EN", 551, !this.ru());
@@ -773,13 +939,13 @@ implements BackgroundMenuScreen {
         double active = this.animate("language.active." + language, selected ? 1.0 : 0.0);
         double hover = this.animate("language.hover." + language, this.contains(x, 13, 37, 30) ? 1.0 : 0.0);
         if (hover > 0.01) {
-            UiDraw.rounded(g, x + 2, 15, 33, 26, 3, UiDraw.alpha(ThemeColors.selectedSurface(), (int)(180.0 * hover * (1.0 - active))));
+            UiDraw.rounded((GuiGraphicsExtractor)g, (int)(x + 2), (int)15, (int)33, (int)26, (int)3, (int)UiDraw.alpha((int)ThemeColors.selectedSurface(), (int)((int)(180.0 * hover * (1.0 - active)))));
         }
         if (active > 0.01) {
-            UiDraw.rounded(g, x + 2, 15, 33, 26, 3, UiDraw.alpha(UiDraw.blend(this.cfg().accent, ThemeColors.light() ? 0xFFFFFF : 1316120, ThemeColors.light() ? 0.86 : 0.74), (int)(255.0 * active)));
-            g.fill(x + 9, 40, x + 28, 41, UiDraw.alpha(this.accent(), (int)(255.0 * active)));
+            UiDraw.rounded((GuiGraphicsExtractor)g, (int)(x + 2), (int)15, (int)33, (int)26, (int)3, (int)UiDraw.alpha((int)UiDraw.blend((int)this.cfg().accent, (int)(ThemeColors.light() ? 0xFFFFFF : 1316120), (double)(ThemeColors.light() ? 0.86 : 0.74)), (int)((int)(255.0 * active))));
+            g.fill(x + 9, 40, x + 28, 41, UiDraw.alpha((int)this.accent(), (int)((int)(255.0 * active))));
         }
-        BloodHelperScreen.strong(g, caption, (float)x + (37.0f - CustomFont.medium().width(caption, 12.0f)) / 2.0f, 21.0f - this.lift(hover), 12.0f, UiDraw.blend(-6775902, -2039324, Math.max(active, hover)));
+        BloodHelperScreen.strong(g, caption, (float)x + (37.0f - CustomFont.medium().width(caption, 12.0f)) / 2.0f, 21.0f - this.lift(hover), 12.0f, UiDraw.blend((int)-6775902, (int)-2039324, (double)Math.max(active, hover)));
         this.hit("language." + language, x, 13, 37, 30, () -> this.setLanguage(language));
     }
 
@@ -789,8 +955,8 @@ implements BackgroundMenuScreen {
         if (hovering) {
             this.languageHintX = 514 + (this.mouseX < 551.0 ? 18 : 55) - 78;
         }
-        double visibility = this.languageHintMotion.to(hovering ? 1.0 : 0.0, this.frameNanos, this.cfg().animations, RenderQuality.animationMillis(160.0));
-        double followed = this.languageHintPosition.to(this.languageHintX, this.frameNanos, this.cfg().animations, RenderQuality.animationMillis(170.0));
+        double visibility = this.languageHintMotion.to(hovering ? 1.0 : 0.0, this.frameNanos, this.cfg().animations, RenderQuality.animationMillis((double)160.0));
+        double followed = this.languageHintPosition.to(this.languageHintX, this.frameNanos, this.cfg().animations, RenderQuality.animationMillis((double)170.0));
         if (visibility < 0.002 || this.colorPicker != null) {
             return;
         }
@@ -798,17 +964,17 @@ implements BackgroundMenuScreen {
         int y = 51 + (int)Math.round(3.0 * (1.0 - visibility));
         int w = 156;
         int opacity = (int)Math.round(255.0 * visibility);
-        int fill = UiDraw.alpha(ThemeColors.surface(-13092028), opacity);
+        int fill = UiDraw.alpha((int)ThemeColors.surface((int)-13092028), (int)opacity);
         if ("LIQUID_GLASS".equals(this.cfg().surfaceStyle)) {
-            UiDraw.rounded(g, x, y + 2, w, 47, 7, UiDraw.alpha(0, opacity / 6));
-            LiquidGlass.surfaceMenu(g, x, y, w, 47, 7, fill, this.cfg());
+            UiDraw.rounded((GuiGraphicsExtractor)g, (int)x, (int)(y + 2), (int)w, (int)47, (int)7, (int)UiDraw.alpha((int)0, (int)(opacity / 6)));
+            LiquidGlass.surfaceMenu((GuiGraphicsExtractor)g, (int)x, (int)y, (int)w, (int)47, (int)7, (int)fill, (ClientConfig)this.cfg());
         } else if ("OUTLINE".equals(this.cfg().surfaceStyle)) {
-            OutlineSurface.draw(g, x, y, w, 47, 5, opacity, this.cfg(), true);
+            OutlineSurface.draw((GuiGraphicsExtractor)g, (int)x, (int)y, (int)w, (int)47, (int)5, (int)opacity, (ClientConfig)this.cfg(), (boolean)true);
         } else {
-            UiDraw.border(g, x, y, w, 47, 4, fill, UiDraw.alpha(ThemeColors.surface(-7236448), opacity));
+            UiDraw.border((GuiGraphicsExtractor)g, (int)x, (int)y, (int)w, (int)47, (int)4, (int)fill, (int)UiDraw.alpha((int)ThemeColors.surface((int)-7236448), (int)opacity));
         }
-        BloodHelperScreen.strong(g, "\u0421\u043c\u0435\u043d\u0430 \u044f\u0437\u044b\u043a\u0430.", x + 12, y + 8, 12.0f, UiDraw.alpha(-2039324, opacity));
-        BloodHelperScreen.label(g, "Language changer.", x + 12, y + 26, 12.0f, UiDraw.alpha(-6775902, opacity));
+        BloodHelperScreen.strong(g, "\u0421\u043c\u0435\u043d\u0430 \u044f\u0437\u044b\u043a\u0430.", x + 12, y + 8, 12.0f, UiDraw.alpha((int)-2039324, (int)opacity));
+        BloodHelperScreen.label(g, "Language changer.", x + 12, y + 26, 12.0f, UiDraw.alpha((int)-6775902, (int)opacity));
     }
 
     private void setLanguage(String language) {
@@ -905,7 +1071,7 @@ implements BackgroundMenuScreen {
 
     private String moduleDescription(Module m) {
         if (!this.cfg().serverAllowsModule(m.id)) {
-            return RemoteModulePolicy.restrictionReason(m.id, this.ru());
+            return RemoteModulePolicy.restrictionReason((String)m.id, (boolean)this.ru());
         }
         return switch (m.ordinal()) {
             default -> throw new MatchException(null, null);
@@ -1416,13 +1582,13 @@ implements BackgroundMenuScreen {
             case 40 -> "combat timeline \u0442\u0430\u0439\u043c\u043b\u0430\u0439\u043d \u0438\u0441\u0442\u043e\u0440\u0438\u044f \u0431\u043e\u044f \u0437\u0434\u043e\u0440\u043e\u0432\u044c\u0435 \u0442\u043e\u0442\u0435\u043c \u0441\u043e\u0431\u044b\u0442\u0438\u044f death recap deaths \u043f\u043e\u0441\u043b\u0435\u0434\u043d\u044f\u044f \u0441\u043c\u0435\u0440\u0442\u044c \u0438\u0441\u0442\u043e\u0440\u0438\u044f \u0441\u043c\u0435\u0440\u0442\u0435\u0439 \u0431\u0440\u043e\u043d\u044f \u044d\u0444\u0444\u0435\u043a\u0442\u044b \u043a\u043e\u043e\u0440\u0434\u0438\u043d\u0430\u0442\u044b";
             case 41 -> "chat patches chatpatches tools history search timestamps copy \u0447\u0430\u0442 \u0438\u0441\u0442\u043e\u0440\u0438\u044f \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043f\u043e\u0438\u0441\u043a \u0432\u0440\u0435\u043c\u044f \u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 \u043f\u043e\u0432\u0442\u043e\u0440\u044b";
         };
-        ModuleCategory category = ModuleCategory.forModule(m.id);
+        ModuleCategory category = ModuleCategory.forModule((String)m.id);
         return query.isBlank() || (this.moduleName(m).toLowerCase(Locale.ROOT) + " " + alias + " " + category.title(true).toLowerCase(Locale.ROOT) + " " + category.title(false).toLowerCase(Locale.ROOT)).contains(query);
     }
 
     private void modules(GuiGraphicsExtractor g) {
         String query = this.search.getValue().strip().toLowerCase(Locale.ROOT);
-        ArrayList entries = new ArrayList();
+        ArrayList<ModuleGroupLayout.Entry> entries = new ArrayList<ModuleGroupLayout.Entry>();
         for (Module module : (Module[])VLRestrictions.visibleModules((Object[])Module.values())) {
             Iterator rows;
             if (BloodHelperScreen.nestedModule(module) || BloodHelperScreen.isStaff(module) || !this.matches(module, query)) continue;
@@ -1439,13 +1605,13 @@ implements BackgroundMenuScreen {
                 this.retainedCards.remove((Object)module);
                 rows = List.of();
             }
-            List<String> description = CustomFont.regular().wrap(this.moduleDescription(module), 11.0f, 222.0f);
+            List description = CustomFont.regular().wrap(this.moduleDescription(module), 11.0f, 222.0f);
             int descriptionExtra = Math.max(0, description.size() - 1) * 15;
             int headerHeight = 59 + (int)Math.round(this.animateLayout(module.id + ".description", open ? (double)descriptionExtra : 0.0));
             int height = headerHeight + shown;
-            entries.add(new ModuleGroupLayout.Entry<Card>(ModuleCategory.forModule(module.id), new Card(module, 0, 0, height, headerHeight, description, (List<Row>)((Object)rows)), height));
+            entries.add(new ModuleGroupLayout.Entry(ModuleCategory.forModule((String)module.id), (Object)new Card(module, 0, 0, height, headerHeight, description, rows), height));
         }
-        ModuleGroupLayout.Layout layout = ModuleGroupLayout.create(entries, 78, 274, 20);
+        ModuleGroupLayout.Layout layout = ModuleGroupLayout.create(entries, (int)78, (int)274, (int)20);
         List<SettingHit> settings = this.findSettings(query);
         int settingsTop = entries.isEmpty() ? 78 : layout.bottom() + 14;
         int settingsHeight = settings.stream().mapToInt(hit -> hit.row.height + 41).sum();
@@ -1487,7 +1653,7 @@ implements BackgroundMenuScreen {
             return;
         }
         String title = header.category().title(this.ru());
-        UiIcons.draw(g, header.category().icon(), 191, y + 3, 14, this.softAccent());
+        UiIcons.draw((GuiGraphicsExtractor)g, (String)header.category().icon(), (int)191, (int)(y + 3), (int)14, (int)this.softAccent());
         BloodHelperScreen.strong(g, title, 213.0f, y + 3, 12.0f, -2039324);
         int titleEnd = 213 + (int)Math.ceil(CustomFont.medium().width(title, 12.0f));
         String count = Integer.toString(header.count());
@@ -1511,12 +1677,12 @@ implements BackgroundMenuScreen {
         this.frame(g, x, y, w, card.height, 4);
         double hover = this.animate(id + ".hover", this.hovered(x + 1, y + 1, w - 51, 31) ? 1.0 : 0.0);
         if (hover > 0.01) {
-            UiDraw.rounded(g, x + 1, y + 1, w - 51, 30, 3, UiDraw.alpha(2632239, (int)(100.0 * hover)));
+            UiDraw.rounded((GuiGraphicsExtractor)g, (int)(x + 1), (int)(y + 1), (int)(w - 51), (int)30, (int)3, (int)UiDraw.alpha((int)2632239, (int)((int)(100.0 * hover))));
         }
         double opening = this.animate(id + ".open", open ? 1.0 : 0.0);
-        int iconColor = UiDraw.blend(-6775902, this.softAccent(), Math.max(opening * 0.7, hover * 0.55));
+        int iconColor = UiDraw.blend((int)-6775902, (int)this.softAccent(), (double)Math.max(opening * 0.7, hover * 0.55));
         this.liftedIcon(g, this.moduleIcon(card.module), x + 13, y + 11, 17, iconColor, hover);
-        BloodHelperScreen.strong(g, CustomFont.medium().ellipsize(this.moduleName(card.module), 14.0f, w - 90), x + 40, (float)(y + 11) - this.lift(hover), 14.0f, on ? -2039324 : -6775902);
+        BloodHelperScreen.strong(g, CustomFont.medium().ellipsize(this.moduleName(card.module), 14.0f, (float)(w - 90)), x + 40, (float)(y + 11) - this.lift(hover), 14.0f, on ? -2039324 : -6775902);
         int descriptionExtra = card.headerHeight - 59;
         if (descriptionExtra > 0) {
             g.enableScissor(x + 13, y + 34, x + w - 37, y + 49 + descriptionExtra);
@@ -1533,7 +1699,7 @@ implements BackgroundMenuScreen {
         } else {
             BloodHelperScreen.label(g, BloodHelperScreen.fit(this.moduleDescription(card.module), 11.0f, w - 52), x + 14, y + 35, 11.0f, -6775902);
         }
-        this.chevron(g, x + w - 28, y + 35, 13, opening, UiDraw.blend(-9275778, -6775902, opening));
+        this.chevron(g, x + w - 28, y + 35, 13, opening, UiDraw.blend((int)-9275778, (int)-6775902, (double)opening));
         Runnable expand = () -> {
             if (!this.expanded.remove((Object)card.module)) {
                 this.expanded.add(card.module);
@@ -1550,7 +1716,7 @@ implements BackgroundMenuScreen {
             this.moduleSwitch(g, id + ".enabled", x + w - 41, y + 12, on, () -> this.toggleModule(card.module));
         }
         if (opening > 0.01) {
-            g.fill(x + 14, y + card.headerHeight - 6, x + w - 14, y + card.headerHeight - 5, UiDraw.alpha(ThemeColors.line(), (int)(255.0 * opening)));
+            g.fill(x + 14, y + card.headerHeight - 6, x + w - 14, y + card.headerHeight - 5, UiDraw.alpha((int)ThemeColors.line(), (int)((int)(255.0 * opening))));
         }
         int shown = card.height - card.headerHeight;
         this.drawRowsClipped(g, card.rows, x, y + card.headerHeight, w, shown, open);
@@ -1560,7 +1726,7 @@ implements BackgroundMenuScreen {
         g.pose().pushMatrix();
         g.pose().translate((float)x + (float)size / 2.0f, (float)y + (float)size / 2.0f);
         g.pose().rotate((float)(-Math.PI * opening));
-        UiIcons.draw(g, "chevron", -size / 2, -size / 2, size, color);
+        UiIcons.draw((GuiGraphicsExtractor)g, (String)"chevron", (int)(-size / 2), (int)(-size / 2), (int)size, (int)color);
         g.pose().popMatrix();
     }
 
@@ -1701,15 +1867,15 @@ implements BackgroundMenuScreen {
         double active = this.animate(id + ".active", on ? 1.0 : 0.0);
         double hot = this.animate(id + ".hover", this.hovered(x - 3, y - 4, 36, 24) ? 1.0 : 0.0);
         double down = this.pressed(id);
-        int track = UiDraw.blend(UiDraw.blend(ThemeColors.light() ? -3024670 : -13618115, this.accent(), active), -16250354, down * 0.12);
-        int rim = ThemeColors.light() ? -8616042 : UiDraw.blend(-11183258, UiDraw.blend(this.accent(), -16250354, 0.18), active);
-        UiDraw.border(g, x, y, 30, 16, 8, track, UiDraw.blend(rim, -2696478, hot * 0.14));
-        int knob = UiDraw.blend(ThemeColors.light() ? -11313039 : -4538165, BloodHelperScreen.switchKnobColor(this.accent()), active);
+        int track = UiDraw.blend((int)UiDraw.blend((int)(ThemeColors.light() ? -3024670 : -13618115), (int)this.accent(), (double)active), (int)-16250354, (double)(down * 0.12));
+        int rim = ThemeColors.light() ? -8616042 : UiDraw.blend((int)-11183258, (int)UiDraw.blend((int)this.accent(), (int)-16250354, (double)0.18), (double)active);
+        UiDraw.border((GuiGraphicsExtractor)g, (int)x, (int)y, (int)30, (int)16, (int)8, (int)track, (int)UiDraw.blend((int)rim, (int)-2696478, (double)(hot * 0.14)));
+        int knob = UiDraw.blend((int)(ThemeColors.light() ? -11313039 : -4538165), (int)BloodHelperScreen.switchKnobColor(this.accent()), (double)active);
         g.pose().pushMatrix();
         g.pose().translate((float)((double)(x + 8) + active * 14.0), (float)(y + 8));
         float knobScale = (float)(1.0 - down * 0.08);
         g.pose().scale(knobScale, knobScale);
-        UiDraw.rounded(g, -6, -6, 12, 12, 6, knob);
+        UiDraw.rounded((GuiGraphicsExtractor)g, (int)-6, (int)-6, (int)12, (int)12, (int)6, (int)knob);
         g.pose().popMatrix();
         this.hit(id, x - 3, y - 4, 36, 24, action);
     }
@@ -1747,7 +1913,7 @@ implements BackgroundMenuScreen {
         if (m == Module.CROSSHAIR) {
             ArrayList<Row> r = new ArrayList<Row>();
             CrosshairSettings p = this.cfg().crosshair;
-            r.add(new Row(40, (g, x, y, w) -> this.button(g, "crosshair.editor", x + 18, y + 2, w - 36, 29, this.tr("\u0424\u043e\u0440\u043c\u044b \u0438 \u0440\u0435\u0434\u0430\u043a\u0442\u043e\u0440 \u043f\u0440\u0438\u0446\u0435\u043b\u0430", "Shapes and crosshair editor"), () -> this.minecraft.gui.setScreen((Screen)new CrosshairScreen(this)))));
+            r.add(new Row(40, (g, x, y, w) -> this.button(g, "crosshair.editor", x + 18, y + 2, w - 36, 29, this.tr("\u0424\u043e\u0440\u043c\u044b \u0438 \u0440\u0435\u0434\u0430\u043a\u0442\u043e\u0440 \u043f\u0440\u0438\u0446\u0435\u043b\u0430", "Shapes and crosshair editor"), () -> this.minecraft.gui.setScreen((Screen)new CrosshairScreen((Screen)this)))));
             r.add(this.choice("crosshair.mode", this.tr("\u0420\u0435\u0436\u0438\u043c", "Mode"), "", () -> p.mode, v -> {
                 p.mode = v;
             }, new String[]{"SIMPLE", "PRESET", "CUSTOM"}, new String[]{this.tr("\u041e\u0431\u044b\u0447\u043d\u044b\u0439", "Simple"), this.tr("\u0413\u043e\u0442\u043e\u0432\u044b\u0439", "Preset"), this.tr("\u0420\u0438\u0441\u0443\u043d\u043e\u043a", "Custom")}));
@@ -1817,10 +1983,10 @@ implements BackgroundMenuScreen {
         }
         if (m == Module.REACH_DISPLAY) {
             ArrayList<Row> r = new ArrayList<Row>();
-            r.add(this.info(ExternalHudMods.reachName(), ExternalHudMods.reachStatus(this.ru())));
+            r.add(this.info(ExternalHudMods.reachName(), ExternalHudMods.reachStatus((boolean)this.ru())));
             r.add(this.info(this.tr("\u0412\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u0435 \u2014 \u0437\u0434\u0435\u0441\u044c. \u0412\u0438\u0434 \u0438 \u043f\u043e\u043b\u043e\u0436\u0435\u043d\u0438\u0435 \u2014 \u0432 \u043d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0430\u0445 \u043c\u043e\u0434\u0430.", "Enable here. Configure appearance and position in the mod."), this.tr("\u0420\u0430\u0441\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u0438\u0437\u043c\u0435\u0440\u044f\u0435\u0442 \u043e\u0440\u0438\u0433\u0438\u043d\u0430\u043b\u044c\u043d\u044b\u0439 \u043c\u043e\u0434; \u0434\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c \u0430\u0442\u0430\u043a \u043d\u0435 \u043c\u0435\u043d\u044f\u0435\u0442\u0441\u044f.", "Distance is measured by the original mod; attack reach is unchanged.")));
             if (ExternalHudMods.reachAvailable()) {
-                r.add(new Row(42, (g, x, y, w) -> this.button(g, "reachDisplay.nativeSettings", x + 18, y + 3, w - 36, 29, this.tr("\u041e\u0442\u043a\u0440\u044b\u0442\u044c \u043d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0438 \u043c\u043e\u0434\u0430", "Open mod settings"), () -> ExternalHudMods.openReachSettings(this))));
+                r.add(new Row(42, (g, x, y, w) -> this.button(g, "reachDisplay.nativeSettings", x + 18, y + 3, w - 36, 29, this.tr("\u041e\u0442\u043a\u0440\u044b\u0442\u044c \u043d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0438 \u043c\u043e\u0434\u0430", "Open mod settings"), () -> ExternalHudMods.openReachSettings((Screen)this))));
             } else {
                 r.add(this.info(this.tr("\u0423\u0441\u0442\u0430\u043d\u043e\u0432\u0438 JAR-\u0444\u0430\u0439\u043b\u044b \u0438\u0437 \u043f\u0430\u043f\u043a\u0438 mods \u043a\u043e\u043c\u043f\u043b\u0435\u043a\u0442\u0430 \u0438 \u043f\u0435\u0440\u0435\u0437\u0430\u043f\u0443\u0441\u0442\u0438 \u0438\u0433\u0440\u0443.", "Install the bundle's mods folder JARs and restart the game.")));
             }
@@ -1829,7 +1995,7 @@ implements BackgroundMenuScreen {
         if (m == Module.SATURATION) {
             ArrayList<Row> r = new ArrayList<Row>();
             PlayerDisplaySettings.Saturation p = this.cfg().saturation;
-            r.add(this.info(ExternalHudMods.appleStatus(this.ru()), this.tr("\u041d\u0430\u0441\u0442\u043e\u044f\u0449\u0438\u0439 AppleSkin: \u043d\u0430\u0441\u044b\u0449\u0435\u043d\u0438\u0435 \u043f\u043e\u0432\u0435\u0440\u0445 \u043f\u043e\u043b\u043e\u0441\u043a\u0438 \u0433\u043e\u043b\u043e\u0434\u0430.", "Original AppleSkin: saturation over the hunger bar.")));
+            r.add(this.info(ExternalHudMods.appleStatus((boolean)this.ru()), this.tr("\u041d\u0430\u0441\u0442\u043e\u044f\u0449\u0438\u0439 AppleSkin: \u043d\u0430\u0441\u044b\u0449\u0435\u043d\u0438\u0435 \u043f\u043e\u0432\u0435\u0440\u0445 \u043f\u043e\u043b\u043e\u0441\u043a\u0438 \u0433\u043e\u043b\u043e\u0434\u0430.", "Original AppleSkin: saturation over the hunger bar.")));
             r.add(this.bool("saturation.exhaustion", this.tr("\u0418\u0441\u0442\u043e\u0449\u0435\u043d\u0438\u0435", "Exhaustion"), "", () -> p.exhaustion, v -> {
                 p.exhaustion = v;
             }));
@@ -1861,7 +2027,7 @@ implements BackgroundMenuScreen {
                 p.timeoutSeconds = (int)v;
             }, 1.0, 15.0, 1.0, this.tr(" \u0441", " s")));
             r.add(this.info(this.tr("\u0422\u043e\u043b\u044c\u043a\u043e \u0431\u043b\u0438\u0436\u043d\u0438\u0435 \u0443\u0434\u0430\u0440\u044b \u0441 \u043f\u043e\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043d\u0438\u0435\u043c \u0443\u0440\u043e\u043d\u0430.", "Only melee hits with a damage confirmation."), this.tr("\u041f\u043e\u043f\u0430\u0434\u0430\u043d\u0438\u044f \u0441 \u043d\u0435\u0443\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u043c \u0441\u0435\u0440\u0432\u0435\u0440\u043e\u043c \u0430\u0442\u0430\u043a\u0443\u044e\u0449\u0438\u043c \u043d\u0435 \u0443\u0447\u0438\u0442\u044b\u0432\u0430\u044e\u0442\u0441\u044f.", "Hits without a server-reported attacker are not counted.")));
-            this.widgetSettings(r, m.id, p);
+            this.widgetSettings(r, m.id, (ClientConfig.WidgetSettings)p);
             return VLRestrictions.cleanRows(r);
         }
         if (m == Module.FREE_LOOK) {
@@ -1942,7 +2108,7 @@ implements BackgroundMenuScreen {
         if (m == Module.OTHER_TIERS) {
             ArrayList<Row> r = new ArrayList<Row>();
             PlayerDisplaySettings.OtherTiers p = this.cfg().otherTiers;
-            r.add(this.info(TierService.status(this.ru()), TierService.selfStatus(this.ru())));
+            r.add(this.info(TierService.status((boolean)this.ru()), TierService.selfStatus((boolean)this.ru())));
             r.add(this.info(this.tr("/checktiers <\u043d\u0438\u043a> \u2014 \u0432\u0441\u0435 \u043a\u0438\u0442\u044b \u0438\u0433\u0440\u043e\u043a\u0430", "/checktiers <name> \u2014 all player kits"), this.tr("\u041e\u0442\u0434\u0435\u043b\u044c\u043d\u043e\u0435 \u043e\u043a\u043d\u043e \u0441 \u0432\u044b\u0431\u043e\u0440\u043e\u043c \u0442\u0438\u0440-\u043b\u0438\u0441\u0442\u0430", "A separate viewer with a provider picker")));
             r.add(this.choice("otherTiers.provider", this.tr("\u0422\u0438\u0440-\u043b\u0438\u0441\u0442", "Tier list"), "", () -> p.provider, v -> {
                 p.provider = v;
@@ -2007,7 +2173,7 @@ implements BackgroundMenuScreen {
             return VLRestrictions.cleanRows(r);
         }
         if (!this.indexingSettings && !this.cfg().serverAllowsModule(m.id)) {
-            return VLRestrictions.cleanRows(List.of(this.info(RemoteModulePolicy.restrictionReason(m.id, this.ru()), RemoteModulePolicy.status(this.ru()))));
+            return VLRestrictions.cleanRows(List.of(this.info(RemoteModulePolicy.restrictionReason((String)m.id, (boolean)this.ru()), RemoteModulePolicy.status((boolean)this.ru()))));
         }
         if (m == Module.CHAT_TOOLS) {
             ArrayList<Row> r = new ArrayList<Row>();
@@ -2048,10 +2214,10 @@ implements BackgroundMenuScreen {
                 extra.add(this.slider("notifications.maxVisible", this.tr("\u0423\u0432\u0435\u0434\u043e\u043c\u043b\u0435\u043d\u0438\u0439", "Visible notices"), this.tr("\u0412\u0441\u0435\u0433\u043e \u043d\u0430 \u044d\u043a\u0440\u0430\u043d\u0435", "Total cards on screen"), () -> p.maxVisible, v -> {
                     p.maxVisible = (int)v;
                 }, 1.0, 4.0, 1.0, ""));
-                extra.add(new Row(42, (g, x, y, w) -> this.button(g, "notifications.history", x + 18, y + 3, w - 36, 29, this.tr("\u0418\u0441\u0442\u043e\u0440\u0438\u044f \u0438 \u0442\u0438\u0445\u0438\u0439 \u0440\u0435\u0436\u0438\u043c", "History and snooze") + " \u00b7 " + NotificationInbox.unread(), () -> this.minecraft.gui.setScreen((Screen)new NotificationHistoryScreen(this)))));
-                extra.add(new Row(42, (g, x, y, w) -> this.button(g, "notifications.sounds", x + 18, y + 3, w - 36, 29, this.tr("\u0417\u0432\u0443\u043a\u0438 \u0441\u043e\u0431\u044b\u0442\u0438\u0439", "Event sounds"), () -> this.minecraft.gui.setScreen((Screen)new NotificationSoundSettingsScreen(this)))));
+                extra.add(new Row(42, (g, x, y, w) -> this.button(g, "notifications.history", x + 18, y + 3, w - 36, 29, this.tr("\u0418\u0441\u0442\u043e\u0440\u0438\u044f \u0438 \u0442\u0438\u0445\u0438\u0439 \u0440\u0435\u0436\u0438\u043c", "History and snooze") + " \u00b7 " + NotificationInbox.unread(), () -> this.minecraft.gui.setScreen((Screen)new NotificationHistoryScreen((Screen)this)))));
+                extra.add(new Row(42, (g, x, y, w) -> this.button(g, "notifications.sounds", x + 18, y + 3, w - 36, 29, this.tr("\u0417\u0432\u0443\u043a\u0438 \u0441\u043e\u0431\u044b\u0442\u0438\u0439", "Event sounds"), () -> this.minecraft.gui.setScreen((Screen)new NotificationSoundSettingsScreen((Screen)this)))));
                 extra.add(new Row(42, (g, x, y, w) -> this.button(g, "notifications.test", x + 18, y + 3, w - 36, 29, this.tr("\u041f\u0440\u043e\u0431\u043d\u043e\u0435 \u0443\u0432\u0435\u0434\u043e\u043c\u043b\u0435\u043d\u0438\u0435", "Test notification"), this::testNotification)));
-                this.widgetSettings((List<Row>)extra, "notifications", p);
+                this.widgetSettings((List<Row>)extra, "notifications", (ClientConfig.WidgetSettings)p);
             });
             return VLRestrictions.cleanRows(r);
         }
@@ -2059,7 +2225,7 @@ implements BackgroundMenuScreen {
     }
 
     private void titleSetting(List<Row> rows, String id) {
-        rows.add(this.bool(id + ".showTitle", this.tr("\u041f\u043e\u043a\u0430\u0437\u044b\u0432\u0430\u0442\u044c \u043d\u0430\u0437\u0432\u0430\u043d\u0438\u0435", "Show widget title"), this.tr("\u0421\u043a\u0440\u044b\u0442\u044c \u0437\u0430\u0433\u043e\u043b\u043e\u0432\u043e\u043a, \u043e\u0441\u0442\u0430\u0432\u0438\u0432 \u043f\u043e\u043a\u0430\u0437\u0430\u0442\u0435\u043b\u0438", "Hide the title while keeping values"), () -> !Boolean.FALSE.equals(this.cfg().hudTitles.get(id)), v -> this.cfg().setHudTitle(id, (boolean)v)));
+        rows.add(this.bool(id + ".showTitle", this.tr("\u041f\u043e\u043a\u0430\u0437\u044b\u0432\u0430\u0442\u044c \u043d\u0430\u0437\u0432\u0430\u043d\u0438\u0435", "Show widget title"), this.tr("\u0421\u043a\u0440\u044b\u0442\u044c \u0437\u0430\u0433\u043e\u043b\u043e\u0432\u043e\u043a, \u043e\u0441\u0442\u0430\u0432\u0438\u0432 \u043f\u043e\u043a\u0430\u0437\u0430\u0442\u0435\u043b\u0438", "Hide the title while keeping values"), () -> !Boolean.FALSE.equals(this.cfg().hudTitles.get(id)), v -> this.cfg().setHudTitle(id, v.booleanValue())));
     }
 
     private List<Row> moduleRows(Module m) {
@@ -2147,7 +2313,7 @@ implements BackgroundMenuScreen {
                 r.add(this.bool("optimizer.droppedItems", this.tr("\u0423\u0431\u0438\u0440\u0430\u0442\u044c \u0432\u044b\u0431\u0440\u0430\u043d\u043d\u044b\u0435 \u043f\u0440\u0435\u0434\u043c\u0435\u0442\u044b \u043d\u0430 \u043f\u043e\u043b\u0443", "Hide selected dropped items"), this.tr("\u0412\u044b\u0431\u043e\u0440 \u043f\u0440\u0435\u0434\u043c\u0435\u0442\u043e\u0432 \u0438 \u043e\u0442\u0434\u0435\u043b\u044c\u043d\u044b\u0445 \u0437\u0435\u043b\u0438\u0439", "Choose items and individual potions"), () -> p.droppedItems.enabled, v -> {
                     p.droppedItems.enabled = v;
                 }));
-                r.add(new Row(42, (g, x, y, w) -> this.button(g, "optimizer.chooseDroppedItems", x + 18, y + 3, w - 36, 29, this.tr("\u0412\u044b\u0431\u0440\u0430\u0442\u044c \u043f\u0440\u0435\u0434\u043c\u0435\u0442\u044b \u00b7 \u043f\u043e\u0438\u0441\u043a", "Choose items \u00b7 search"), () -> this.minecraft.gui.setScreen((Screen)new DroppedItemFilterScreen(this)))));
+                r.add(new Row(42, (g, x, y, w) -> this.button(g, "optimizer.chooseDroppedItems", x + 18, y + 3, w - 36, 29, this.tr("\u0412\u044b\u0431\u0440\u0430\u0442\u044c \u043f\u0440\u0435\u0434\u043c\u0435\u0442\u044b \u00b7 \u043f\u043e\u0438\u0441\u043a", "Choose items \u00b7 search"), () -> this.minecraft.gui.setScreen((Screen)new DroppedItemFilterScreen((Screen)this)))));
                 r.add(this.bool("optimizer.signs", this.tr("\u041e\u043f\u0442\u0438\u043c\u0438\u0437\u0430\u0446\u0438\u044f \u0442\u0430\u0431\u043b\u0438\u0447\u0435\u043a", "Sign optimization"), this.tr("\u041c\u0435\u043d\u044c\u0448\u0435 \u0434\u0430\u043b\u044c\u043d\u0438\u0445 \u043c\u043e\u0434\u0435\u043b\u0435\u0439 \u0438 \u0442\u0435\u043a\u0441\u0442\u0430", "Fewer distant models and text"), () -> p.signs, v -> {
                     p.signs = v;
                 }));
@@ -2201,10 +2367,10 @@ implements BackgroundMenuScreen {
                 SkinsSettings p = this.cfg().skins;
                 r.add(this.choice("skins.character", this.tr("\u041f\u0435\u0440\u0441\u043e\u043d\u0430\u0436", "Character"), this.tr("\u0412\u044b\u0441\u043e\u0442\u0430 \u043f\u043e\u0434\u043e\u0433\u043d\u0430\u043d\u0430 \u043f\u043e\u0434 \u0438\u0433\u0440\u043e\u043a\u0430", "Fitted to player height"), () -> p.character, v -> {
                     p.character = v;
-                }, CustomModels.ids(), CustomModels.names("ru".equals(this.cfg().language))));
+                }, CustomModels.ids(), CustomModels.names((boolean)"ru".equals(this.cfg().language))));
                 r.add(new Row(150, (g, x, y, w) -> {
-                    if (CustomModels.validId(p.character)) {
-                        CustomFont.regular().draw(g, this.tr("\u0421\u0432\u043e\u044f \u043c\u043e\u0434\u0435\u043b\u044c \u00b7 \u041f\u0440\u043e\u0441\u043c\u043e\u0442\u0440 \u0447\u0435\u0440\u0435\u0437 F5", "Custom model \u00b7 Preview with F5"), x + 10, y + 60, 10.0f, -2039584);
+                    if (CustomModels.validId((String)p.character)) {
+                        CustomFont.regular().draw(g, this.tr("\u0421\u0432\u043e\u044f \u043c\u043e\u0434\u0435\u043b\u044c \u00b7 \u041f\u0440\u043e\u0441\u043c\u043e\u0442\u0440 \u0447\u0435\u0440\u0435\u0437 F5", "Custom model \u00b7 Preview with F5"), (float)(x + 10), (float)(y + 60), 10.0f, -2039584);
                         return;
                     }
                     BloodHelperScreen.texture(g, "skins/" + p.character.toLowerCase(Locale.ROOT), x + (w - 144) / 2, y + 2, 144, 144, 384, 384, -1);
@@ -2292,7 +2458,7 @@ implements BackgroundMenuScreen {
                     p.bottom = v;
                 }));
                 if ("SEPARATE".equals(p.layout)) {
-                    r.add(new Row(42, (g, x, y, w) -> this.button(g, "watermark.editor", x + 18, y + 3, w - 36, 29, this.tr("\u0420\u0430\u0441\u0441\u0442\u0430\u0432\u0438\u0442\u044c \u043f\u043e\u043a\u0430\u0437\u0430\u0442\u0435\u043b\u0438 HUD", "Arrange HUD metrics"), () -> BloodHelperClient.openHudEditor(this))));
+                    r.add(new Row(42, (g, x, y, w) -> this.button(g, "watermark.editor", x + 18, y + 3, w - 36, 29, this.tr("\u0420\u0430\u0441\u0441\u0442\u0430\u0432\u0438\u0442\u044c \u043f\u043e\u043a\u0430\u0437\u0430\u0442\u0435\u043b\u0438 HUD", "Arrange HUD metrics"), () -> BloodHelperClient.openHudEditor((Screen)this))));
                     break;
                 }
                 this.positions(r, "watermark", p.position, true);
@@ -2301,7 +2467,7 @@ implements BackgroundMenuScreen {
             case 62: {
                 DiscordPresenceSettings p = this.cfg().discordPresence;
                 r.add(this.info(DiscordPresenceModule.statusText()));
-                r.add(new Row(42, (g, x, y, w) -> this.button(g, "discordPresence.setup", x + 18, y + 3, w - 36, 29, this.tr("\u0421\u0432\u043e\u0439 \u0442\u0435\u043a\u0441\u0442", "Custom text"), () -> this.minecraft.gui.setScreen((Screen)new DiscordPresenceScreen(this)))));
+                r.add(new Row(42, (g, x, y, w) -> this.button(g, "discordPresence.setup", x + 18, y + 3, w - 36, 29, this.tr("\u0421\u0432\u043e\u0439 \u0442\u0435\u043a\u0441\u0442", "Custom text"), () -> this.minecraft.gui.setScreen((Screen)new DiscordPresenceScreen((Screen)this)))));
                 r.add(this.bool("discordPresence.serverIcon", this.tr("\u0418\u043a\u043e\u043d\u043a\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0430", "Server icon"), this.tr("\u0417\u043d\u0430\u0447\u043e\u043a \u0441\u0435\u0440\u0432\u0435\u0440\u0430 \u0432 \u0443\u0433\u043b\u0443 \u0433\u043e\u043b\u043e\u0432\u044b, \u0432 \u0442\u043e\u043c \u0447\u0438\u0441\u043b\u0435 \u0441\u043e \u0441\u0432\u043e\u0438\u043c \u0442\u0435\u043a\u0441\u0442\u043e\u043c", "Server badge over the player head, including custom text"), () -> p.showServerIcon, v -> {
                     p.showServerIcon = v;
                 }));
@@ -2334,7 +2500,7 @@ implements BackgroundMenuScreen {
             }
             case 60: {
                 r.add(this.info(this.tr("\u041d\u0430\u0436\u043c\u0438 \u043d\u0430 \u043a\u043e\u043e\u0440\u0434\u0438\u043d\u0430\u0442\u044b \u0432 \u043d\u043e\u0432\u043e\u043c \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0438.", "Click coordinates in a new message."), this.tr("\u041f\u0440\u043e\u0432\u0435\u0440\u044c \u0438\u043c\u044f \u0438 \u0438\u0437\u043c\u0435\u0440\u0435\u043d\u0438\u0435 \u043f\u0435\u0440\u0435\u0434 \u0441\u043e\u0445\u0440\u0430\u043d\u0435\u043d\u0438\u0435\u043c.", "Check the name and dimension before saving.")));
-                r.add(new Row(42, (g, x, y, w) -> this.button(g, "coordinateLinks.waypoints", x + 18, y + 3, w - 36, 29, this.tr("\u0423\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435 \u043c\u0435\u0442\u043a\u0430\u043c\u0438", "Manage waypoints"), () -> WaypointsModule.openScreen(this))));
+                r.add(new Row(42, (g, x, y, w) -> this.button(g, "coordinateLinks.waypoints", x + 18, y + 3, w - 36, 29, this.tr("\u0423\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435 \u043c\u0435\u0442\u043a\u0430\u043c\u0438", "Manage waypoints"), () -> WaypointsModule.openScreen((Screen)this))));
                 break;
             }
             case 61: {
@@ -2383,7 +2549,7 @@ implements BackgroundMenuScreen {
             }
             case 56: {
                 r.add(this.info(this.tr("\u0412\u044b\u0431\u0440\u0430\u043d\u043e \u043f\u0440\u0435\u0434\u043c\u0435\u0442\u043e\u0432: ", "Selected items: ") + this.cfg().dropGuard.protectedItems.size()));
-                r.add(new Row(42, (g, x, y, w) -> this.button(g, "dropGuard.items", x + 18, y + 3, w - 36, 29, this.tr("\u0417\u0430\u0449\u0438\u0449\u0451\u043d\u043d\u044b\u0435 \u043f\u0440\u0435\u0434\u043c\u0435\u0442\u044b", "Protected items"), () -> DropGuardModule.openEditor(this))));
+                r.add(new Row(42, (g, x, y, w) -> this.button(g, "dropGuard.items", x + 18, y + 3, w - 36, 29, this.tr("\u0417\u0430\u0449\u0438\u0449\u0451\u043d\u043d\u044b\u0435 \u043f\u0440\u0435\u0434\u043c\u0435\u0442\u044b", "Protected items"), () -> DropGuardModule.openEditor((Screen)this))));
                 r.add(this.info(this.tr("\u0414\u043b\u044f \u0432\u044b\u0431\u0440\u0430\u0441\u044b\u0432\u0430\u043d\u0438\u044f \u043d\u0430\u0436\u043c\u0438 \u0435\u0449\u0451 \u0440\u0430\u0437 \u0437\u0430 2 \u0441.", "Press again within 2s to drop.")));
                 break;
             }
@@ -2414,8 +2580,8 @@ implements BackgroundMenuScreen {
                 r.add(this.bool("combatHud.compactMusic", this.tr("\u041a\u043e\u043c\u043f\u0430\u043a\u0442\u043d\u0430\u044f \u043c\u0443\u0437\u044b\u043a\u0430", "Compact music"), this.tr("\u0423\u043c\u0435\u043d\u044c\u0448\u0430\u0442\u044c \u043e\u0441\u0442\u0440\u043e\u0432\u043e\u043a \u0432\u043e \u0432\u0440\u0435\u043c\u044f \u0431\u043e\u044f", "Use a compact island during combat"), () -> p.compactMusic, v -> {
                     p.compactMusic = v;
                 }));
-                r.add(new Row(42, (g, x, y, w) -> this.button(g, "combatHud.editCombat", x + 18, y + 3, w - 36, 29, this.tr("\u041d\u0430\u0441\u0442\u0440\u043e\u0438\u0442\u044c \u0431\u043e\u0435\u0432\u043e\u0439 HUD", "Edit combat HUD"), () -> CombatHudModule.openCombatEditor(this))));
-                r.add(new Row(42, (g, x, y, w) -> this.button(g, "combatHud.editNormal", x + 18, y + 3, w - 36, 29, this.tr("\u041d\u0430\u0441\u0442\u0440\u043e\u0438\u0442\u044c \u043e\u0431\u044b\u0447\u043d\u044b\u0439 HUD", "Edit normal HUD"), () -> BloodHelperClient.openHudEditor(this))));
+                r.add(new Row(42, (g, x, y, w) -> this.button(g, "combatHud.editCombat", x + 18, y + 3, w - 36, 29, this.tr("\u041d\u0430\u0441\u0442\u0440\u043e\u0438\u0442\u044c \u0431\u043e\u0435\u0432\u043e\u0439 HUD", "Edit combat HUD"), () -> CombatHudModule.openCombatEditor((Screen)this))));
+                r.add(new Row(42, (g, x, y, w) -> this.button(g, "combatHud.editNormal", x + 18, y + 3, w - 36, 29, this.tr("\u041d\u0430\u0441\u0442\u0440\u043e\u0438\u0442\u044c \u043e\u0431\u044b\u0447\u043d\u044b\u0439 HUD", "Edit normal HUD"), () -> BloodHelperClient.openHudEditor((Screen)this))));
                 r.add(new Row(42, (g, x, y, w) -> this.button(g, "combatHud.reset", x + 18, y + 3, w - 36, 29, this.tr("\u0421\u0431\u0440\u043e\u0441\u0438\u0442\u044c \u0431\u043e\u0435\u0432\u0443\u044e \u0440\u0430\u0441\u043a\u043b\u0430\u0434\u043a\u0443", "Reset combat layout"), () -> {
                     CombatHudModule.resetCombatLayout();
                     this.save();
@@ -2464,7 +2630,7 @@ implements BackgroundMenuScreen {
                 r.add(this.bool("cooldownReady.selected", this.tr("\u0422\u043e\u043b\u044c\u043a\u043e \u0432\u044b\u0431\u0440\u0430\u043d\u043d\u044b\u0435", "Selected only"), this.tr("\u0424\u0438\u043b\u044c\u0442\u0440 \u043f\u043e \u0433\u0440\u0443\u043f\u043f\u0435 \u043a\u0443\u043b\u0434\u0430\u0443\u043d\u0430", "Filter by cooldown group"), () -> p.onlySelected, v -> {
                     p.onlySelected = v;
                 }));
-                r.add(new Row(42, (g, x, y, w) -> this.button(g, "cooldownReady.groups", x + 18, y + 3, w - 36, 29, this.tr("\u0412\u044b\u0431\u0440\u0430\u0442\u044c \u043f\u0435\u0440\u0435\u0437\u0430\u0440\u044f\u0434\u043a\u0438", "Choose cooldowns"), () -> CooldownReadyModule.openScreen(this))));
+                r.add(new Row(42, (g, x, y, w) -> this.button(g, "cooldownReady.groups", x + 18, y + 3, w - 36, 29, this.tr("\u0412\u044b\u0431\u0440\u0430\u0442\u044c \u043f\u0435\u0440\u0435\u0437\u0430\u0440\u044f\u0434\u043a\u0438", "Choose cooldowns"), () -> CooldownReadyModule.openScreen((Screen)this))));
                 r.add(this.info(this.tr("PvP-\u0442\u0430\u0439\u043c\u0435\u0440 \u043d\u0435 \u0432\u044b\u0437\u044b\u0432\u0430\u0435\u0442 \u0443\u0432\u0435\u0434\u043e\u043c\u043b\u0435\u043d\u0438\u0439.", "The PvP timer never triggers alerts.")));
                 break;
             }
@@ -2513,7 +2679,7 @@ implements BackgroundMenuScreen {
             case 52: {
                 DeathScreenshotSettings p = this.cfg().deathScreenshot;
                 r.add(this.info(this.tr("\u0421\u043d\u0438\u043c\u043e\u043a \u043f\u0440\u0438 \u043a\u0430\u0436\u0434\u043e\u0439 \u0441\u043c\u0435\u0440\u0442\u0438.", "A screenshot on each death.")));
-                r.add(new Row(42, (g, x, y, w) -> this.button(g, "deathScreenshot.gallery", x + 18, y + 3, w - 36, 29, this.tr("\u041e\u0442\u043a\u0440\u044b\u0442\u044c \u0433\u0430\u043b\u0435\u0440\u0435\u044e", "Open gallery"), () -> DeathScreenshotModule.openGallery(this))));
+                r.add(new Row(42, (g, x, y, w) -> this.button(g, "deathScreenshot.gallery", x + 18, y + 3, w - 36, 29, this.tr("\u041e\u0442\u043a\u0440\u044b\u0442\u044c \u0433\u0430\u043b\u0435\u0440\u0435\u044e", "Open gallery"), () -> DeathScreenshotModule.openGallery((Screen)this))));
                 r.add(this.bool("deathScreenshot.notify", this.tr("\u0423\u0432\u0435\u0434\u043e\u043c\u043b\u0435\u043d\u0438\u0435", "Saved notification"), this.tr("\u0421\u043e\u043e\u0431\u0449\u0430\u0442\u044c \u043e \u0441\u043e\u0445\u0440\u0430\u043d\u0451\u043d\u043d\u043e\u043c \u0441\u043d\u0438\u043c\u043a\u0435", "Notify when a screenshot is saved"), () -> p.notifySaved, v -> {
                     p.notifySaved = v;
                 }));
@@ -2524,13 +2690,13 @@ implements BackgroundMenuScreen {
             }
             case 47: {
                 r.add(this.info(this.tr("\u0421\u043f\u043e\u0441\u043e\u0431\u043d\u043e\u0441\u0442\u0438 \u0438 \u0442\u0432\u043e\u0438 \u0437\u0430\u043c\u0435\u0442\u043a\u0438.", "Abilities and your notes.")));
-                r.add(new Row(42, (g, x, y, w) -> this.button(g, "abilityGuide.open", x + 18, y + 3, w - 36, 29, this.tr("\u041e\u0442\u043a\u0440\u044b\u0442\u044c \u0441\u043f\u0440\u0430\u0432\u043e\u0447\u043d\u0438\u043a", "Open ability guide"), () -> AbilityGuideModule.openScreen(this))));
+                r.add(new Row(42, (g, x, y, w) -> this.button(g, "abilityGuide.open", x + 18, y + 3, w - 36, 29, this.tr("\u041e\u0442\u043a\u0440\u044b\u0442\u044c \u0441\u043f\u0440\u0430\u0432\u043e\u0447\u043d\u0438\u043a", "Open ability guide"), () -> AbilityGuideModule.openScreen((Screen)this))));
                 r.add(this.info(this.tr("\u041a\u043b\u0430\u0432\u0438\u0448\u0430: ", "Key: ") + AbilityGuideModule.keyName(), this.tr("\u041d\u0430\u0437\u043d\u0430\u0447\u0430\u0435\u0442\u0441\u044f \u0432 \u0443\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0438 Minecraft.", "Set it in Minecraft Controls.")));
                 break;
             }
             case 48: {
                 r.add(this.info(this.tr("\u041e\u0442\u043a\u0440\u044b\u0442\u044c \u043a\u043e\u043b\u0435\u0441\u043e: ", "Open wheel: ") + QuickCommandsModule.keyName(), this.tr("\u041b\u041a\u041c \u2014 \u0432\u044b\u0431\u0440\u0430\u0442\u044c, Esc \u2014 \u0437\u0430\u043a\u0440\u044b\u0442\u044c.", "Left click selects; Esc cancels.")));
-                r.add(new Row(42, (g, x, y, w) -> this.button(g, "quickCommands.configure", x + 18, y + 3, w - 36, 29, this.tr("\u041d\u0430\u0441\u0442\u0440\u043e\u0438\u0442\u044c \u0447\u0435\u0442\u044b\u0440\u0435 \u043f\u0443\u043d\u043a\u0442\u0430", "Configure four slots"), () -> QuickCommandsModule.openEditor(this))));
+                r.add(new Row(42, (g, x, y, w) -> this.button(g, "quickCommands.configure", x + 18, y + 3, w - 36, 29, this.tr("\u041d\u0430\u0441\u0442\u0440\u043e\u0438\u0442\u044c \u0447\u0435\u0442\u044b\u0440\u0435 \u043f\u0443\u043d\u043a\u0442\u0430", "Configure four slots"), () -> QuickCommandsModule.openEditor((Screen)this))));
                 r.add(this.info(this.tr("GG \u2014 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0435, /spawn \u2014 \u043a\u043e\u043c\u0430\u043d\u0434\u0430.", "GG is chat; /spawn is a command."), this.tr("\u041a\u043b\u0430\u0432\u0438\u0448\u0430 \u043c\u0435\u043d\u044f\u0435\u0442\u0441\u044f \u0432 \u0443\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0438 Minecraft.", "Change the binding in Minecraft Controls.")));
                 break;
             }
@@ -2664,12 +2830,12 @@ implements BackgroundMenuScreen {
                 r.add(this.bool("sizeTimer.progress", this.tr("\u041f\u043e\u043b\u043e\u0441\u0430 \u0432\u0440\u0435\u043c\u0435\u043d\u0438", "Progress bar"), this.tr("\u041e\u0441\u0442\u0430\u0432\u0448\u0435\u0435\u0441\u044f \u0432\u0440\u0435\u043c\u044f \u044d\u0444\u0444\u0435\u043a\u0442\u0430", "Estimated time remaining"), () -> p.showProgress, v -> {
                     p.showProgress = v;
                 }));
-                this.widgetSettings(r, "sizeTimer", p);
+                this.widgetSettings(r, "sizeTimer", (ClientConfig.WidgetSettings)p);
                 break;
             }
             case 49: {
                 WaypointSettings p = this.cfg().waypoints;
-                r.add(new Row(42, (g, x, y, w) -> this.button(g, "waypoints.open", x + 18, y + 3, w - 36, 29, this.tr("\u0423\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435 \u043c\u0435\u0442\u043a\u0430\u043c\u0438", "Manage waypoints"), () -> WaypointsModule.openScreen(this))));
+                r.add(new Row(42, (g, x, y, w) -> this.button(g, "waypoints.open", x + 18, y + 3, w - 36, 29, this.tr("\u0423\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435 \u043c\u0435\u0442\u043a\u0430\u043c\u0438", "Manage waypoints"), () -> WaypointsModule.openScreen((Screen)this))));
                 r.add(this.info(this.tr("\u041c\u0435\u0442\u043a\u0438 \u0440\u0430\u0437\u0434\u0435\u043b\u0435\u043d\u044b \u043f\u043e \u043c\u0438\u0440\u0430\u043c \u0438 \u0438\u0437\u043c\u0435\u0440\u0435\u043d\u0438\u044f\u043c.", "Markers belong to their world and dimension."), this.tr("\u041d\u043e\u0432\u0430\u044f \u043c\u0435\u0442\u043a\u0430: ", "New waypoint: ") + WaypointsModule.keyName()));
                 r.add(this.bool("waypoints.world", this.tr("\u0422\u043e\u0447\u043a\u0438 \u0432 \u043c\u0438\u0440\u0435", "World markers"), this.tr("\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u0438 \u0434\u0438\u0441\u0442\u0430\u043d\u0446\u0438\u044f \u043d\u0430\u0434 \u043e\u0442\u043c\u0435\u0447\u0435\u043d\u043d\u044b\u043c \u043c\u0435\u0441\u0442\u043e\u043c", "Name and distance above the marked location"), () -> p.showWorld, v -> {
                     p.showWorld = v;
@@ -2681,7 +2847,7 @@ implements BackgroundMenuScreen {
                     p.quickPing = v;
                 }));
                 r.add(this.info(this.tr("\u0411\u044b\u0441\u0442\u0440\u0430\u044f \u043c\u0435\u0442\u043a\u0430: ", "Quick ping: ") + WaypointsModule.pingKeyName(), this.tr("Shift + \u043a\u043b\u0430\u0432\u0438\u0448\u0430 \u2014 \u0441\u043e\u0445\u0440\u0430\u043d\u0438\u0442\u044c \u0442\u043e\u0447\u043a\u0443.", "Shift + key saves a waypoint.")));
-                r.add(new Row(42, (g, x, y, w) -> this.button(g, "waypoints.binds", x + 18, y + 3, w - 36, 29, this.tr("\u041d\u0430\u0441\u0442\u0440\u043e\u0438\u0442\u044c \u043a\u043b\u0430\u0432\u0438\u0448\u0438", "Configure keys"), () -> BindManagerScreen.open(this))));
+                r.add(new Row(42, (g, x, y, w) -> this.button(g, "waypoints.binds", x + 18, y + 3, w - 36, 29, this.tr("\u041d\u0430\u0441\u0442\u0440\u043e\u0438\u0442\u044c \u043a\u043b\u0430\u0432\u0438\u0448\u0438", "Configure keys"), () -> BindManagerScreen.open((Screen)this))));
                 r.add(this.slider("waypoints.pingSeconds", this.tr("\u0412\u0440\u0435\u043c\u044f \u0431\u044b\u0441\u0442\u0440\u043e\u0439 \u043c\u0435\u0442\u043a\u0438", "Ping lifetime"), this.tr("\u041f\u043e\u0432\u0442\u043e\u0440 \u043d\u0430 \u0442\u043e\u043c \u0436\u0435 \u0431\u043b\u043e\u043a\u0435 \u0443\u0431\u0438\u0440\u0430\u0435\u0442 \u043c\u0435\u0442\u043a\u0443", "Ping the same block again to remove it"), () -> p.pingSeconds, v -> {
                     p.pingSeconds = (int)v;
                 }, 3.0, 120.0, 1.0, this.tr(" \u0441", " s")));
@@ -2697,7 +2863,7 @@ implements BackgroundMenuScreen {
                 r.add(this.slider("waypoints.maxVisible", this.tr("\u0412\u0438\u0434\u0438\u043c\u044b\u0445 \u043c\u0435\u0442\u043e\u043a", "Visible waypoints"), this.tr("\u0411\u043b\u0438\u0436\u0430\u0439\u0448\u0438\u0435 \u043c\u0435\u0442\u043a\u0438 \u0432 HUD", "Nearest waypoints shown in the HUD"), () -> p.maxVisible, v -> {
                     p.maxVisible = (int)v;
                 }, 1.0, 8.0, 1.0, ""));
-                this.widgetSettings(r, "waypoints", p);
+                this.widgetSettings(r, "waypoints", (ClientConfig.WidgetSettings)p);
                 break;
             }
             case 50: {
@@ -2733,7 +2899,7 @@ implements BackgroundMenuScreen {
             case 44: {
                 LegendarySizeSettings p = this.cfg().legendarySize;
                 r.add(this.info(this.tr("100% \u2014 \u043e\u0431\u044b\u0447\u043d\u044b\u0439 \u0440\u0430\u0437\u043c\u0435\u0440 \u00b7 50% \u2014 \u0432\u0434\u0432\u043e\u0435 \u043c\u0435\u043d\u044c\u0448\u0435.", "100% is original size \u00b7 50% is half size.")));
-                r.add(new Row(40, (g, x, y, w) -> this.button(g, "legendarySize.selected", x + 18, y + 2, w - 36, 29, this.tr("\u0412\u044b\u0431\u0440\u0430\u0442\u044c \u043f\u0440\u0435\u0434\u043c\u0435\u0442\u044b", "Choose items"), () -> this.minecraft.gui.setScreen((Screen)new HandItemScaleScreen(this)))));
+                r.add(new Row(40, (g, x, y, w) -> this.button(g, "legendarySize.selected", x + 18, y + 2, w - 36, 29, this.tr("\u0412\u044b\u0431\u0440\u0430\u0442\u044c \u043f\u0440\u0435\u0434\u043c\u0435\u0442\u044b", "Choose items"), () -> {})));
                 r.add(this.info(this.tr("\u0418\u043d\u0434\u0438\u0432\u0438\u0434\u0443\u0430\u043b\u044c\u043d\u043e \u0432\u044b\u0431\u0440\u0430\u043d\u043e: ", "Individually selected: ") + p.selectedItems.size()));
                 r.add(this.bool("legendarySize.allDropped", this.tr("\u0412\u0441\u0435 \u043f\u0440\u0435\u0434\u043c\u0435\u0442\u044b \u043d\u0430 \u0437\u0435\u043c\u043b\u0435", "All dropped items"), this.tr("\u041e\u0440\u0443\u0436\u0438\u0435, \u0431\u043b\u043e\u043a\u0438, \u0435\u0434\u0430 \u0438 \u043b\u044e\u0431\u043e\u0439 \u0434\u0440\u0443\u0433\u043e\u0439 \u043b\u0443\u0442", "Weapons, blocks, food and any other loot"), () -> p.scaleAllDropped, v -> {
                     p.scaleAllDropped = v;
@@ -2785,7 +2951,7 @@ implements BackgroundMenuScreen {
                 r.add(this.soundSlider("legendarySounds.killVolume", this.tr("\u0412\u0441\u0435 \u043a\u0438\u043b\u043b-\u044d\u0444\u0444\u0435\u043a\u0442\u044b", "All kill effects"), this.tr("\u041e\u0431\u0449\u0438\u0439 \u0443\u0440\u043e\u0432\u0435\u043d\u044c, \u0432\u043a\u043b\u044e\u0447\u0430\u044f \u0432\u044b\u0431\u043e\u0440\u043e\u0447\u043d\u044b\u0439 \u0440\u0435\u0436\u0438\u043c", "Master level, also in individual mode"), () -> p.killEffectsVolume, v -> {
                     p.killEffectsVolume = v;
                 }));
-                r.add(new Row(38, (g, x, y, w) -> this.button(g, "legendarySounds.killList", x + 18, y + 2, w - 36, 28, this.tr("\u041d\u0430\u0441\u0442\u0440\u043e\u0438\u0442\u044c \u043f\u043e \u043e\u0442\u0434\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u0438", "Adjust individually"), () -> this.minecraft.gui.setScreen((Screen)new KillEffectSoundScreen(this)))));
+                r.add(new Row(38, (g, x, y, w) -> this.button(g, "legendarySounds.killList", x + 18, y + 2, w - 36, 28, this.tr("\u041d\u0430\u0441\u0442\u0440\u043e\u0438\u0442\u044c \u043f\u043e \u043e\u0442\u0434\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u0438", "Adjust individually"), () -> this.minecraft.gui.setScreen((Screen)new KillEffectSoundScreen((Screen)this)))));
                 r.add(this.disclosure("legendarySounds.minecraft", this.tr("\u041e\u0431\u0449\u0438\u0435 \u0437\u0432\u0443\u043a\u0438 Minecraft", "Shared Minecraft sounds")));
                 this.section(r, "legendarySounds.minecraft", extra -> {
                     extra.add(this.info(this.tr("\u0427\u0430\u0441\u0442\u044c \u043b\u0435\u0433\u0435\u043d\u0434\u0430\u0440\u043e\u043a \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0435\u0442 \u043e\u0431\u044b\u0447\u043d\u044b\u0435 \u0437\u0432\u0443\u043a\u0438.", "Some weapons use ordinary game sounds."), this.tr("\u041e\u043d\u0438 \u043d\u0435\u043e\u0442\u043b\u0438\u0447\u0438\u043c\u044b \u043e\u0442 \u0442\u0435\u0445 \u0436\u0435 \u0437\u0432\u0443\u043a\u043e\u0432 \u043c\u0438\u0440\u0430.", "They cannot be separated by sound ID.")));
@@ -2864,13 +3030,13 @@ implements BackgroundMenuScreen {
             }
             case 34: {
                 ClientConfig.MusicSettings p = this.cfg().music;
-                r.add(new Row(42, (g, x, y, w) -> this.button(g, "music.source", x + 18, y + 3, w - 36, 29, this.tr("\u041f\u043b\u0435\u0435\u0440: ", "Player: ") + (p.preferredSource.isEmpty() ? this.tr("\u0410\u0432\u0442\u043e", "Auto") : MediaSources.labelFor(p.preferredSource)), () -> this.minecraft.gui.setScreen((Screen)new MediaSourceScreen(this)))));
-                r.add(new Row(42, (g, x, y, w) -> this.button(g, "music.player", x + 18, y + 3, w - 36, 29, this.tr("\u041e\u0442\u043a\u0440\u044b\u0442\u044c \u043f\u043b\u0435\u0435\u0440", "Open player"), () -> this.minecraft.gui.setScreen((Screen)new MusicPlayerScreen(this)))));
+                r.add(new Row(42, (g, x, y, w) -> this.button(g, "music.source", x + 18, y + 3, w - 36, 29, this.tr("\u041f\u043b\u0435\u0435\u0440: ", "Player: ") + (p.preferredSource.isEmpty() ? this.tr("\u0410\u0432\u0442\u043e", "Auto") : MediaSources.labelFor((String)p.preferredSource)), () -> this.minecraft.gui.setScreen((Screen)new MediaSourceScreen((Screen)this)))));
+                r.add(new Row(42, (g, x, y, w) -> this.button(g, "music.player", x + 18, y + 3, w - 36, 29, this.tr("\u041e\u0442\u043a\u0440\u044b\u0442\u044c \u043f\u043b\u0435\u0435\u0440", "Open player"), () -> this.minecraft.gui.setScreen((Screen)new MusicPlayerScreen((Screen)this)))));
                 this.hudScale(r, "music", p.position, this.tr("\u0420\u0430\u0437\u043c\u0435\u0440 \u043e\u0441\u0442\u0440\u043e\u0432\u043a\u0430", "Island size"));
                 r.add(this.slider("music.hudLyricLines", this.tr("\u0421\u0442\u0440\u043e\u043a\u0438 \u0442\u0435\u043a\u0441\u0442\u0430 \u0432 HUD", "HUD lyric lines"), this.tr("\u041e\u0442\u0434\u0435\u043b\u044c\u043d\u043e \u043e\u0442 \u0442\u0435\u043a\u0441\u0442\u0430 \u0432 \u043c\u0438\u0440\u0435", "Separate from world lyrics"), () -> p.hudLyricLines, v -> {
                     p.hudLyricLines = (int)v;
                 }, 1.0, 3.0, 1.0, ""));
-                r.add(new Row(42, (g, x, y, w) -> this.button(g, "music.localLibrary", x + 18, y + 3, w - 36, 29, this.tr("\u0421\u0432\u043e\u0438 \u043c\u0443\u0437\u044b\u043a\u0430\u043b\u044c\u043d\u044b\u0435 \u0444\u0430\u0439\u043b\u044b", "Local music files"), () -> this.minecraft.gui.setScreen((Screen)new LocalMusicScreen(this)))));
+                r.add(new Row(42, (g, x, y, w) -> this.button(g, "music.localLibrary", x + 18, y + 3, w - 36, 29, this.tr("\u0421\u0432\u043e\u0438 \u043c\u0443\u0437\u044b\u043a\u0430\u043b\u044c\u043d\u044b\u0435 \u0444\u0430\u0439\u043b\u044b", "Local music files"), () -> this.minecraft.gui.setScreen((Screen)new LocalMusicScreen((Screen)this)))));
                 r.add(this.choice("music.lyrics", this.tr("\u0422\u0435\u043a\u0441\u0442 \u043f\u0435\u0441\u043d\u0438", "Lyrics"), this.tr("\u0413\u0434\u0435 \u043f\u043e\u043a\u0430\u0437\u044b\u0432\u0430\u0442\u044c \u0442\u0435\u043a\u0441\u0442", "Where to display lyrics"), () -> p.lyricsMode, v -> {
                     p.lyricsMode = v;
                 }, new String[]{"OFF", "ISLAND", "WORLD", "BOTH"}, new String[]{this.tr("\u0412\u044b\u043a\u043b\u044e\u0447\u0435\u043d", "Off"), this.tr("\u041e\u0441\u0442\u0440\u043e\u0432\u043e\u043a", "Island"), this.tr("WorldLyrics", "WorldLyrics"), this.tr("\u041e\u0441\u0442\u0440\u043e\u0432\u043e\u043a + WorldLyrics", "Island + WorldLyrics")}));
@@ -2887,7 +3053,7 @@ implements BackgroundMenuScreen {
                 r.add(this.bool("music.compact", this.tr("\u041a\u043e\u043c\u043f\u0430\u043a\u0442\u043d\u044b\u0439 \u0432\u0438\u0434", "Compact island"), this.tr("\u0411\u0435\u0437 \u0442\u0435\u043a\u0441\u0442\u0430 \u043f\u0435\u0441\u043d\u0438 \u0438 \u043a\u043d\u043e\u043f\u043e\u043a", "No lyrics or controls"), () -> p.compact, v -> {
                     p.compact = v;
                 }));
-                r.add(new Row(42, (g, x, y, w) -> this.button(g, "music.keybinds", x + 18, y + 3, w - 36, 29, this.tr("\u0411\u0438\u043d\u0434\u044b \u043c\u0443\u0437\u044b\u043a\u0438", "Music keybinds"), () -> this.minecraft.gui.setScreen((Screen)new BindManagerScreen(this)))));
+                r.add(new Row(42, (g, x, y, w) -> this.button(g, "music.keybinds", x + 18, y + 3, w - 36, 29, this.tr("\u0411\u0438\u043d\u0434\u044b \u043c\u0443\u0437\u044b\u043a\u0438", "Music keybinds"), () -> this.minecraft.gui.setScreen((Screen)new BindManagerScreen((Screen)this)))));
                 r.add(this.disclosure("music.advanced", this.tr("\u0414\u043e\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044c\u043d\u043e", "More settings")));
                 this.section(r, "music.advanced", extra -> {
                     extra.add(this.bool("music.idle", this.tr("\u0421\u043a\u0440\u044b\u0432\u0430\u0442\u044c \u0431\u0435\u0437 \u043c\u0443\u0437\u044b\u043a\u0438", "Hide when idle"), this.tr("\u0421\u043a\u0440\u044b\u0432\u0430\u0442\u044c \u0431\u0435\u0437 \u043c\u0443\u0437\u044b\u043a\u0438", "Hide when no music is playing"), () -> p.hideWhenIdle, v -> {
@@ -2961,7 +3127,7 @@ implements BackgroundMenuScreen {
                 r.add(this.slider("armor.warnPercent", this.tr("\u041f\u043e\u0440\u043e\u0433 \u0442\u0440\u0435\u0432\u043e\u0433\u0438", "Warning level"), this.tr("\u041f\u043e\u0440\u043e\u0433 \u043d\u0438\u0437\u043a\u043e\u0439 \u043f\u0440\u043e\u0447\u043d\u043e\u0441\u0442\u0438", "Low durability threshold"), () -> p.warnPercent, v -> {
                     p.warnPercent = (int)v;
                 }, 1.0, 90.0, 1.0, "%"));
-                this.widgetSettings(r, "armor", p, "GROUPED".equals(p.layout), false);
+                this.widgetSettings(r, "armor", (ClientConfig.WidgetSettings)p, "GROUPED".equals(p.layout), false);
                 break;
             }
             case 36: {
@@ -2983,7 +3149,7 @@ implements BackgroundMenuScreen {
                 r.add(new Row(27, (g, x, y, w) -> BloodHelperScreen.strong(g, this.tr("\u0412\u044b\u0431\u0440\u0430\u043d\u043e: ", "Selected: ") + p.items.size() + " / 8", x + 18, y + 5, 13.0f, -2039324)));
                 r.add(this.disclosure("itemCounter.items", this.tr("\u0412\u044b\u0431\u0440\u0430\u0442\u044c \u043f\u0440\u0435\u0434\u043c\u0435\u0442\u044b", "Select items")));
                 this.section(r, "itemCounter.items", this::itemSelection);
-                this.widgetSettings(r, "itemCounter", p, "GROUPED".equals(p.layout), false);
+                this.widgetSettings(r, "itemCounter", (ClientConfig.WidgetSettings)p, "GROUPED".equals(p.layout), false);
                 break;
             }
             case 42: {
@@ -3007,7 +3173,7 @@ implements BackgroundMenuScreen {
                 r.add(this.slider(prefix + ".maxVisible", this.tr("\u042d\u0444\u0444\u0435\u043a\u0442\u043e\u0432 \u0432 \u0441\u043f\u0438\u0441\u043a\u0435", "Visible effects"), this.tr("\u041c\u0430\u043a\u0441\u0438\u043c\u0443\u043c \u043e\u0434\u043d\u043e\u0432\u0440\u0435\u043c\u0435\u043d\u043d\u043e", "Maximum shown at once"), () -> e.maxVisible, v -> {
                     e.maxVisible = (int)v;
                 }, 1.0, 12.0, 1.0, ""));
-                this.widgetSettings(r, prefix, e);
+                this.widgetSettings(r, prefix, (ClientConfig.WidgetSettings)e);
                 break;
             }
             case 37: {
@@ -3055,9 +3221,9 @@ implements BackgroundMenuScreen {
                     p.showGraph = v;
                 }));
                 if ("SEPARATE".equals(p.layout)) {
-                    r.add(new Row(42, (g, x, y, w) -> this.button(g, "performance.editor", x + 18, y + 3, w - 36, 29, this.tr("\u0420\u0430\u0441\u0441\u0442\u0430\u0432\u0438\u0442\u044c \u043f\u043e\u043a\u0430\u0437\u0430\u0442\u0435\u043b\u0438 HUD", "Arrange HUD metrics"), () -> BloodHelperClient.openHudEditor(this))));
+                    r.add(new Row(42, (g, x, y, w) -> this.button(g, "performance.editor", x + 18, y + 3, w - 36, 29, this.tr("\u0420\u0430\u0441\u0441\u0442\u0430\u0432\u0438\u0442\u044c \u043f\u043e\u043a\u0430\u0437\u0430\u0442\u0435\u043b\u0438 HUD", "Arrange HUD metrics"), () -> BloodHelperClient.openHudEditor((Screen)this))));
                 }
-                this.widgetSettings(r, "performance", p, !"SEPARATE".equals(p.layout), true);
+                this.widgetSettings(r, "performance", (ClientConfig.WidgetSettings)p, !"SEPARATE".equals(p.layout), true);
                 break;
             }
             case 39: {
@@ -3089,12 +3255,12 @@ implements BackgroundMenuScreen {
                     SessionTracker.reset();
                     this.showNotice(this.tr("\u0421\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043a\u0430 \u0441\u0435\u0441\u0441\u0438\u0438 \u0441\u0431\u0440\u043e\u0448\u0435\u043d\u0430", "Session statistics reset"));
                 })));
-                this.widgetSettings(r, "session", p);
+                this.widgetSettings(r, "session", (ClientConfig.WidgetSettings)p);
                 break;
             }
             case 40: {
                 ClientConfig.DeathRecapSettings p = this.cfg().deathRecap;
-                r.add(new Row(42, (g, x, y, w) -> this.button(g, "deathRecap.open", x + 18, y + 3, w - 36, 29, this.tr("\u041e\u0442\u043a\u0440\u044b\u0442\u044c \u0438\u0441\u0442\u043e\u0440\u0438\u044e \u0441\u043c\u0435\u0440\u0442\u0435\u0439", "Open death history"), () -> DeathRecapModule.openScreen(this))));
+                r.add(new Row(42, (g, x, y, w) -> this.button(g, "deathRecap.open", x + 18, y + 3, w - 36, 29, this.tr("\u041e\u0442\u043a\u0440\u044b\u0442\u044c \u0438\u0441\u0442\u043e\u0440\u0438\u044e \u0441\u043c\u0435\u0440\u0442\u0435\u0439", "Open death history"), () -> DeathRecapModule.openScreen((Screen)this))));
                 r.add(this.bool("deathRecap.coordinates", this.tr("\u041a\u043e\u043e\u0440\u0434\u0438\u043d\u0430\u0442\u044b", "Coordinates"), this.tr("\u041c\u0435\u0441\u0442\u043e \u0438 \u0438\u0437\u043c\u0435\u0440\u0435\u043d\u0438\u0435 \u0441\u043c\u0435\u0440\u0442\u0438", "Death location and dimension"), () -> p.showCoordinates, v -> {
                     p.showCoordinates = v;
                 }));
@@ -3127,18 +3293,18 @@ implements BackgroundMenuScreen {
             }
             case 41: {
                 ClientConfig.ChatToolsSettings p = this.cfg().chatTools;
-                r.add(new Row(42, (g, x, y, w) -> this.button(g, "chatTools.open", x + 18, y + 3, w - 36, 29, this.tr("\u041e\u0442\u043a\u0440\u044b\u0442\u044c \u0438\u0441\u0442\u043e\u0440\u0438\u044e \u0447\u0430\u0442\u0430", "Open chat history"), () -> ChatTools.openScreen(this))));
+                r.add(new Row(42, (g, x, y, w) -> this.button(g, "chatTools.open", x + 18, y + 3, w - 36, 29, this.tr("\u041e\u0442\u043a\u0440\u044b\u0442\u044c \u0438\u0441\u0442\u043e\u0440\u0438\u044e \u0447\u0430\u0442\u0430", "Open chat history"), () -> ChatTools.openScreen((Screen)this))));
                 boolean nativeChat = ExternalChatPatches.loaded();
                 if (nativeChat) {
                     r.add(this.info(this.tr("Chat Patches \u043f\u043e\u0434\u043a\u043b\u044e\u0447\u0451\u043d: \u0434\u0430\u0442\u044b \u0438 \u0438\u0441\u0442\u043e\u0440\u0438\u044f \u0441\u043e\u0445\u0440\u0430\u043d\u044f\u044e\u0442\u0441\u044f \u043e\u0440\u0438\u0433\u0438\u043d\u0430\u043b\u044c\u043d\u044b\u043c \u043c\u043e\u0434\u043e\u043c.", "Chat Patches connected: original dates and history are preserved.")));
                     if (ExternalChatPatches.settingsAvailable()) {
-                        r.add(new Row(42, (g, x, y, w) -> this.button(g, "chatTools.nativeSettings", x + 18, y + 3, w - 36, 29, this.tr("\u0412\u0441\u0435 \u043d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0438 Chat Patches", "All Chat Patches settings"), () -> ExternalChatPatches.openSettings(this))));
+                        r.add(new Row(42, (g, x, y, w) -> this.button(g, "chatTools.nativeSettings", x + 18, y + 3, w - 36, 29, this.tr("\u0412\u0441\u0435 \u043d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0438 Chat Patches", "All Chat Patches settings"), () -> ExternalChatPatches.openSettings((Screen)this))));
                         String[] keys = new String[]{"chatlog", "hover", "boundary", "search", "contextMenu"};
                         String[] ruNames = new String[]{"\u0421\u043e\u0445\u0440\u0430\u043d\u044f\u0442\u044c \u0447\u0430\u0442 \u043c\u0435\u0436\u0434\u0443 \u0437\u0430\u043f\u0443\u0441\u043a\u0430\u043c\u0438", "\u0414\u0430\u0442\u0430 \u043f\u0440\u0438 \u043d\u0430\u0432\u0435\u0434\u0435\u043d\u0438\u0438", "\u0420\u0430\u0437\u0434\u0435\u043b\u0438\u0442\u0435\u043b\u0438 \u0441\u0435\u0441\u0441\u0438\u0439", "\u041f\u043e\u0438\u0441\u043a \u0432 \u0447\u0430\u0442\u0435", "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 \u043f\u043e \u041f\u041a\u041c"};
                         String[] enNames = new String[]{"Save chat between launches", "Date on hover", "Session boundaries", "Chat search", "Right-click copying"};
                         for (int i = 0; i < keys.length; ++i) {
                             String key = keys[i];
-                            r.add(this.bool("chatTools.native." + key, this.tr(ruNames[i], enNames[i]), "", () -> ExternalChatPatches.option(key, true), v -> ExternalChatPatches.setOption(key, v)));
+                            r.add(this.bool("chatTools.native." + key, this.tr(ruNames[i], enNames[i]), "", () -> ExternalChatPatches.option((String)key, (boolean)true), v -> ExternalChatPatches.setOption((String)key, (boolean)v)));
                         }
                     }
                 } else {
@@ -3147,13 +3313,13 @@ implements BackgroundMenuScreen {
                 r.add(this.bool("chatTools.timestamps", this.tr("\u0412\u0440\u0435\u043c\u044f \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439", "Timestamps"), this.tr("\u0421\u043e\u0445\u0440\u0430\u043d\u0451\u043d\u043d\u043e\u0435 \u0432\u0440\u0435\u043c\u044f \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u044f", "Original saved message time"), () -> p.timestamps, v -> {
                     p.timestamps = v;
                     if (nativeChat) {
-                        ExternalChatPatches.setOption("time", v);
+                        ExternalChatPatches.setOption((String)"time", (boolean)v);
                     }
                 }));
-                r.add(this.bool("chatTools.groupDuplicates", this.tr("\u041e\u0431\u044a\u0435\u0434\u0438\u043d\u044f\u0442\u044c \u043f\u043e\u0432\u0442\u043e\u0440\u044b", "Group repeated messages"), this.tr("\u041e\u0434\u043d\u0430 \u0441\u0442\u0440\u043e\u043a\u0430 \u0441\u043e \u0441\u0447\u0451\u0442\u0447\u0438\u043a\u043e\u043c \u0432 \u0447\u0430\u0442\u0435 \u0438 \u0438\u0441\u0442\u043e\u0440\u0438\u0438", "One line with a counter in chat and history"), () -> nativeChat ? ExternalChatPatches.option("counter", p.groupDuplicates) : p.groupDuplicates, v -> {
+                r.add(this.bool("chatTools.groupDuplicates", this.tr("\u041e\u0431\u044a\u0435\u0434\u0438\u043d\u044f\u0442\u044c \u043f\u043e\u0432\u0442\u043e\u0440\u044b", "Group repeated messages"), this.tr("\u041e\u0434\u043d\u0430 \u0441\u0442\u0440\u043e\u043a\u0430 \u0441\u043e \u0441\u0447\u0451\u0442\u0447\u0438\u043a\u043e\u043c \u0432 \u0447\u0430\u0442\u0435 \u0438 \u0438\u0441\u0442\u043e\u0440\u0438\u0438", "One line with a counter in chat and history"), () -> nativeChat ? ExternalChatPatches.option((String)"counter", (boolean)p.groupDuplicates) : p.groupDuplicates, v -> {
                     p.groupDuplicates = v;
                     if (nativeChat) {
-                        ExternalChatPatches.setOption("counter", v);
+                        ExternalChatPatches.setOption((String)"counter", (boolean)v);
                     }
                 }));
                 r.add(this.slider("chatTools.maxMessages", this.tr("\u0420\u0430\u0437\u043c\u0435\u0440 \u0438\u0441\u0442\u043e\u0440\u0438\u0438 BloodHelper", "BloodHelper history size"), this.tr("\u041b\u0438\u043c\u0438\u0442 \u0438\u0441\u0442\u043e\u0440\u0438\u0438 Chat Patches \u2014 \u0432 \u0435\u0433\u043e \u043f\u043e\u043b\u043d\u044b\u0445 \u043d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0430\u0445", "Chat Patches history limit is in its full settings"), () -> p.maxMessages, v -> {
@@ -3162,7 +3328,7 @@ implements BackgroundMenuScreen {
             }
         }
         if (m == Module.ABILITY_GUIDE || m == Module.QUICK_COMMANDS || m == Module.WAYPOINTS || m == Module.STREAMER || m == Module.ZOOM) {
-            r.add(new Row(42, (g, x, y, w) -> this.button(g, m.id + ".bindings", x + 18, y + 3, w - 36, 29, this.tr("\u041d\u0430\u0437\u043d\u0430\u0447\u0438\u0442\u044c \u043a\u043b\u0430\u0432\u0438\u0448\u0438", "Configure keybinds"), () -> this.minecraft.gui.setScreen((Screen)new BindManagerScreen(this)))));
+            r.add(new Row(42, (g, x, y, w) -> this.button(g, m.id + ".bindings", x + 18, y + 3, w - 36, 29, this.tr("\u041d\u0430\u0437\u043d\u0430\u0447\u0438\u0442\u044c \u043a\u043b\u0430\u0432\u0438\u0448\u0438", "Configure keybinds"), () -> this.minecraft.gui.setScreen((Screen)new BindManagerScreen((Screen)this)))));
         }
         return VLRestrictions.cleanRows(r);
     }
@@ -3180,7 +3346,7 @@ implements BackgroundMenuScreen {
         this.section(r, "pvp.advanced", extra -> {
             extra.add(new Row(65, (g, x, y, w) -> {
                 BloodHelperScreen.strong(g, this.tr("\u0413\u0440\u0443\u043f\u043f\u0430 \u043f\u0435\u0440\u0435\u0437\u0430\u0440\u044f\u0434\u043a\u0438", "Cooldown group"), x + 18, y + 2, 14.0f, -2039324);
-                UiDraw.border(g, x + 18, y + 26, w - 36, 28, 5, -15658475, Identifier.tryParse((String)this.pvpGroup.getValue()) == null ? -2336665 : UiDraw.blend(-14079184, this.softAccent(), this.animate("pvp.group.focus", this.focused == this.pvpGroup ? 1.0 : 0.0)));
+                UiDraw.border((GuiGraphicsExtractor)g, (int)(x + 18), (int)(y + 26), (int)(w - 36), (int)28, (int)5, (int)-15658475, (int)(Identifier.tryParse((String)this.pvpGroup.getValue()) == null ? -2336665 : UiDraw.blend((int)-14079184, (int)this.softAccent(), (double)this.animate("pvp.group.focus", this.focused == this.pvpGroup ? 1.0 : 0.0))));
                 this.field(g, this.pvpGroup, x + 24, y + 30, w - 48, "pvp.group");
             }));
             extra.add(this.bool("pvp.shadow", this.tr("\u0422\u0435\u043d\u044c \u0442\u0435\u043a\u0441\u0442\u0430", "Text shadow"), this.tr("\u0422\u0435\u043d\u044c \u0437\u0430 \u0442\u0435\u043a\u0441\u0442\u043e\u043c", "Shadow behind text"), () -> p.shadow, v -> {
@@ -3205,7 +3371,7 @@ implements BackgroundMenuScreen {
 
     private void alertPlacement(List<Row> rows, String id) {
         rows.add(this.info(this.tr("\u0418\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0435\u0442 \u043c\u0435\u0441\u0442\u043e \u0443\u0432\u0435\u0434\u043e\u043c\u043b\u0435\u043d\u0438\u0439.", "Uses the notification position.")));
-        rows.add(new Row(42, (g, x, y, w) -> this.button(g, id + ".placement", x + 18, y + 3, w - 36, 29, this.tr("\u0420\u0430\u0437\u043c\u0435\u0441\u0442\u0438\u0442\u044c \u0443\u0432\u0435\u0434\u043e\u043c\u043b\u0435\u043d\u0438\u044f", "Position alerts"), () -> BloodHelperClient.openHudEditor(this))));
+        rows.add(new Row(42, (g, x, y, w) -> this.button(g, id + ".placement", x + 18, y + 3, w - 36, 29, this.tr("\u0420\u0430\u0437\u043c\u0435\u0441\u0442\u0438\u0442\u044c \u0443\u0432\u0435\u0434\u043e\u043c\u043b\u0435\u043d\u0438\u044f", "Position alerts"), () -> BloodHelperClient.openHudEditor((Screen)this))));
     }
 
     private void layoutSettings(List<Row> r, String id, Supplier<String> layout, Consumer<String> setLayout, Supplier<String> orientation, Consumer<String> setOrientation, ClientConfig.HudPosition position) {
@@ -3215,7 +3381,7 @@ implements BackgroundMenuScreen {
             this.hudScale(r, id, position, this.tr("\u0420\u0430\u0437\u043c\u0435\u0440 \u0431\u043b\u043e\u043a\u0430", "Panel size"));
         } else {
             r.add(this.info(this.tr("\u041f\u0435\u0440\u0435\u043c\u0435\u0449\u0430\u0439 \u0447\u0430\u0441\u0442\u0438 \u043e\u0442\u0434\u0435\u043b\u044c\u043d\u043e \u0432 \u0440\u0435\u0434\u0430\u043a\u0442\u043e\u0440\u0435.", "Move each part freely in the editor."), this.tr("\u041a\u043e\u043b\u0451\u0441\u0438\u043a\u043e \u043d\u0430\u0434 \u0447\u0430\u0441\u0442\u044c\u044e \u043c\u0435\u043d\u044f\u0435\u0442 \u0435\u0451 \u0440\u0430\u0437\u043c\u0435\u0440.", "Scroll over a part to change its size.")));
-            r.add(new Row(42, (g, x, y, w) -> this.button(g, id + ".editor", x + 18, y + 3, w - 36, 29, this.tr("\u0420\u0430\u0441\u0441\u0442\u0430\u0432\u0438\u0442\u044c \u0447\u0430\u0441\u0442\u0438 HUD", "Arrange HUD parts"), () -> BloodHelperClient.openHudEditor(this))));
+            r.add(new Row(42, (g, x, y, w) -> this.button(g, id + ".editor", x + 18, y + 3, w - 36, 29, this.tr("\u0420\u0430\u0441\u0441\u0442\u0430\u0432\u0438\u0442\u044c \u0447\u0430\u0441\u0442\u0438 HUD", "Arrange HUD parts"), () -> BloodHelperClient.openHudEditor((Screen)this))));
         }
     }
 
@@ -3258,42 +3424,42 @@ implements BackgroundMenuScreen {
         return new Row(66, (g, x, y, w) -> {
             BloodstoneResourcePack.Snapshot status = BloodstoneResourcePack.status();
             BloodstoneResourcePack.State state = this.cfg().resourcePack.enabled ? status.state() : BloodstoneResourcePack.State.DISABLED;
-            String title = switch (state) {
+            String title = switch (2.$SwitchMap$ru$bloodhelper$client$resourcepack$BloodstoneResourcePack$State[state.ordinal()]) {
                 default -> throw new MatchException(null, null);
-                case BloodstoneResourcePack.State.DISABLED -> this.tr("\u0412\u044b\u043a\u043b\u044e\u0447\u0435\u043d", "Disabled");
-                case BloodstoneResourcePack.State.WAITING -> this.tr("\u041e\u0436\u0438\u0434\u0430\u043d\u0438\u0435 \u0441\u0435\u0440\u0432\u0435\u0440\u0430", "Waiting for the server");
-                case BloodstoneResourcePack.State.PRELOADING -> this.tr("\u041f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u043a\u0430 \u0434\u0432\u0443\u0445 \u0440\u0435\u0441\u0443\u0440\u0441\u043f\u0430\u043a\u043e\u0432", "Preparing both resource packs");
-                case BloodstoneResourcePack.State.CACHED -> this.tr("\u0420\u0435\u0441\u0443\u0440\u0441\u043f\u0430\u043a\u0438 \u0441\u043a\u0430\u0447\u0430\u043d\u044b \u0437\u0430\u0440\u0430\u043d\u0435\u0435", "Resource packs cached");
-                case BloodstoneResourcePack.State.PRELOAD_ERROR -> this.tr("\u041d\u0435 \u0443\u0434\u0430\u043b\u043e\u0441\u044c \u043f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u0438\u0442\u044c \u0432\u0441\u0435 \u043f\u0430\u043a\u0438", "Some preloads failed");
-                case BloodstoneResourcePack.State.LOADING -> this.tr("\u0417\u0430\u0433\u0440\u0443\u0437\u043a\u0430 \u0440\u0435\u0441\u0443\u0440\u0441\u043f\u0430\u043a\u043e\u0432", "Loading resource packs");
-                case BloodstoneResourcePack.State.ACTIVE -> this.tr("\u041f\u043e\u043b\u0443\u0447\u0435\u043d\u043d\u044b\u0435 \u043f\u0430\u043a\u0438 \u043f\u0440\u0438\u043c\u0435\u043d\u0435\u043d\u044b", "Received packs applied");
-                case BloodstoneResourcePack.State.ERROR -> this.tr("\u041e\u0448\u0438\u0431\u043a\u0430 \u0437\u0430\u0433\u0440\u0443\u0437\u043a\u0438 \u0440\u0435\u0441\u0443\u0440\u0441\u043e\u0432", "Resource-pack loading failed");
+                case 1 -> this.tr("\u0412\u044b\u043a\u043b\u044e\u0447\u0435\u043d", "Disabled");
+                case 2 -> this.tr("\u041e\u0436\u0438\u0434\u0430\u043d\u0438\u0435 \u0441\u0435\u0440\u0432\u0435\u0440\u0430", "Waiting for the server");
+                case 3 -> this.tr("\u041f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u043a\u0430 \u0434\u0432\u0443\u0445 \u0440\u0435\u0441\u0443\u0440\u0441\u043f\u0430\u043a\u043e\u0432", "Preparing both resource packs");
+                case 4 -> this.tr("\u0420\u0435\u0441\u0443\u0440\u0441\u043f\u0430\u043a\u0438 \u0441\u043a\u0430\u0447\u0430\u043d\u044b \u0437\u0430\u0440\u0430\u043d\u0435\u0435", "Resource packs cached");
+                case 5 -> this.tr("\u041d\u0435 \u0443\u0434\u0430\u043b\u043e\u0441\u044c \u043f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u0438\u0442\u044c \u0432\u0441\u0435 \u043f\u0430\u043a\u0438", "Some preloads failed");
+                case 6 -> this.tr("\u0417\u0430\u0433\u0440\u0443\u0437\u043a\u0430 \u0440\u0435\u0441\u0443\u0440\u0441\u043f\u0430\u043a\u043e\u0432", "Loading resource packs");
+                case 7 -> this.tr("\u041f\u043e\u043b\u0443\u0447\u0435\u043d\u043d\u044b\u0435 \u043f\u0430\u043a\u0438 \u043f\u0440\u0438\u043c\u0435\u043d\u0435\u043d\u044b", "Received packs applied");
+                case 8 -> this.tr("\u041e\u0448\u0438\u0431\u043a\u0430 \u0437\u0430\u0433\u0440\u0443\u0437\u043a\u0438 \u0440\u0435\u0441\u0443\u0440\u0441\u043e\u0432", "Resource-pack loading failed");
             };
-            String hint = switch (state) {
+            String hint = switch (2.$SwitchMap$ru$bloodhelper$client$resourcepack$BloodstoneResourcePack$State[state.ordinal()]) {
                 default -> throw new MatchException(null, null);
-                case BloodstoneResourcePack.State.DISABLED -> this.tr("\u0412\u043a\u043b\u044e\u0447\u0438 \u043c\u043e\u0434\u0443\u043b\u044c \u043f\u0435\u0440\u0435\u0434 \u0432\u0445\u043e\u0434\u043e\u043c.", "Enable before joining the server.");
-                case BloodstoneResourcePack.State.WAITING -> this.tr("\u0417\u0430\u0439\u0434\u0438 \u043d\u0430 Bloodstone.", "Join Bloodstone.");
-                case BloodstoneResourcePack.State.PRELOADING -> this.tr("\u0421\u043a\u0430\u0447\u0430\u043d\u043e: ", "Cached: ") + status.completedPacks() + " / 2 \u00b7 Bloodstone + BetterModel";
-                case BloodstoneResourcePack.State.CACHED -> this.tr("2 / 2 \u00b7 \u041f\u0440\u0438\u043c\u0435\u043d\u044f\u0442\u0441\u044f \u043f\u0440\u0438 \u0432\u0445\u043e\u0434\u0435 \u043d\u0430 Bloodstone.", "2 / 2 \u00b7 Applied when you join Bloodstone.");
-                case BloodstoneResourcePack.State.PRELOAD_ERROR -> this.tr("\u041f\u0440\u0438 \u0432\u0445\u043e\u0434\u0435 \u0441\u0435\u0440\u0432\u0435\u0440 \u0437\u0430\u0433\u0440\u0443\u0437\u0438\u0442 \u043d\u0435\u0434\u043e\u0441\u0442\u0430\u044e\u0449\u0438\u0435 \u043f\u0430\u043a\u0438.", "Missing packs will download when joining.");
-                case BloodstoneResourcePack.State.LOADING, BloodstoneResourcePack.State.ACTIVE -> this.tr("\u041f\u0440\u0438\u043c\u0435\u043d\u0435\u043d\u043e: ", "Applied: ") + status.completedPacks() + " / " + status.totalPacks();
-                case BloodstoneResourcePack.State.ERROR -> this.tr("\u041d\u0435 \u0437\u0430\u0433\u0440\u0443\u0436\u0435\u043d\u043e: ", "Failed: ") + status.failedPacks() + this.tr(". \u041f\u0435\u0440\u0435\u0437\u0430\u0439\u0434\u0438 \u043d\u0430 \u0441\u0435\u0440\u0432\u0435\u0440.", ". Rejoin the server.");
+                case 1 -> this.tr("\u0412\u043a\u043b\u044e\u0447\u0438 \u043c\u043e\u0434\u0443\u043b\u044c \u043f\u0435\u0440\u0435\u0434 \u0432\u0445\u043e\u0434\u043e\u043c.", "Enable before joining the server.");
+                case 2 -> this.tr("\u0417\u0430\u0439\u0434\u0438 \u043d\u0430 Bloodstone.", "Join Bloodstone.");
+                case 3 -> this.tr("\u0421\u043a\u0430\u0447\u0430\u043d\u043e: ", "Cached: ") + status.completedPacks() + " / 2 \u00b7 Bloodstone + BetterModel";
+                case 4 -> this.tr("2 / 2 \u00b7 \u041f\u0440\u0438\u043c\u0435\u043d\u044f\u0442\u0441\u044f \u043f\u0440\u0438 \u0432\u0445\u043e\u0434\u0435 \u043d\u0430 Bloodstone.", "2 / 2 \u00b7 Applied when you join Bloodstone.");
+                case 5 -> this.tr("\u041f\u0440\u0438 \u0432\u0445\u043e\u0434\u0435 \u0441\u0435\u0440\u0432\u0435\u0440 \u0437\u0430\u0433\u0440\u0443\u0437\u0438\u0442 \u043d\u0435\u0434\u043e\u0441\u0442\u0430\u044e\u0449\u0438\u0435 \u043f\u0430\u043a\u0438.", "Missing packs will download when joining.");
+                case 6, 7 -> this.tr("\u041f\u0440\u0438\u043c\u0435\u043d\u0435\u043d\u043e: ", "Applied: ") + status.completedPacks() + " / " + status.totalPacks();
+                case 8 -> this.tr("\u041d\u0435 \u0437\u0430\u0433\u0440\u0443\u0436\u0435\u043d\u043e: ", "Failed: ") + status.failedPacks() + this.tr(". \u041f\u0435\u0440\u0435\u0437\u0430\u0439\u0434\u0438 \u043d\u0430 \u0441\u0435\u0440\u0432\u0435\u0440.", ". Rejoin the server.");
             };
             BloodHelperScreen.strong(g, BloodHelperScreen.fit(title, 13.0f, w - 36), x + 18, y + 4, 13.0f, state == BloodstoneResourcePack.State.ERROR ? -2336665 : -2039324);
             BloodHelperScreen.label(g, BloodHelperScreen.fit(hint, 11.0f, w - 36), x + 18, y + 24, 11.0f, -6775902);
             int trackWidth = w - 36;
-            UiDraw.rounded(g, x + 18, y + 47, trackWidth, 3, 1, ThemeColors.surface(-13026236));
+            UiDraw.rounded((GuiGraphicsExtractor)g, (int)(x + 18), (int)(y + 47), (int)trackWidth, (int)3, (int)1, (int)ThemeColors.surface((int)-13026236));
             double progress = state == BloodstoneResourcePack.State.DISABLED ? 0.0 : status.progress();
             int fill = (int)Math.round((double)trackWidth * this.animate("resourcePack.progress", progress));
             if (fill > 0) {
-                UiDraw.rounded(g, x + 18, y + 47, fill, 3, 1, this.accent());
+                UiDraw.rounded((GuiGraphicsExtractor)g, (int)(x + 18), (int)(y + 47), (int)fill, (int)3, (int)1, (int)this.accent());
             }
             if ((state == BloodstoneResourcePack.State.LOADING || state == BloodstoneResourcePack.State.PRELOADING) && fill < trackWidth) {
                 int remaining = trackWidth - fill;
                 int segment = Math.max(1, Math.min(remaining, trackWidth / 5));
                 double phase = this.cfg().animations ? (Math.sin((double)this.frameNanos / 7.0E8) + 1.0) / 2.0 : 0.5;
                 int start = (int)Math.round((double)(remaining - segment) * phase);
-                UiDraw.rounded(g, x + 18 + fill + start, y + 47, segment, 3, 1, UiDraw.alpha(this.accent(), 120));
+                UiDraw.rounded((GuiGraphicsExtractor)g, (int)(x + 18 + fill + start), (int)(y + 47), (int)segment, (int)3, (int)1, (int)UiDraw.alpha((int)this.accent(), (int)120));
             }
         });
     }
@@ -3309,9 +3475,9 @@ implements BackgroundMenuScreen {
             if (ITEM_PRESETS.stream().anyMatch(p -> p.itemId.equals(itemId))) continue;
             Identifier parsed = Identifier.tryParse((String)itemId);
             boolean available = parsed != null && BuiltInRegistries.ITEM.containsKey(parsed) && !new ItemStack((ItemLike)BuiltInRegistries.ITEM.getValue(parsed)).isEmpty();
-            String name = available ? UiLanguage.text(((Item)BuiltInRegistries.ITEM.getValue(parsed)).getName(new ItemStack((ItemLike)BuiltInRegistries.ITEM.getValue(parsed)))) : this.tr("\u041f\u0440\u0435\u0434\u043c\u0435\u0442 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d", "Missing item");
+            String name = available ? UiLanguage.text((Component)((Item)BuiltInRegistries.ITEM.getValue(parsed)).getName(new ItemStack((ItemLike)BuiltInRegistries.ITEM.getValue(parsed)))) : this.tr("\u041f\u0440\u0435\u0434\u043c\u0435\u0442 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d", "Missing item");
             r.add(new Row(52, (g, x, y, w) -> {
-                BloodHelperScreen.strong(g, CustomFont.medium().ellipsize(name, 13.0f, w - 124), x + 18, y + 4, 13.0f, available ? -2039324 : -2336665);
+                BloodHelperScreen.strong(g, CustomFont.medium().ellipsize(name, 13.0f, (float)(w - 124)), x + 18, y + 4, 13.0f, available ? -2039324 : -2336665);
                 BloodHelperScreen.label(g, BloodHelperScreen.fit(itemId, 10.0f, w - 36), x + 18, y + 29, 10.0f, -6775902);
                 this.button(g, "itemCounter.remove." + itemId, x + w - 94, y + 1, 76, 25, this.tr("\u0423\u0431\u0440\u0430\u0442\u044c", "Remove"), () -> {
                     this.selectItem(itemId, false);
@@ -3324,7 +3490,7 @@ implements BackgroundMenuScreen {
     }
 
     private void selectItem(String itemId, boolean selected) {
-        List<String> items = this.cfg().itemCounter.items;
+        List items = this.cfg().itemCounter.items;
         if (!selected) {
             items.remove(itemId);
             return;
@@ -3386,7 +3552,7 @@ implements BackgroundMenuScreen {
         r.add(this.slider(id + ".y", this.tr("\u041f\u043e \u0432\u0435\u0440\u0442\u0438\u043a\u0430\u043b\u0438", "Vertical"), this.tr("\u041f\u043e\u043b\u043e\u0436\u0435\u043d\u0438\u0435 \u043f\u043e \u0432\u0435\u0440\u0442\u0438\u043a\u0430\u043b\u0438", "Vertical position"), () -> p.y * 100.0, v -> {
             p.y = v / 100.0;
         }, 0.0, 100.0, 1.0, "%"));
-        r.add(new Row(42, (g, x, y, w) -> this.button(g, id + ".editor", x + 18, y + 3, w - 36, 29, this.tr("\u041e\u0442\u043a\u0440\u044b\u0442\u044c \u0440\u0435\u0434\u0430\u043a\u0442\u043e\u0440 HUD", "Open HUD Editor"), () -> BloodHelperClient.openHudEditor(this))));
+        r.add(new Row(42, (g, x, y, w) -> this.button(g, id + ".editor", x + 18, y + 3, w - 36, 29, this.tr("\u041e\u0442\u043a\u0440\u044b\u0442\u044c \u0440\u0435\u0434\u0430\u043a\u0442\u043e\u0440 HUD", "Open HUD Editor"), () -> BloodHelperClient.openHudEditor((Screen)this))));
     }
 
     private Row bool(String sourceId, String name, String desc, BooleanSupplier get, Consumer<Boolean> set) {
@@ -3408,9 +3574,9 @@ implements BackgroundMenuScreen {
         return new Row(32, (g, x, y, w) -> {
             double hot = this.animate(id + ".hover", this.hovered(x + 12, y + 2, w - 24, 29) ? 1.0 : 0.0);
             if (hot > 0.01) {
-                UiDraw.rounded(g, x + 12, y + 2, w - 24, 29, 4, UiDraw.alpha(3158330, (int)(70.0 * hot)));
+                UiDraw.rounded((GuiGraphicsExtractor)g, (int)(x + 12), (int)(y + 2), (int)(w - 24), (int)29, (int)4, (int)UiDraw.alpha((int)3158330, (int)((int)(70.0 * hot))));
             }
-            BloodHelperScreen.label(g, name, x + 18, (float)(y + 8) - this.lift(hot), 12.0f, UiDraw.blend(-6775902, -2039324, hot));
+            BloodHelperScreen.label(g, name, x + 18, (float)(y + 8) - this.lift(hot), 12.0f, UiDraw.blend((int)-6775902, (int)-2039324, (double)hot));
             this.chevron(g, x + w - 31, y + 9, 12, this.animate(id + ".open", this.advanced.contains(id) ? 1.0 : 0.0), -9275778);
             this.hit(id, x + 12, y + 2, w - 24, 29, () -> {
                 if (!this.advanced.remove(id)) {
@@ -3443,15 +3609,15 @@ implements BackgroundMenuScreen {
         void w;
         void y;
         void x;
-        if (VLRestrictions.hideButton(string)) {
+        if (VLRestrictions.hideButton((String)string)) {
             return;
         }
         boolean hover = this.hovered((int)x, (int)y, (int)w, (int)h);
         double amount = this.animate((String)id + ".hover", hover ? 1.0 : 0.0);
         double down = this.pressed((String)id);
-        UiDraw.border((GuiGraphicsExtractor)g, (int)x, (int)y, (int)w, (int)h, 4, UiDraw.blend(UiDraw.blend(ThemeColors.light() ? -1578000 : ThemeColors.surface(-15329509), ThemeColors.light() ? -2300950 : ThemeColors.surface(-14211027), amount), ThemeColors.light() ? -4405550 : 592396, down * 0.45), UiDraw.blend(ThemeColors.line(), ThemeColors.surface(-11777199), amount));
+        UiDraw.border((GuiGraphicsExtractor)g, (int)x, (int)y, (int)w, (int)h, (int)4, (int)UiDraw.blend((int)UiDraw.blend((int)(ThemeColors.light() ? -1578000 : ThemeColors.surface((int)-15329509)), (int)(ThemeColors.light() ? -2300950 : ThemeColors.surface((int)-14211027)), (double)amount), (int)(ThemeColors.light() ? -4405550 : 592396), (double)(down * 0.45)), (int)UiDraw.blend((int)ThemeColors.line(), (int)ThemeColors.surface((int)-11777199), (double)amount));
         String shown = BloodHelperScreen.fit((String)text, 13.0f, (float)(w - 16));
-        BloodHelperScreen.label((GuiGraphicsExtractor)g, shown, (float)x + ((float)w - CustomFont.regular().width(shown, 13.0f)) / 2.0f, (float)y + (float)(h - 16) / 2.0f - this.lift(amount) * (1.0f - (float)down * 0.5f), 13.0f, UiDraw.blend(-6775902, -2039324, amount));
+        BloodHelperScreen.label((GuiGraphicsExtractor)g, shown, (float)x + ((float)w - CustomFont.regular().width(shown, 13.0f)) / 2.0f, (float)y + (float)(h - 16) / 2.0f - this.lift(amount) * (1.0f - (float)down * 0.5f), 13.0f, UiDraw.blend((int)-6775902, (int)-2039324, (double)amount));
         this.hit((String)id, (int)x, (int)y, (int)w, (int)h, (Runnable)action);
     }
 
@@ -3459,9 +3625,9 @@ implements BackgroundMenuScreen {
         String id = "media." + command;
         double hover = this.animate(id + ".hover", this.hovered(x, y, w, 28) ? 1.0 : 0.0);
         double down = this.pressed(id);
-        UiDraw.rounded(g, x, y, w, 28, 5, UiDraw.blend(UiDraw.blend(ThemeColors.surface(-14539993), ThemeColors.surface(-13355972), hover), 0x101114, down * 0.35));
+        UiDraw.rounded((GuiGraphicsExtractor)g, (int)x, (int)y, (int)w, (int)28, (int)5, (int)UiDraw.blend((int)UiDraw.blend((int)ThemeColors.surface((int)-14539993), (int)ThemeColors.surface((int)-13355972), (double)hover), (int)0x101114, (double)(down * 0.35)));
         this.liftedIcon(g, command, x + (w - 14) / 2, y + 7, 14, -2039324, hover * (1.0 - down * 0.5));
-        this.hit(id, x, y, w, 28, () -> BloodHelperClient.musicCommand(command.equals("play") || command.equals("pause") ? "toggle" : command));
+        this.hit(id, x, y, w, 28, () -> BloodHelperClient.musicCommand((String)(command.equals("play") || command.equals("pause") ? "toggle" : command)));
     }
 
     private void openDropdown(Dropdown next) {
@@ -3496,7 +3662,7 @@ implements BackgroundMenuScreen {
             return;
         }
         boolean interactive = this.dropdown != null;
-        double amount = this.dropdownMotion.to(interactive ? 1.0 : 0.0, this.frameNanos, this.cfg().animations, RenderQuality.animationMillis(130.0));
+        double amount = this.dropdownMotion.to(interactive ? 1.0 : 0.0, this.frameNanos, this.cfg().animations, RenderQuality.animationMillis((double)130.0));
         if (!interactive && amount < 0.001) {
             this.closingDropdown = null;
             return;
@@ -3518,7 +3684,7 @@ implements BackgroundMenuScreen {
         this.rowsInteractive = interactive;
         g.enableScissor(x, y, x + d.w, y + shown);
         try {
-            UiDraw.border(g, x, y, d.w, shown, 4, ThemeColors.surface(-15000544), ThemeColors.surface(-11777199));
+            UiDraw.border((GuiGraphicsExtractor)g, (int)x, (int)y, (int)d.w, (int)shown, (int)4, (int)ThemeColors.surface((int)-15000544), (int)ThemeColors.surface((int)-11777199));
             for (int i = 0; i < count; ++i) {
                 int yy = y + 4 + i * 26 - (int)this.dropdownScroll;
                 String value = d.values[i];
@@ -3526,7 +3692,7 @@ implements BackgroundMenuScreen {
                 if (yy >= y + shown) break;
                 double hover = this.animate(d.id + ".option." + value + ".hover", this.hovered(x + 3, yy, d.w - 6, 26) ? 1.0 : 0.0);
                 if (hover > 0.01) {
-                    UiDraw.rounded(g, x + 3, yy, d.w - 6, 26, 4, UiDraw.alpha(this.cfg().accent, (int)(45.0 * hover)));
+                    UiDraw.rounded((GuiGraphicsExtractor)g, (int)(x + 3), (int)yy, (int)(d.w - 6), (int)26, (int)4, (int)UiDraw.alpha((int)this.cfg().accent, (int)((int)(45.0 * hover))));
                 }
                 BloodHelperScreen.label(g, BloodHelperScreen.fit(d.names[i], 12.0f, d.w - 24), x + 10, (float)(yy + 5) - this.lift(hover), 12.0f, -2039324);
                 this.hit(d.id + ".option." + value, x + 3, yy, d.w - 6, 26, () -> {
@@ -3550,13 +3716,13 @@ implements BackgroundMenuScreen {
     private void appearance(GuiGraphicsExtractor g) {
         ArrayList<Row> a = new ArrayList<Row>();
         ArrayList<Row> b = new ArrayList<Row>();
-        a.add(new Row(42, (gg, x, y, w) -> this.button(gg, "appearance.presets", x + 18, y + 4, w - 36, 30, this.tr("\u0422\u0435\u043c\u044b \u0441 \u043f\u0440\u0435\u0434\u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u043e\u043c", "Preview themes"), () -> this.minecraft.gui.setScreen((Screen)new ThemePreviewScreen(this)))));
+        a.add(new Row(42, (gg, x, y, w) -> this.button(gg, "appearance.presets", x + 18, y + 4, w - 36, 30, this.tr("\u0422\u0435\u043c\u044b \u0441 \u043f\u0440\u0435\u0434\u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u043e\u043c", "Preview themes"), () -> this.minecraft.gui.setScreen((Screen)new ThemePreviewScreen((Screen)this)))));
         a.add(this.choice("appearance.themeMode", this.tr("\u0422\u0435\u043c\u0430", "Theme"), this.tr("\u0424\u043e\u043d \u0438 \u0446\u0432\u0435\u0442 \u0442\u0435\u043a\u0441\u0442\u0430", "Background and text"), () -> this.cfg().themeMode, v -> {
             this.cfg().themeMode = v;
         }, new String[]{"DARK", "LIGHT"}, new String[]{this.tr("\u0422\u0451\u043c\u043d\u0430\u044f", "Dark"), this.tr("\u0421\u0432\u0435\u0442\u043b\u0430\u044f", "Light")}));
         a.add(new Row(64, (gg, x, y, w) -> {
             BloodHelperScreen.strong(gg, this.tr("\u0426\u0432\u0435\u0442 \u043e\u0444\u043e\u0440\u043c\u043b\u0435\u043d\u0438\u044f", "Theme colour"), x + 18, y + 4, 14.0f, -2039324);
-            this.button(gg, "appearance.theme", x + 18, y + 27, w - 36, 29, ThemeColors.hex(this.cfg().accent) + "  \u00b7  " + this.tr("\u041f\u0430\u043b\u0438\u0442\u0440\u0430", "Palette"), this::openThemePicker);
+            this.button(gg, "appearance.theme", x + 18, y + 27, w - 36, 29, ThemeColors.hex((int)this.cfg().accent) + "  \u00b7  " + this.tr("\u041f\u0430\u043b\u0438\u0442\u0440\u0430", "Palette"), this::openThemePicker);
         }));
         a.add(this.slider("appearance.scale", this.tr("\u041c\u0430\u0441\u0448\u0442\u0430\u0431 \u043c\u0435\u043d\u044e", "Interface scale"), this.tr("\u0420\u0430\u0437\u043c\u0435\u0440 \u043c\u0435\u043d\u044e", "Menu size"), () -> this.cfg().guiScale, v -> {
             this.cfg().guiScale = v;
@@ -3625,15 +3791,15 @@ implements BackgroundMenuScreen {
             this.cfg().textShadow = v;
         }));
         if (ReGlassCompat.installed()) {
-            b.add(this.searchable(52, "appearance.reglass", "ReGlass", ReGlassCompat.status(this.ru()), (gg, x, y, w) -> {
+            b.add(this.searchable(52, "appearance.reglass", "ReGlass", ReGlassCompat.status((boolean)this.ru()), (gg, x, y, w) -> {
                 BloodHelperScreen.strong(gg, "ReGlass", x + 18, y + 3, 14.0f, -6775902);
                 BloodHelperScreen.label(gg, BloodHelperScreen.fit(this.tr("\u0412\u043d\u0435\u0448\u043d\u0438\u0439 \u043c\u043e\u0434 \u0430\u043a\u0442\u0438\u0432\u0435\u043d", "External mod active"), 11.0f, w - 54), x + 18, y + 22, 11.0f, -6775902);
                 BloodHelperScreen.label(gg, BloodHelperScreen.fit(this.tr("\u0412\u0441\u0442\u0440\u043e\u0435\u043d\u043d\u044b\u0439 \u044d\u0444\u0444\u0435\u043a\u0442 \u0437\u0430\u0431\u043b\u043e\u043a\u0438\u0440\u043e\u0432\u0430\u043d", "Built-in effect locked"), 10.0f, w - 36), x + 18, y + 37, 10.0f, -9275778);
-                UiDraw.roundedSolid(gg, x + w - 48, y + 4, 28, 14, 7, ThemeColors.surface(-13289150));
-                UiDraw.roundedSolid(gg, x + w - 46, y + 6, 10, 10, 5, -8946039);
+                UiDraw.roundedSolid((GuiGraphicsExtractor)gg, (int)(x + w - 48), (int)(y + 4), (int)28, (int)14, (int)7, (int)ThemeColors.surface((int)-13289150));
+                UiDraw.roundedSolid((GuiGraphicsExtractor)gg, (int)(x + w - 46), (int)(y + 6), (int)10, (int)10, (int)5, (int)-8946039);
             }));
         } else {
-            b.add(this.bool("appearance.reglass", "ReGlass", ReGlassCompat.status(this.ru()), () -> this.cfg().reglassEnabled, v -> {
+            b.add(this.bool("appearance.reglass", "ReGlass", ReGlassCompat.status((boolean)this.ru()), () -> this.cfg().reglassEnabled, v -> {
                 this.cfg().reglassEnabled = v;
             }));
         }
@@ -3655,8 +3821,8 @@ implements BackgroundMenuScreen {
                 this.cfg().glassRefraction = v;
             }, 0.0, 10.0, 1.0, ""));
         });
-        b.add(new Row(42, (gg, x, y, w) -> this.button(gg, "appearance.share", x + 18, y + 4, w - 36, 30, this.tr("\u041e\u0431\u043c\u0435\u043d \u043e\u0444\u043e\u0440\u043c\u043b\u0435\u043d\u0438\u0435\u043c", "Share appearance"), () -> this.minecraft.gui.setScreen((Screen)new AppearanceShareScreen(this)))));
-        b.add(new Row(42, (gg, x, y, w) -> this.button(gg, "appearance.hud", x + 18, y + 4, w - 36, 30, this.tr("\u041e\u0442\u043a\u0440\u044b\u0442\u044c \u0440\u0435\u0434\u0430\u043a\u0442\u043e\u0440 HUD", "Open HUD Editor"), () -> BloodHelperClient.openHudEditor(this))));
+        b.add(new Row(42, (gg, x, y, w) -> this.button(gg, "appearance.share", x + 18, y + 4, w - 36, 30, this.tr("\u041e\u0431\u043c\u0435\u043d \u043e\u0444\u043e\u0440\u043c\u043b\u0435\u043d\u0438\u0435\u043c", "Share appearance"), () -> this.minecraft.gui.setScreen((Screen)new AppearanceShareScreen((Screen)this)))));
+        b.add(new Row(42, (gg, x, y, w) -> this.button(gg, "appearance.hud", x + 18, y + 4, w - 36, 30, this.tr("\u041e\u0442\u043a\u0440\u044b\u0442\u044c \u0440\u0435\u0434\u0430\u043a\u0442\u043e\u0440 HUD", "Open HUD Editor"), () -> BloodHelperClient.openHudEditor((Screen)this))));
         if (this.indexingSettings) {
             return;
         }
@@ -3676,7 +3842,7 @@ implements BackgroundMenuScreen {
     private void simpleCard(GuiGraphicsExtractor g, String title, int x, int y, int w, List<Row> rows) {
         int h = 46 + rows.stream().mapToInt(Row::height).sum();
         this.frame(g, x, y, w, h, 5);
-        UiIcons.draw(g, x == 190 ? "palette" : "grid", x + 16, y + 12, 18, -6775902);
+        UiIcons.draw((GuiGraphicsExtractor)g, (String)(x == 190 ? "palette" : "grid"), (int)(x + 16), (int)(y + 12), (int)18, (int)-6775902);
         BloodHelperScreen.strong(g, title, x + 44, y + 13, 14.0f, -2039324);
         g.fill(x + 16, y + 37, x + w - 16, y + 38, ThemeColors.line());
         int yy = y + 45;
@@ -3691,7 +3857,7 @@ implements BackgroundMenuScreen {
     private void profiles(GuiGraphicsExtractor g) {
         this.frame(g, 190, 78, 568, 115, 10);
         BloodHelperScreen.strong(g, this.tr("\u0421\u043e\u0445\u0440\u0430\u043d\u0438\u0442\u044c \u043d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0438", "Save current settings"), 208.0f, 96.0f, 15.0f, -2039324);
-        UiDraw.border(g, 208, 130, 334, 32, 6, ThemeColors.surface(-15658475), UiDraw.blend(ThemeColors.line(), this.softAccent(), this.animate("profile.focus", this.focused == this.profileName ? 1.0 : 0.0)));
+        UiDraw.border((GuiGraphicsExtractor)g, (int)208, (int)130, (int)334, (int)32, (int)6, (int)ThemeColors.surface((int)-15658475), (int)UiDraw.blend((int)ThemeColors.line(), (int)this.softAccent(), (double)this.animate("profile.focus", this.focused == this.profileName ? 1.0 : 0.0)));
         this.field(g, this.profileName, 217, 136, 312, "profile.name");
         this.button(g, "profile.save", 556, 130, 184, 32, this.tr("\u0421\u043e\u0445\u0440\u0430\u043d\u0438\u0442\u044c \u043f\u0440\u043e\u0444\u0438\u043b\u044c", "Save profile"), this::saveProfile);
         BloodHelperScreen.label(g, this.tr("\u041c\u043e\u0434\u0443\u043b\u0438, \u043e\u0444\u043e\u0440\u043c\u043b\u0435\u043d\u0438\u0435 \u0438 \u0440\u0430\u0441\u043f\u043e\u043b\u043e\u0436\u0435\u043d\u0438\u0435 HUD", "Modules, appearance and HUD positions"), 208.0f, 174.0f, 11.0f, -6775902);
@@ -3771,7 +3937,7 @@ implements BackgroundMenuScreen {
         }));
         rows.add(new Row(38, (g, x, y, w) -> {
             int bw = (w - 44) / 2;
-            this.button(g, "music.lyricsRetry", x + 18, y + 2, bw, 28, this.tr("\u041f\u043e\u0432\u0442\u043e\u0440\u0438\u0442\u044c \u043f\u043e\u0438\u0441\u043a", "Retry lookup"), lyrics::retry);
+            this.button(g, "music.lyricsRetry", x + 18, y + 2, bw, 28, this.tr("\u041f\u043e\u0432\u0442\u043e\u0440\u0438\u0442\u044c \u043f\u043e\u0438\u0441\u043a", "Retry lookup"), () -> ((LyricsService)lyrics).retry());
             if ("AUTO".equals(settings.lyricsSource) || "LRCLIB".equals(settings.lyricsSource)) {
                 this.button(g, "music.lyricsVersions", x + 26 + bw, y + 2, bw, 28, lyrics.alternativesLoading() ? this.tr("\u041f\u043e\u0438\u0441\u043a \u0437\u0430\u043f\u0438\u0441\u0435\u0439\u2026", "Finding records\u2026") : this.tr("\u0414\u0440\u0443\u0433\u0438\u0435 \u0437\u0430\u043f\u0438\u0441\u0438 \u0442\u0435\u043a\u0441\u0442\u0430", "Other lyric records"), () -> {
                     this.advanced.add("music.records");
@@ -3779,7 +3945,7 @@ implements BackgroundMenuScreen {
                 });
             }
         }));
-        List<LyricsService.Variant> variants = lyrics.variants();
+        List variants = lyrics.variants();
         if (!variants.isEmpty() && ("AUTO".equals(settings.lyricsSource) || "LRCLIB".equals(settings.lyricsSource))) {
             rows.add(this.disclosure("music.records", this.tr("\u0417\u0430\u043f\u0438\u0441\u0438 LRCLIB", "LRCLIB records")));
             this.section(rows, "music.records", records -> {
@@ -3832,28 +3998,28 @@ implements BackgroundMenuScreen {
     private String lyricsStatus() {
         LyricsService lyrics = BloodHelperClient.lyrics();
         String source = lyrics.source().isEmpty() ? "" : " \u00b7 " + lyrics.source() + (String)(lyrics.recordId().isEmpty() ? "" : " #" + lyrics.recordId());
-        return switch (lyrics.status()) {
+        return switch (2.$SwitchMap$ru$bloodhelper$client$lyrics$LyricsService$Status[lyrics.status().ordinal()]) {
             default -> throw new MatchException(null, null);
-            case LyricsService.Status.DISABLED -> this.tr("\u0422\u0435\u043a\u0441\u0442: \u0432\u043a\u043b\u044e\u0447\u0438 \u043c\u0443\u0437\u044b\u043a\u0443", "Lyrics: start music");
-            case LyricsService.Status.LOADING -> this.tr("\u0422\u0435\u043a\u0441\u0442: \u043f\u043e\u0438\u0441\u043a\u2026", "Lyrics: loading\u2026");
-            case LyricsService.Status.READY -> (lyrics.hasSyncedLyrics() ? this.tr("\u0421\u0438\u043d\u0445\u0440\u043e\u043d\u0438\u0437\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u044b\u0439 \u0442\u0435\u043a\u0441\u0442", "Synced lyrics") : this.tr("\u0422\u0435\u043a\u0441\u0442 \u0431\u0435\u0437 \u0442\u0430\u0439\u043c\u043a\u043e\u0434\u043e\u0432 \u00b7 \u043e\u0442\u043a\u0440\u043e\u0439 \u043f\u043b\u0435\u0435\u0440", "Plain lyrics \u00b7 open player")) + source;
-            case LyricsService.Status.NOT_FOUND -> this.tr("\u041d\u0435\u0442 \u0441\u0438\u043d\u0445\u0440\u043e\u043d\u0438\u0437\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u043e\u0433\u043e \u0442\u0435\u043a\u0441\u0442\u0430", "No synced lyrics") + source;
-            case LyricsService.Status.ERROR -> this.tr("\u0418\u0441\u0442\u043e\u0447\u043d\u0438\u043a \u0442\u0435\u043a\u0441\u0442\u0430 \u043d\u0435 \u043e\u0442\u0432\u0435\u0442\u0438\u043b", "Lyrics provider unavailable") + source;
+            case 1 -> this.tr("\u0422\u0435\u043a\u0441\u0442: \u0432\u043a\u043b\u044e\u0447\u0438 \u043c\u0443\u0437\u044b\u043a\u0443", "Lyrics: start music");
+            case 2 -> this.tr("\u0422\u0435\u043a\u0441\u0442: \u043f\u043e\u0438\u0441\u043a\u2026", "Lyrics: loading\u2026");
+            case 3 -> (lyrics.hasSyncedLyrics() ? this.tr("\u0421\u0438\u043d\u0445\u0440\u043e\u043d\u0438\u0437\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u044b\u0439 \u0442\u0435\u043a\u0441\u0442", "Synced lyrics") : this.tr("\u0422\u0435\u043a\u0441\u0442 \u0431\u0435\u0437 \u0442\u0430\u0439\u043c\u043a\u043e\u0434\u043e\u0432 \u00b7 \u043e\u0442\u043a\u0440\u043e\u0439 \u043f\u043b\u0435\u0435\u0440", "Plain lyrics \u00b7 open player")) + source;
+            case 4 -> this.tr("\u041d\u0435\u0442 \u0441\u0438\u043d\u0445\u0440\u043e\u043d\u0438\u0437\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u043e\u0433\u043e \u0442\u0435\u043a\u0441\u0442\u0430", "No synced lyrics") + source;
+            case 5 -> this.tr("\u0418\u0441\u0442\u043e\u0447\u043d\u0438\u043a \u0442\u0435\u043a\u0441\u0442\u0430 \u043d\u0435 \u043e\u0442\u0432\u0435\u0442\u0438\u043b", "Lyrics provider unavailable") + source;
         };
     }
 
     private String lyricIssue(LyricsService.Issue issue) {
-        return switch (issue) {
+        return switch (2.$SwitchMap$ru$bloodhelper$client$lyrics$LyricsService$Issue[issue.ordinal()]) {
             default -> throw new MatchException(null, null);
-            case LyricsService.Issue.NONE -> "";
-            case LyricsService.Issue.NO_MATCH -> this.tr("\u041d\u0435\u0442 \u0437\u0430\u043f\u0438\u0441\u0438 \u0441 \u0442\u0435\u043c \u0436\u0435 \u0438\u0441\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u0435\u043c \u0438 \u0434\u043b\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c\u044e", "No matching artist and duration");
-            case LyricsService.Issue.UNSYNCED -> this.tr("\u0415\u0441\u0442\u044c \u043e\u0431\u044b\u0447\u043d\u044b\u0439 \u0442\u0435\u043a\u0441\u0442, \u043d\u043e \u043d\u0435\u0442 \u0442\u0430\u0439\u043c\u043a\u043e\u0434\u043e\u0432 \u0441\u0442\u0440\u043e\u043a", "Plain lyrics exist, but have no timestamps");
-            case LyricsService.Issue.INSTRUMENTAL -> this.tr("\u0418\u0441\u0442\u043e\u0447\u043d\u0438\u043a \u043f\u043e\u043c\u0435\u0442\u0438\u043b \u0437\u0430\u043f\u0438\u0441\u044c \u043a\u0430\u043a \u0438\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442\u0430\u043b\u044c\u043d\u0443\u044e", "The provider marks this record instrumental");
-            case LyricsService.Issue.MISSING_METADATA -> this.tr("\u041f\u043b\u0435\u0435\u0440 \u043d\u0435 \u043f\u0435\u0440\u0435\u0434\u0430\u043b \u0438\u0441\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044f \u0438\u043b\u0438 \u0434\u043b\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c", "Player did not provide artist or duration");
-            case LyricsService.Issue.RATE_LIMITED -> this.tr("\u041b\u0438\u043c\u0438\u0442 \u0437\u0430\u043f\u0440\u043e\u0441\u043e\u0432; \u043f\u043e\u0432\u0442\u043e\u0440\u0438 \u043d\u0435\u043c\u043d\u043e\u0433\u043e \u043f\u043e\u0437\u0436\u0435", "Rate limited; retry a little later");
-            case LyricsService.Issue.NETWORK -> this.tr("\u041e\u0448\u0438\u0431\u043a\u0430 \u0441\u0435\u0442\u0438 \u0438\u043b\u0438 \u0442\u0430\u0439\u043c-\u0430\u0443\u0442", "Network error or timeout");
-            case LyricsService.Issue.HTTP_ERROR -> this.tr("\u041e\u0448\u0438\u0431\u043a\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0430 \u0438\u0441\u0442\u043e\u0447\u043d\u0438\u043a\u0430", "Provider server error");
-            case LyricsService.Issue.INVALID_RESPONSE -> this.tr("\u0418\u0441\u0442\u043e\u0447\u043d\u0438\u043a \u0432\u0435\u0440\u043d\u0443\u043b \u043d\u0435\u043a\u043e\u0440\u0440\u0435\u043a\u0442\u043d\u044b\u0435 \u0434\u0430\u043d\u043d\u044b\u0435", "Provider returned invalid data");
+            case 1 -> "";
+            case 2 -> this.tr("\u041d\u0435\u0442 \u0437\u0430\u043f\u0438\u0441\u0438 \u0441 \u0442\u0435\u043c \u0436\u0435 \u0438\u0441\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u0435\u043c \u0438 \u0434\u043b\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c\u044e", "No matching artist and duration");
+            case 3 -> this.tr("\u0415\u0441\u0442\u044c \u043e\u0431\u044b\u0447\u043d\u044b\u0439 \u0442\u0435\u043a\u0441\u0442, \u043d\u043e \u043d\u0435\u0442 \u0442\u0430\u0439\u043c\u043a\u043e\u0434\u043e\u0432 \u0441\u0442\u0440\u043e\u043a", "Plain lyrics exist, but have no timestamps");
+            case 4 -> this.tr("\u0418\u0441\u0442\u043e\u0447\u043d\u0438\u043a \u043f\u043e\u043c\u0435\u0442\u0438\u043b \u0437\u0430\u043f\u0438\u0441\u044c \u043a\u0430\u043a \u0438\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442\u0430\u043b\u044c\u043d\u0443\u044e", "The provider marks this record instrumental");
+            case 5 -> this.tr("\u041f\u043b\u0435\u0435\u0440 \u043d\u0435 \u043f\u0435\u0440\u0435\u0434\u0430\u043b \u0438\u0441\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044f \u0438\u043b\u0438 \u0434\u043b\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c", "Player did not provide artist or duration");
+            case 6 -> this.tr("\u041b\u0438\u043c\u0438\u0442 \u0437\u0430\u043f\u0440\u043e\u0441\u043e\u0432; \u043f\u043e\u0432\u0442\u043e\u0440\u0438 \u043d\u0435\u043c\u043d\u043e\u0433\u043e \u043f\u043e\u0437\u0436\u0435", "Rate limited; retry a little later");
+            case 7 -> this.tr("\u041e\u0448\u0438\u0431\u043a\u0430 \u0441\u0435\u0442\u0438 \u0438\u043b\u0438 \u0442\u0430\u0439\u043c-\u0430\u0443\u0442", "Network error or timeout");
+            case 8 -> this.tr("\u041e\u0448\u0438\u0431\u043a\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0430 \u0438\u0441\u0442\u043e\u0447\u043d\u0438\u043a\u0430", "Provider server error");
+            case 9 -> this.tr("\u0418\u0441\u0442\u043e\u0447\u043d\u0438\u043a \u0432\u0435\u0440\u043d\u0443\u043b \u043d\u0435\u043a\u043e\u0440\u0440\u0435\u043a\u0442\u043d\u044b\u0435 \u0434\u0430\u043d\u043d\u044b\u0435", "Provider returned invalid data");
         };
     }
 
@@ -3917,53 +4083,11 @@ implements BackgroundMenuScreen {
                 out.append(this.moduleName(module)).append("; ");
             }
         }
-        return AssistantKnowledge.limit(out.toString(), 800);
+        return AssistantKnowledge.limit((String)out.toString(), (int)800);
     }
 
     private AssistantActions.Result executeAssistantAction(AssistantActions.Request request) {
-        return AssistantActions.execute(request, new AssistantActions.Controls(this){
-            final /* synthetic */ BloodHelperScreen this$0;
-            {
-                BloodHelperScreen bloodHelperScreen = this$0;
-                Objects.requireNonNull(bloodHelperScreen);
-                this.this$0 = bloodHelperScreen;
-            }
-
-            private Module module(String id) {
-                for (Module value : Module.values()) {
-                    if (!value.id.equals(id)) continue;
-                    return value;
-                }
-                throw new IllegalArgumentException("Unknown module");
-            }
-
-            @Override
-            public boolean allowed(String id) {
-                return this.this$0.cfg().serverAllowsModule(id);
-            }
-
-            @Override
-            public boolean enabled(String id) {
-                return this.this$0.enabled(this.module(id));
-            }
-
-            @Override
-            public void setEnabled(String id, boolean value) {
-                Module selected = this.module(id);
-                if (this.this$0.enabled(selected) != value) {
-                    this.this$0.toggleModule(selected);
-                }
-                if (selected == Module.HITBOXES) {
-                    VisualHitboxes.visible();
-                }
-            }
-
-            @Override
-            public boolean open(String id) {
-                this.this$0.openAssistantTarget(id);
-                return true;
-            }
-        }, this.ru());
+        return AssistantActions.execute((AssistantActions.Request)request, (AssistantActions.Controls)new /* Unavailable Anonymous Inner Class!! */, (boolean)this.ru());
     }
 
     private void openAssistantTarget(String id) {
@@ -3971,15 +4095,15 @@ implements BackgroundMenuScreen {
         this.focus(null);
         this.closeDropdown();
         if ("_profiles".equals(id)) {
-            this.minecraft.gui.setScreen((Screen)new ConfigProfilesScreen(this));
+            this.minecraft.gui.setScreen((Screen)new ConfigProfilesScreen((Screen)this));
             return;
         }
         if ("_themes".equals(id)) {
-            this.minecraft.gui.setScreen((Screen)new ThemePreviewScreen(this));
+            this.minecraft.gui.setScreen((Screen)new ThemePreviewScreen((Screen)this));
             return;
         }
         if ("_hud".equals(id)) {
-            BloodHelperClient.openHudEditor(this);
+            BloodHelperClient.openHudEditor((Screen)this);
             return;
         }
         if ("_about".equals(id)) {
@@ -4051,7 +4175,7 @@ implements BackgroundMenuScreen {
             return;
         }
         try {
-            BloodHelperClient.saveProfile(name);
+            BloodHelperClient.saveProfile((String)name);
             this.refreshProfiles();
             this.showNotice(this.tr("\u0421\u043e\u0445\u0440\u0430\u043d\u0435\u043d\u043e: ", "Saved: ") + name);
         }
@@ -4062,7 +4186,7 @@ implements BackgroundMenuScreen {
 
     private void loadProfile(String name) {
         this.indexedLanguage = "";
-        if (BloodHelperClient.loadProfile(name)) {
+        if (BloodHelperClient.loadProfile((String)name)) {
             this.resetContentMotion();
             this.closeDropdown();
             this.pvpGroup.setValue(this.cfg().pvp.cooldownGroup);
@@ -4078,7 +4202,7 @@ implements BackgroundMenuScreen {
             this.deleteUntil = System.currentTimeMillis() + 5000L;
             return;
         }
-        boolean ok = BloodHelperClient.deleteProfile(name);
+        boolean ok = BloodHelperClient.deleteProfile((String)name);
         this.deleteCandidate = "";
         this.refreshProfiles();
         this.profileScroll = Math.min(this.profileScroll, (double)Math.max(0, this.profiles.size() * 64 - 230));
@@ -4145,23 +4269,23 @@ implements BackgroundMenuScreen {
     }
 
     private void scrollbar(GuiGraphicsExtractor g, int x, int y, int h, double value, double max, ScrollBarDrag bar) {
-        bar.configure(x, y, 3.0, h, 24.0, value, max);
+        bar.configure((double)x, (double)y, 3.0, (double)h, 24.0, value, max);
         if (max <= 0.0) {
             return;
         }
         int thumb = (int)bar.thumbHeight();
         int yy = (int)bar.thumbTop();
-        UiDraw.rounded(g, x, y, 3, h, 1, 1614428992);
-        UiDraw.rounded(g, x, yy, 3, thumb, 1, bar.active() ? -3749164 : -7565416);
+        UiDraw.rounded((GuiGraphicsExtractor)g, (int)x, (int)y, (int)3, (int)h, (int)1, (int)1614428992);
+        UiDraw.rounded((GuiGraphicsExtractor)g, (int)x, (int)yy, (int)3, (int)thumb, (int)1, (int)(bar.active() ? -3749164 : -7565416));
     }
 
     public boolean mouseClicked(MouseButtonEvent event, boolean doubled) {
         if (this.capturingKey) {
             this.capturingKey = false;
-            BloodHelperClient.setMenuKey(InputConstants.Type.MOUSE.getOrCreate(event.button()));
+            BloodHelperClient.setMenuKey((InputConstants.Key)InputConstants.Type.MOUSE.getOrCreate(event.button()));
             return true;
         }
-        if (BloodHelperClient.menuMatches(event)) {
+        if (BloodHelperClient.menuMatches((MouseButtonEvent)event)) {
             this.onClose();
             return true;
         }
@@ -4344,7 +4468,7 @@ implements BackgroundMenuScreen {
                 if (event.key() == 42) {
                     BloodHelperClient.resetMenuKey();
                 } else {
-                    BloodHelperClient.setMenuKey(InputConstants.getKey((KeyEvent)event));
+                    BloodHelperClient.setMenuKey((InputConstants.Key)InputConstants.getKey((KeyEvent)event));
                 }
             }
             return true;
@@ -4360,7 +4484,7 @@ implements BackgroundMenuScreen {
         if (this.assistantEnabled() && this.assistant.focused() && this.assistant.keyPressed(event)) {
             return true;
         }
-        if (this.focused == null && !this.assistant.focused() && BloodHelperClient.menuMatches(event)) {
+        if (this.focused == null && !this.assistant.focused() && BloodHelperClient.menuMatches((KeyEvent)event)) {
             this.onClose();
             return true;
         }
@@ -4419,14 +4543,14 @@ implements BackgroundMenuScreen {
         int sy = y + 48;
         int sw = w - 40;
         boolean held = this.dragging != null && this.dragging.id.equals(id);
-        double shown = this.motion.value(id + ".position", value, this.frameNanos, this.cfg().animations && !held, RenderQuality.animationMillis(140.0));
+        double shown = this.motion.value(id + ".position", value, this.frameNanos, this.cfg().animations && !held, RenderQuality.animationMillis((double)140.0));
         int progress = (int)Math.round((double)sw * shown);
-        UiDraw.rounded(g, sx, sy, sw, 3, 1, ThemeColors.surface(-11907755));
+        UiDraw.rounded((GuiGraphicsExtractor)g, (int)sx, (int)sy, (int)sw, (int)3, (int)1, (int)ThemeColors.surface((int)-11907755));
         if (progress > 0) {
-            UiDraw.rounded(g, sx, sy, progress, 3, 1, this.accent());
+            UiDraw.rounded((GuiGraphicsExtractor)g, (int)sx, (int)sy, (int)progress, (int)3, (int)1, (int)this.accent());
         }
-        UiDraw.rounded(g, sx + progress - 5, sy - 3, 10, 10, 5, ThemeColors.surface(-15658216));
-        UiDraw.rounded(g, sx + progress - 3, sy - 1, 6, 6, 3, this.softAccent());
+        UiDraw.rounded((GuiGraphicsExtractor)g, (int)(sx + progress - 5), (int)(sy - 3), (int)10, (int)10, (int)5, (int)ThemeColors.surface((int)-15658216));
+        UiDraw.rounded((GuiGraphicsExtractor)g, (int)(sx + progress - 3), (int)(sy - 1), (int)6, (int)6, (int)3, (int)this.softAccent());
         ClipArea clip = this.currentClip().intersect(new ClipArea(sx - 5, sy - 7, sw + 10, 18));
         if (this.rowsInteractive && !clip.empty()) {
             this.sliders.add(new Slider(id, sx, sy - 7, sw, 18, 0.0, 100.0, 1.0, v -> {
@@ -4448,11 +4572,11 @@ implements BackgroundMenuScreen {
         g.fill(sx, sy, sx + 90, sy + 2, -12829373);
         double target = Math.clamp((value - min) / (max - min), 0.0, 1.0);
         boolean held = this.dragging != null && this.dragging.id.equals(id);
-        double shown = this.motion.value(id + ".position", target, this.frameNanos, this.cfg().animations && !held, RenderQuality.animationMillis(140.0));
+        double shown = this.motion.value(id + ".position", target, this.frameNanos, this.cfg().animations && !held, RenderQuality.animationMillis((double)140.0));
         int progress = (int)Math.round(90.0 * shown);
         g.fill(sx, sy, sx + progress, sy + 2, this.accent());
-        UiDraw.rounded(g, sx + progress - 4, sy - 3, 8, 8, 4, -15724268);
-        UiDraw.rounded(g, sx + progress - 2, sy - 1, 4, 4, 2, this.softAccent());
+        UiDraw.rounded((GuiGraphicsExtractor)g, (int)(sx + progress - 4), (int)(sy - 3), (int)8, (int)8, (int)4, (int)-15724268);
+        UiDraw.rounded((GuiGraphicsExtractor)g, (int)(sx + progress - 2), (int)(sy - 1), (int)4, (int)4, (int)2, (int)this.softAccent());
         ClipArea clip = this.currentClip().intersect(new ClipArea(sx - 4, sy - 7, 98, 18));
         if (this.rowsInteractive && !clip.empty()) {
             this.sliders.add(new Slider(id, sx, sy - 7, 90, 18, min, max, step, set, this.contentClip, clip));
@@ -4460,7 +4584,7 @@ implements BackgroundMenuScreen {
     }
 
     private /* synthetic */ void lambda$choice$0(String name, String desc, String[] values, Supplier get, String id, String[] names, Consumer set, GuiGraphicsExtractor g, int x, int y, int w) {
-        BloodHelperScreen.strong(g, CustomFont.medium().ellipsize(name, 13.0f, w - 174), x + 18, y + 3, 13.0f, -2039324);
+        BloodHelperScreen.strong(g, CustomFont.medium().ellipsize(name, 13.0f, (float)(w - 174)), x + 18, y + 3, 13.0f, -2039324);
         BloodHelperScreen.label(g, BloodHelperScreen.fit(desc, 10.0f, w - 174), x + 18, y + 24, 10.0f, -6775902);
         int index = Math.max(0, Arrays.asList(values).indexOf(get.get()));
         int bx = x + w - 150;
@@ -4468,9 +4592,9 @@ implements BackgroundMenuScreen {
         boolean selected = this.dropdown != null && this.dropdown.id.equals(id);
         double hot = this.animate(id + ".hover", this.hovered(bx, by, 132, 28) ? 1.0 : 0.0);
         double opened = this.animate(id + ".open", selected ? 1.0 : 0.0);
-        UiDraw.border(g, bx, by, 132, 28, 6, UiDraw.blend(ThemeColors.surface(-15461095), ThemeColors.surface(-14408148), hot * 0.6), UiDraw.blend(ThemeColors.line(), ThemeColors.icon(-9741723), Math.max(opened, hot * 0.5)));
+        UiDraw.border((GuiGraphicsExtractor)g, (int)bx, (int)by, (int)132, (int)28, (int)6, (int)UiDraw.blend((int)ThemeColors.surface((int)-15461095), (int)ThemeColors.surface((int)-14408148), (double)(hot * 0.6)), (int)UiDraw.blend((int)ThemeColors.line(), (int)ThemeColors.icon((int)-9741723), (double)Math.max(opened, hot * 0.5)));
         BloodHelperScreen.label(g, BloodHelperScreen.fit(names[index], 12.0f, 104.0f), bx + 8, (float)(by + 6) - this.lift(hot), 12.0f, -2039324);
-        this.chevron(g, bx + 115, by + 8, 11, opened, UiDraw.blend(-9275778, -6775902, opened));
+        this.chevron(g, bx + 115, by + 8, 11, opened, UiDraw.blend((int)-9275778, (int)-6775902, (double)opened));
         if (selected) {
             this.dropdown = new Dropdown(id, bx, by + 31, 132, values, names, this.dropdown.select);
         }
@@ -4488,26 +4612,12 @@ implements BackgroundMenuScreen {
     }
 
     private /* synthetic */ void lambda$bool$0(String name, String desc, String id, BooleanSupplier get, Consumer set, GuiGraphicsExtractor g, int x, int y, int w) {
-        BloodHelperScreen.strong(g, CustomFont.medium().ellipsize(name, 14.0f, w - 80), x + 18, y + 3, 14.0f, -2039324);
+        BloodHelperScreen.strong(g, CustomFont.medium().ellipsize(name, 14.0f, (float)(w - 80)), x + 18, y + 3, 14.0f, -2039324);
         BloodHelperScreen.label(g, BloodHelperScreen.fit(desc, 11.0f, w - 54), x + 18, y + 22, 11.0f, -6775902);
         this.checkbox(g, id, x + w - 48, y + 4, get.getAsBoolean(), () -> {
             set.accept(!get.getAsBoolean());
             this.save();
         });
-    }
-
-    private record Row(int height, RowDraw renderer) {
-        void draw(GuiGraphicsExtractor g, int x, int y, int w) {
-            this.renderer.draw(g, x, y, w);
-        }
-    }
-
-    @FunctionalInterface
-    private static interface RowDraw {
-        public void draw(GuiGraphicsExtractor var1, int var2, int var3, int var4);
-    }
-
-    private record SettingHit(Module module, String name, String description, Row row) {
     }
 
     private static enum Module {
@@ -4555,7 +4665,6 @@ implements BackgroundMenuScreen {
         CHAT_TOOLS("chatTools"),
         EFFECTS("effects"),
         OPPONENT_COOLDOWNS("opponentCooldowns"),
-        LEGENDARY_SIZE("legendarySize"),
         LEGENDARY_SOUNDS("legendarySounds"),
         BLOODSTONE_PACK("resourcePack"),
         ABILITY_GUIDE("abilityGuide"),
@@ -4584,52 +4693,6 @@ implements BackgroundMenuScreen {
         private Module(String id) {
             this.id = id;
         }
-    }
-
-    private static enum Page {
-        VISUALS,
-        APPEARANCE,
-        PROFILES,
-        ABOUT;
-
-    }
-
-    private record ClipArea(int x, int y, int w, int h) {
-        boolean empty() {
-            return this.w <= 0 || this.h <= 0;
-        }
-
-        boolean contains(double px, double py) {
-            return !this.empty() && px >= (double)this.x && px < (double)(this.x + this.w) && py >= (double)this.y && py < (double)(this.y + this.h);
-        }
-
-        ClipArea intersect(ClipArea other) {
-            int left = Math.max(this.x, other.x);
-            int top = Math.max(this.y, other.y);
-            return new ClipArea(left, top, Math.max(0, Math.min(this.x + this.w, other.x + other.w) - left), Math.max(0, Math.min(this.y + this.h, other.y + other.h) - top));
-        }
-    }
-
-    private record Slider(String id, int x, int y, int w, int h, double min, double max, double step, DoubleConsumer setter, boolean clipped, ClipArea inputClip) {
-        void set(double mouse) {
-            double v = this.min + Math.clamp((mouse - (double)this.x) / (double)this.w, 0.0, 1.0) * (this.max - this.min);
-            this.setter.accept(Math.clamp(this.min + (double)Math.round((v - this.min) / this.step) * this.step, this.min, this.max));
-        }
-    }
-
-    private record Dropdown(String id, int x, int y, int w, String[] values, String[] names, Consumer<String> select) {
-    }
-
-    private record Card(Module module, int x, int y, int height, int headerHeight, List<String> description, List<Row> rows) {
-    }
-
-    private record ItemPreset(String key, String itemId, String name, String description) {
-    }
-
-    private record FieldHit(String id, GuiTextField box, int x, int y, int w, int h, boolean clipped) {
-    }
-
-    private record Hit(String id, int x, int y, int w, int h, Runnable action) {
     }
 }
 

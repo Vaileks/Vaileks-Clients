@@ -3,12 +3,16 @@
  * 
  * Could not load the following classes:
  *  net.minecraft.client.Minecraft
- *  net.minecraft.client.multiplayer.ClientLevel
  *  net.minecraft.world.entity.Entity
  *  net.minecraft.world.entity.player.Inventory
  *  net.minecraft.world.entity.player.Player
  *  net.minecraft.world.item.ItemStack
  *  net.minecraft.world.phys.Vec3
+ *  ru.bloodhelper.client.BloodHelperClient
+ *  ru.bloodhelper.client.config.LegendaryVisualSettings
+ *  ru.bloodhelper.client.visuals.TrailTracker$Kind
+ *  ru.bloodhelper.client.visuals.TrailTracker$State
+ *  ru.bloodhelper.client.visuals.TrailTracker$Trail
  */
 package ru.bloodhelper.client.visuals;
 
@@ -19,7 +23,6 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.UUID;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -27,7 +30,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.Vec3;
 import ru.bloodhelper.client.BloodHelperClient;
 import ru.bloodhelper.client.config.LegendaryVisualSettings;
-import ru.bloodhelper.client.modules.LegendarySizeModule;
+import ru.bloodhelper.client.visuals.TrailTracker;
 
 public final class TrailTracker {
     public static final List<Trail> TRAILS = new ArrayList<Trail>();
@@ -93,7 +96,7 @@ public final class TrailTracker {
                 State s = STATES.computeIfAbsent(p.getUUID(), k -> new State());
                 seen.put(p.getUUID(), s);
                 Vec3 pos = p.position();
-                Vec3 prev = s.history.isEmpty() ? pos : s.history.get(s.history.size() - 1);
+                Vec3 prev = s.history.isEmpty() ? pos : (Vec3)s.history.get(s.history.size() - 1);
                 s.history.add(pos);
                 while (s.history.size() > 5) {
                     s.history.remove(0);
@@ -104,10 +107,10 @@ public final class TrailTracker {
                 if (wanted) {
                     double dy;
                     double step = pos.distanceTo(prev);
-                    double jump = pos.distanceTo(s.history.get(0));
+                    double jump = pos.distanceTo((Vec3)s.history.get(0));
                     if (step > 2.5 && jump > 6.0 && jump < 26.0 && now - s.lastTeleport > 1000L) {
                         s.lastTeleport = now;
-                        s.jumpFrom = s.history.get(0);
+                        s.jumpFrom = (Vec3)s.history.get(0);
                         s.jumpTo = pos;
                         s.jumpAt = now;
                         s.history.clear();
@@ -141,7 +144,7 @@ public final class TrailTracker {
                 s.maceBefore = maceNow;
                 for (Trail t : TRAILS) {
                     if (!t.recording || !t.owner.equals(p.getUUID())) continue;
-                    Vec3 last = t.points.get(t.points.size() - 1);
+                    Vec3 last = (Vec3)t.points.get(t.points.size() - 1);
                     Vec3 point = pos.add(0.0, 0.2, 0.0);
                     if (t.points.size() < 96 && point.distanceTo(last) > 0.6) {
                         t.points.add(point);
@@ -248,7 +251,7 @@ public final class TrailTracker {
     }
 
     private static boolean named(ItemStack stack, String itemName) {
-        String id = LegendarySizeModule.identify(stack);
+        String id = null;
         if (id != null) {
             String expected = switch (itemName) {
                 case KATANA -> "dragon_katana";
@@ -269,73 +272,6 @@ public final class TrailTracker {
     }
 
     private TrailTracker() {
-    }
-
-    private static final class State {
-        final List<Vec3> history = new ArrayList<Vec3>();
-        boolean katanaBefore;
-        boolean maceBefore;
-        long lastTeleport;
-        long jumpAt;
-        long boostAt;
-        Vec3 jumpFrom;
-        Vec3 jumpTo;
-        Vec3 boostFrom;
-        Vec3 boostTo;
-
-        private State() {
-        }
-    }
-
-    public static final class Trail {
-        public final Kind kind;
-        public final UUID owner;
-        public final boolean self;
-        public final long start;
-        public final List<Vec3> points = new ArrayList<Vec3>();
-        boolean recording;
-        boolean sawCooldown;
-        long recordStart;
-        public long fadeAt;
-        public int version;
-        float cdFirst;
-        float cdNow;
-        long cdSeenAt;
-        public final String ownerName;
-
-        Trail(Kind kind, UUID owner, boolean self) {
-            this.kind = kind;
-            this.owner = owner;
-            this.self = self;
-            this.start = System.nanoTime() / 1000000L;
-            ClientLevel level = Minecraft.getInstance().level;
-            Player p = level == null ? null : level.getPlayerByUUID(owner);
-            this.ownerName = p == null ? "" : p.getName().getString();
-        }
-
-        public String itemName() {
-            return this.kind == Kind.KATANA ? "\u041a\u0430\u0442\u0430\u043d\u0430 \u0414\u0440\u0430\u043a\u043e\u043d\u0430" : "\u041b\u0451\u0433\u043a\u0430\u044f \u0411\u0443\u043b\u0430\u0432\u0430";
-        }
-
-        public long remainingMs(long now) {
-            if (this.fadeAt != 0L) {
-                return 0L;
-            }
-            if (this.recording) {
-                return -1L;
-            }
-            if (this.self && this.sawCooldown) {
-                float used = this.cdFirst - this.cdNow;
-                return !(used < 0.01f) && now - this.cdSeenAt >= 300L ? (long)(this.cdNow / (used / (float)(now - this.cdSeenAt))) : -1L;
-            }
-            return Math.max(0L, (long)(TrailTracker.settings().trailSeconds * 1000.0) - (now - this.start));
-        }
-    }
-
-    public static enum Kind {
-        KATANA,
-        MACE;
-
     }
 }
 

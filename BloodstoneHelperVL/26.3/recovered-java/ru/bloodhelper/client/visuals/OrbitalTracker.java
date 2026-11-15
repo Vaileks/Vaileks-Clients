@@ -13,6 +13,11 @@
  *  net.minecraft.world.phys.BlockHitResult
  *  net.minecraft.world.phys.HitResult$Type
  *  net.minecraft.world.phys.Vec3
+ *  ru.bloodhelper.client.BloodHelperClient
+ *  ru.bloodhelper.client.config.LegendaryVisualSettings
+ *  ru.bloodhelper.client.gui.UiDraw
+ *  ru.bloodhelper.client.visuals.OrbitalTracker$Strike
+ *  ru.bloodhelper.client.visuals.WorldOverlay
  */
 package ru.bloodhelper.client.visuals;
 
@@ -30,7 +35,7 @@ import net.minecraft.world.phys.Vec3;
 import ru.bloodhelper.client.BloodHelperClient;
 import ru.bloodhelper.client.config.LegendaryVisualSettings;
 import ru.bloodhelper.client.gui.UiDraw;
-import ru.bloodhelper.client.modules.LegendarySizeModule;
+import ru.bloodhelper.client.visuals.OrbitalTracker;
 import ru.bloodhelper.client.visuals.WorldOverlay;
 
 public final class OrbitalTracker {
@@ -45,7 +50,7 @@ public final class OrbitalTracker {
     }
 
     public static boolean cannon(ItemStack stack) {
-        return "orbital_nuke".equals(LegendarySizeModule.identify(stack));
+        return "orbital_nuke".equals(null);
     }
 
     private static boolean enabled() {
@@ -133,21 +138,21 @@ public final class OrbitalTracker {
         long now = System.nanoTime() / 1000000L;
         Minecraft mc = Minecraft.getInstance();
         if (preview != null && mc.player != null && !mc.player.isShiftKeyDown() && (aim = OrbitalTracker.aim(mc)) != null) {
-            OrbitalTracker.draw(aim, s.orbitalRadius, UiDraw.alpha(s.orbitalColor, 165), true);
+            OrbitalTracker.draw(aim, s.orbitalRadius, UiDraw.alpha((int)s.orbitalColor, (int)165), true);
         }
         for (Strike strike : strikes) {
             double age = (double)(now - strike.started) / 1000.0;
             double alpha = Math.min(Math.clamp(age / 0.12, 0.0, 1.0), Math.clamp((s.orbitalSeconds + 0.45 - age) / 0.45, 0.0, 1.0));
-            OrbitalTracker.draw(strike.center, strike.radius, UiDraw.alpha(s.orbitalColor, (int)(230.0 * alpha)), false);
+            OrbitalTracker.draw(strike.center, strike.radius, UiDraw.alpha((int)s.orbitalColor, (int)((int)(230.0 * alpha))), false);
         }
     }
 
     private static void draw(Vec3 center, double radius, int color, boolean aiming) {
-        WorldOverlay.ring(center, radius, color);
-        WorldOverlay.ring(center, 0.3, UiDraw.alpha(color, (int)((double)(color >>> 24) * 0.7)));
-        WorldOverlay.line(center, center.add(0.0, aiming ? 2.2 : 5.0, 0.0), color, 1.7f);
+        WorldOverlay.ring((Vec3)center, (double)radius, (int)color);
+        WorldOverlay.ring((Vec3)center, (double)0.3, (int)UiDraw.alpha((int)color, (int)((int)((double)(color >>> 24) * 0.7))));
+        WorldOverlay.line((Vec3)center, (Vec3)center.add(0.0, aiming ? 2.2 : 5.0, 0.0), (int)color, (float)1.7f);
         if (BloodHelperClient.config().legendaryVisuals.names) {
-            WorldOverlay.label(center.add(0.0, 2.4, 0.0), (aiming ? "\u0421\u0442\u0430\u0431\u0448\u043e\u0442 \u00b7 \u2248" : "\u0421\u0442\u0430\u0431\u0448\u043e\u0442 \u00b7 \u0443\u0434\u0430\u0440 \u00b7 \u2248") + Math.round(radius) + " \u043c", color);
+            WorldOverlay.label((Vec3)center.add(0.0, 2.4, 0.0), (String)((aiming ? "\u0421\u0442\u0430\u0431\u0448\u043e\u0442 \u00b7 \u2248" : "\u0421\u0442\u0430\u0431\u0448\u043e\u0442 \u00b7 \u0443\u0434\u0430\u0440 \u00b7 \u2248") + Math.round(radius) + " \u043c"), (int)color);
         }
     }
 
@@ -161,9 +166,6 @@ public final class OrbitalTracker {
 
     static {
         pendingItem = ItemStack.EMPTY;
-    }
-
-    public record Strike(Vec3 center, long started, double radius) {
     }
 }
 

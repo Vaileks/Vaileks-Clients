@@ -26,6 +26,10 @@ for p in sorted(src.glob('BloodHelper-*.jar')):
    if info.filename in {'ru/bloodhelper/client/mixin/'+n+'.class' for n in removed}:continue
    zout.writestr(info,b)
   zout.writestr('ru/bloodhelper/client/vl/PrivacyGuard.class',(tool/'ru/bloodhelper/client/vl/PrivacyGuard.class').read_bytes())
+ if variant=='26.3':
+  stripped=target.with_suffix('.without-size.jar')
+  subprocess.run([j,'-cp',asm+':'+str(tool),'RemoveLegendarySize',str(target),str(stripped)],check=True)
+  stripped.replace(target)
  with zipfile.ZipFile(target) as z,zipfile.ZipFile(p) as original:
   assert z.testzip() is None
   assert all(n not in json.loads(z.read('bloodhelper.mixins.json'))['client'] for n in removed)
