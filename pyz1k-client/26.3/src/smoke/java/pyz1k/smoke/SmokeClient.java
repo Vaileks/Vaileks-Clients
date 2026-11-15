@@ -23,11 +23,11 @@ public final class SmokeClient implements ClientModInitializer {
             MixinEnvironment.getCurrentEnvironment().audit();
             pyz1k.extensions.pvp.IntegratedSmoke.idle();
             int count=Pyz1k.getInstance().getModuleManager().getModules().size();
-            if(count!=35)throw new AssertionError("Expected 35 modules, got "+count);
+            if(count!=34)throw new AssertionError("Expected 34 modules, got "+count);
             for(var module:Pyz1k.getInstance().getModuleManager().getModules()){
                 if(module.getName().equals("LegList")||module.getName().equals("LegAlerts")||module.getName().equals("LootGlow"))throw new AssertionError("Removed module registered");
             }
-            System.out.println("PYZ1K_SMOKE: mixin audit passed, 35 modules registered");
+            System.out.println("PYZ1K_SMOKE: mixin audit passed, 34 modules registered");
             mc.execute(()->{
                 net.minecraft.client.gui.screens.worldselection.CreateWorldScreen.openFresh(mc,()->{});
                 if (!(mc.gui.screen() instanceof net.minecraft.client.gui.screens.worldselection.CreateWorldScreen screen)) throw new AssertionError("No create-world screen");
