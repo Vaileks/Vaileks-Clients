@@ -49,7 +49,7 @@ public final class Config {
     public double x = 0.03;
     public double y = 0.15;
     public int color = 0xFFFFFF;
-    public int accent = 7920895;
+    public int accent = pyz1k.utilites.color.ClientColors.CATEGORY_ACCENT_SECOND&0xffffff;
     public int threshold = 3;
     public int mode = 0;
     public int actionKey = -1;

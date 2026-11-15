@@ -1,48 +1,31 @@
-/*
- * Decompiled with CFR 0.152.
- * 
- * Could not load the following classes:
- *  net.minecraft.client.Minecraft
- *  net.minecraft.client.gui.screens.Screen
- */
 package pyz1k.extensions;
 
 import java.util.List;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.screens.Screen;
-import pyz1k.extensions.BloodCooldownProfiles;
-import pyz1k.extensions.ExtensionClient;
-import pyz1k.extensions.ExtensionScreen;
-import pyz1k.extensions.ScreenshotMode;
 import pyz1k.module.base.Category;
 import pyz1k.module.base.Module;
 import pyz1k.module.base.ModuleInfo;
-import pyz1k.module.impl.visuals.Interface;
-import pyz1k.module.setting.BooleanSetting;
-import pyz1k.module.setting.ColorSetting;
-import pyz1k.module.setting.SelectSetting;
-import pyz1k.module.setting.SliderSetting;
+import pyz1k.module.setting.*;
 
+/** Settings use the existing client's editor, bindings and named-config persistence. */
 public final class FeatureModules {
+    private FeatureModules() {}
     public static LootGloow loot;
     public static OldMirrorSword oldMirror;
     public static BetterNames names;
     public static Skins skins;
     public static Durability durability;
     public static BloodSwordCooldown blood;
-
-    private FeatureModules() {
-    }
+    public static BlastIndicator blast;
 
     public static void register(List<Module> modules) {
         loot = new LootGloow(); oldMirror = new OldMirrorSword();
-        names = new BetterNames();
-        skins = new Skins();
-        durability = new Durability();
-        blood = new BloodSwordCooldown();
-        modules.addAll(List.of(loot, oldMirror, names, skins, new Extras(), durability, new Screenshot(), blood));
+        names = new BetterNames(); skins = new Skins();
+        durability=new Durability();blood=new BloodSwordCooldown();blast=new BlastIndicator();
+        modules.addAll(List.of(loot, oldMirror, names, skins, new Extras(), durability, new Screenshot(),blood,blast,new Playtime(),new Advancements()));
         pyz1k.extensions.pvp.PvpModules.register(modules);
-        Interface.registerExternalHudElement(ExtensionClient.BLOOD_HUD);
+        pyz1k.module.impl.visuals.Interface.registerExternalHudElement(ExtensionClient.BLOOD_HUD);
+        pyz1k.module.impl.visuals.Interface.registerExternalHudElement(ExtensionClient.BLAST_HUD);
     }
 
     @ModuleInfo(name="LootGloow", desc="Обычный лут и эпики из белого списка; легендарки исключены", category=Category.VISUALS)
@@ -62,60 +45,56 @@ public final class FeatureModules {
     public static final class OldMirrorSword extends Module {}
 
     @ModuleInfo(name="BetterNameVisibility", desc="Читаемые ники, в том числе сквозь стены", category=Category.VISUALS)
-    public static final class BetterNames
-    extends Module {
-        public final BooleanSetting throughWalls = this.registerSetting(new BooleanSetting("Сквозь стены", true));
-        public final BooleanSetting background = this.registerSetting(new BooleanSetting("Фон", true));
-        public final SliderSetting scale = this.registerSetting(new SliderSetting("Размер", 1.15f, 0.75f, 2.0f, 0.05f));
-        public final SliderSetting distance = this.registerSetting(new SliderSetting("Дистанция", 64.0f, 8.0f, 128.0f, 4.0f));
-        public final ColorSetting color = this.registerSetting(new ColorSetting("Цвет текста", -723720));
+    public static final class BetterNames extends Module {
+        public final BooleanSetting throughWalls=registerSetting(new BooleanSetting("Сквозь стены",true));
+        public final BooleanSetting background=registerSetting(new BooleanSetting("Фон",true));
+        public final SliderSetting scale=registerSetting(new SliderSetting("Размер",1.15f,0.75f,2,0.05f));
+        public final SliderSetting distance=registerSetting(new SliderSetting("Дистанция",64,8,128,4));
+        public final ColorSetting color=registerSetting(new ColorSetting("Цвет текста",0xfff4f4f8));
     }
-
-    @ModuleInfo(name="ItemSkin", desc="Локальные скины из активного серверного ресурспака", category=Category.VISUALS)
-    public static final class Skins
-    extends Module {
-        public final BooleanSetting inventory = this.registerSetting(new BooleanSetting("В инвентаре", true));
+    @ModuleInfo(name="ItemSkins", desc="Локальные скины из активного серверного ресурспака", category=Category.VISUALS)
+    public static final class Skins extends Module {
+        public final BooleanSetting inventory=registerSetting(new BooleanSetting("В инвентаре",true));
     }
-
     @ModuleInfo(name="DurabilityAlert", desc="Предупреждение о низкой прочности снаряжения", category=Category.VISUALS)
-    public static final class Durability
-    extends Module {
-        public final SliderSetting threshold = this.registerSetting(new SliderSetting("Осталось процентов", 15.0f, 1.0f, 50.0f, 1.0f));
-        public final BooleanSetting armor = this.registerSetting(new BooleanSetting("Броня", true));
-        public final BooleanSetting sound = this.registerSetting(new BooleanSetting("Звук", true));
+    public static final class Durability extends Module {
+        public final SliderSetting threshold=registerSetting(new SliderSetting("Осталось процентов",15,1,50,1));
+        public final BooleanSetting armor=registerSetting(new BooleanSetting("Броня",true));
+        public final BooleanSetting sound=registerSetting(new BooleanSetting("Звук",true));
     }
-
-    @ModuleInfo(name="BloodSwordCooldown", desc="Кулдауны форм кровавого меча и пресеты режимов", category=Category.VISUALS)
-    public static final class BloodSwordCooldown
-    extends Module {
-        public final SelectSetting mode = this.registerSetting(new SelectSetting("Режим", "Митапы", BloodCooldownProfiles.ALL.stream().map(BloodCooldownProfiles.Mode::label).toList()));
-        public final SliderSetting scale = this.registerSetting(new SliderSetting("Размер", 1.0f, 0.5f, 2.0f, 0.05f));
-        public final BooleanSetting precise = this.registerSetting(new BooleanSetting("Точное время", true));
-        public final BooleanSetting showIdle = this.registerSetting(new BooleanSetting("Показывать без КД", true));
-        public final BooleanSetting itemData = this.registerSetting(new BooleanSetting("Таймеры из предмета", true));
-    }
-
-    @ModuleInfo(name="ClientTools", desc="Каталог скинов и расположение HUD", category=Category.VISUALS)
-    public static final class Extras
-    extends Module {
-        @Override
-        public void toggle() {
-            Minecraft mc = Minecraft.getInstance();
-            mc.gui.setScreen((Screen)new ExtensionScreen(mc.gui.screen()));
-        }
-    }
-
     @ModuleInfo(name="ScreenshotMode", desc="Скрыть HUD одной кнопкой. По умолчанию F8", category=Category.VISUALS)
-    public static final class Screenshot
-    extends Module {
-        public Screenshot() {
-            this.setKey(297);
+    public static final class Screenshot extends Module {
+        public Screenshot(){setKey(297);}
+        @Override public void toggle(){ScreenshotMode.toggle();}
+    }
+    @ModuleInfo(name="BloodSwordCooldown", desc="Кулдауны форм кровавого меча и пресеты режимов", category=Category.VISUALS)
+    public static final class BloodSwordCooldown extends Module {
+        public final SelectSetting mode=registerSetting(new SelectSetting("Режим","Митапы",BloodCooldownProfiles.ALL.stream().map(BloodCooldownProfiles.Mode::label).toList()));
+        public final SliderSetting scale=registerSetting(new SliderSetting("Размер",1,.5f,2,.05f));
+        public final BooleanSetting precise=registerSetting(new BooleanSetting("Точное время",true));
+        public final BooleanSetting showIdle=registerSetting(new BooleanSetting("Показывать без КД",true));
+        public final BooleanSetting itemData=registerSetting(new BooleanSetting("Таймеры из предмета",true));
+    }
+    @ModuleInfo(name="ItemSkin", desc="Каталог скинов и расположение HUD", category=Category.VISUALS)
+    public static final class Extras extends Module {
+        @Override public void toggle() {
+            Minecraft mc=Minecraft.getInstance();
+            mc.gui.setScreen(new ExtensionScreen(mc.gui.screen()));
         }
+    }
 
-        @Override
-        public void toggle() {
-            ScreenshotMode.toggle();
-        }
+    @ModuleInfo(name="ServerPlaytime",desc="Локальная история времени на серверах",category=Category.VISUALS)
+    public static final class Playtime extends Module {
+        @Override public void toggle(){UnifiedMenu.open(this);}
+    }
+    @ModuleInfo(name="AdvancementProgress",desc="Выполненные и оставшиеся критерии достижений",category=Category.VISUALS)
+    public static final class Advancements extends Module {
+        @Override public void toggle(){UnifiedMenu.open(this);}
+    }
+    @ModuleInfo(name="BlastProtectionIndicator",desc="Индикатор Взрывоустойчивости на твоей броне",category=Category.VISUALS)
+    public static final class BlastIndicator extends Module {
+        public final BooleanSetting leggingsOnly=registerSetting(new BooleanSetting("Только поножи",false));
+        public final BooleanSetting text=registerSetting(new BooleanSetting("Текст",true));
+        public final SliderSetting scale=registerSetting(new SliderSetting("Размер индикатора",1,.5f,2,.05f));
     }
 }
-

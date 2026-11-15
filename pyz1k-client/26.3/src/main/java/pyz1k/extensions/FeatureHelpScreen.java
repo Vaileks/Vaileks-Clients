@@ -39,13 +39,13 @@ public final class FeatureHelpScreen extends Screen {
   while(!s.isEmpty()&&RenderUtil.getTextWidth(s+"…",GFonts.MEDIUM,size)>width)s=s.substring(0,s.length()-1);return s+"…";
  }
  @Override public void extractRenderState(GuiGraphicsExtractor ctx,int mx,int my,float delta){
-  ctx.fill(0,0,width,height,0xf511141b);
+  ctx.fill(0,0,width,height,ClientColors.MENU_BACKGROUND);
   RenderUtil.drawText(ctx,"Справка pyz1k-client",12,12,ClientColors.TEXT_PRIMARY,GFonts.SEMIBOLD,11);
   RenderUtil.drawText(ctx,"Выбери функцию слева. Колесо прокручивает список или текст.",12,29,ClientColors.CATEGORY_INACTIVE,GFonts.MEDIUM,6);
   for(int i=listOffset;i<Math.min(entries.size(),listOffset+rows());i++){
    float y=47+(i-listOffset)*17;boolean active=i==selected;
    RenderUtil.drawRoundRect(ctx,8,y,side,16,3,active?ClientColors.CATEGORY_ACCENT:ClientColors.SETTINGS_BACKGROUND);
-   RenderUtil.drawText(ctx,titles.get(i),13,y+4,active?0xffffffff:ClientColors.TEXT_PRIMARY,GFonts.MEDIUM,7);
+   RenderUtil.drawText(ctx,titles.get(i),13,y+4,active?ClientColors.TEXT_PRIMARY:ClientColors.TEXT_PRIMARY,GFonts.MEDIUM,7);
   }
   RenderUtil.drawText(ctx,trim(entries.get(selected).title(),bodyWidth,10),right,48,ClientColors.CATEGORY_ACCENT_SECOND,GFonts.SEMIBOLD,10);
   ctx.enableScissor((int)right,64,width-10,height-30);

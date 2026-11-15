@@ -6,7 +6,7 @@ import json
 import zipfile
 
 ROOT = Path(__file__).resolve().parent
-VERSION = '1.5.0-vaileks'
+VERSION = '1.6.0-vaileks'
 BASE_SHA256 = 'ab637a8e0378baebfcc9d68d4d4e211e3504aa16d0728372757aa244253ee063'
 base = ROOT / 'libs/pyz1k-base.jar'
 additions = ROOT / f'build/libs/pyz1k-additions-{VERSION}.jar'

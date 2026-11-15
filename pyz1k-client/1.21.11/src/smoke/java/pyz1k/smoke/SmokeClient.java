@@ -17,15 +17,16 @@ public final class SmokeClient implements ClientModInitializer {
     private boolean packReady;
     @Override public void onInitializeClient(){
         if(!Boolean.getBoolean("pyz1k.smoke"))return;
+        if(Boolean.getBoolean("pyz1k.progressOnly")){ProgressSmoke.start();return;}
         ClientLifecycleEvents.CLIENT_STARTED.register(mc->{
             MixinEnvironment.getCurrentEnvironment().audit();
             pyz1k.extensions.pvp.IntegratedSmoke.idle();
             int count=Pyz1k.getInstance().getModuleManager().getModules().size();
-            if(count!=32)throw new AssertionError("Expected 32 modules, got "+count);
+            if(count!=35)throw new AssertionError("Expected 35 modules, got "+count);
             for(var module:Pyz1k.getInstance().getModuleManager().getModules()){
                 if(module.getName().equals("LegList")||module.getName().equals("LegAlerts")||module.getName().equals("LootGlow"))throw new AssertionError("Removed module registered");
             }
-            System.out.println("PYZ1K_SMOKE: mixin audit passed, 32 modules registered");
+            System.out.println("PYZ1K_SMOKE: mixin audit passed, 35 modules registered");
             String fixture=System.getProperty("pyz1k.testPack");
             if(fixture!=null){
                 var id=java.util.UUID.fromString("a0000000-0000-4000-8000-000000000001");

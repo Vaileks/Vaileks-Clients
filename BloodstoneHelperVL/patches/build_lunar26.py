@@ -23,3 +23,6 @@ with zipfile.ZipFile(args.output) as src,zipfile.ZipFile(temp,'w',zipfile.ZIP_DE
    content=(json.dumps(metadata,ensure_ascii=False,indent=2)+'\n').encode()
   dst.writestr(entry,content)
 temp.replace(args.output)
+credits=args.output.with_suffix('.credits.jar')
+subprocess.run([str(Path(os.environ['JAVA_HOME'])/'bin/java'),'-cp',classpath,'PatchCredits',str(args.output),str(credits),'true'],check=True)
+credits.replace(args.output)

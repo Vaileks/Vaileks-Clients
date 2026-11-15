@@ -95,6 +95,7 @@
  *  ru.bloodhelper.client.gui.BloodHelperScreen$FieldHit
  *  ru.bloodhelper.client.gui.BloodHelperScreen$Hit
  *  ru.bloodhelper.client.gui.BloodHelperScreen$ItemPreset
+ *  ru.bloodhelper.client.gui.BloodHelperScreen$Module
  *  ru.bloodhelper.client.gui.BloodHelperScreen$Page
  *  ru.bloodhelper.client.gui.BloodHelperScreen$Row
  *  ru.bloodhelper.client.gui.BloodHelperScreen$RowDraw
@@ -1592,17 +1593,17 @@ implements BackgroundMenuScreen {
         for (Module module : (Module[])VLRestrictions.visibleModules((Object[])Module.values())) {
             Iterator rows;
             if (BloodHelperScreen.nestedModule(module) || BloodHelperScreen.isStaff(module) || !this.matches(module, query)) continue;
-            boolean open = this.expanded.contains((Object)module);
+            boolean open = this.expanded.contains(module);
             if (open) {
                 rows = this.rows(module);
                 this.retainedCards.put(module, (List<Row>)((Object)rows));
             } else {
-                rows = this.retainedCards.getOrDefault((Object)module, List.of());
+                rows = this.retainedCards.getOrDefault(module, List.of());
             }
             int bodyHeight = rows.stream().mapToInt(Row::height).sum();
             int shown = (int)Math.round(this.animateLayout(module.id + ".body", open ? (double)bodyHeight : 0.0));
             if (!open && shown <= 0) {
-                this.retainedCards.remove((Object)module);
+                this.retainedCards.remove(module);
                 rows = List.of();
             }
             List description = CustomFont.regular().wrap(this.moduleDescription(module), 11.0f, 222.0f);
@@ -1671,7 +1672,7 @@ implements BackgroundMenuScreen {
         }
         int x = card.x;
         int w = 274;
-        boolean open = this.expanded.contains((Object)card.module);
+        boolean open = this.expanded.contains(card.module);
         boolean on = BloodHelperScreen.groupedModule(card.module) || this.enabled(card.module);
         String id = card.module.id;
         this.frame(g, x, y, w, card.height, 4);
@@ -1701,7 +1702,7 @@ implements BackgroundMenuScreen {
         }
         this.chevron(g, x + w - 28, y + 35, 13, opening, UiDraw.blend((int)-9275778, (int)-6775902, (double)opening));
         Runnable expand = () -> {
-            if (!this.expanded.remove((Object)card.module)) {
+            if (!this.expanded.remove(card.module)) {
                 this.expanded.add(card.module);
             }
             this.closeDropdown();
@@ -3888,10 +3889,10 @@ implements BackgroundMenuScreen {
         BloodHelperScreen.label(g, "Minecraft 26.3 \u00b7 Fabric", 211.0f, 277.0f, 13.0f, -9275778);
         g.fill(211, 310, 737, 311, ThemeColors.line());
         BloodHelperScreen.strong(g, this.tr("\u0411\u043b\u0430\u0433\u043e\u0434\u0430\u0440\u043d\u043e\u0441\u0442\u0438", "Credits"), 211.0f, 326.0f, 14.0f, -2039324);
-        BloodHelperScreen.label(g, this.tr("\u0420\u0435\u0441\u0443\u0440\u0441\u043f\u0430\u043a Bloodstone - Trard/github", "Bloodstone resource pack - Trard/github"), 211.0f, 351.0f, 13.0f, -6775902);
-        BloodHelperScreen.label(g, this.tr("Yz1kk - Cooldown \u043c\u043e\u0434", "Yz1kk - Cooldown mod"), 211.0f, 375.0f, 13.0f, -6775902);
-        BloodHelperScreen.label(g, "Minions_ \u2014 WorldLyrics / AbilityTrails / LootHighlight", 211.0f, 399.0f, 13.0f, -6775902);
-        BloodHelperScreen.label(g, "Hoetty \u2014 Better Name Visibility (MIT)", 211.0f, 423.0f, 13.0f, -6775902);
+        BloodHelperScreen.label(g, this.tr("\u0420\u0435\u0441\u0443\u0440\u0441\u043f\u0430\u043a Bloodstone - Vaileks", "Bloodstone resource pack - Vaileks"), 211.0f, 351.0f, 13.0f, -6775902);
+        BloodHelperScreen.label(g, this.tr("Vaileks - Cooldown \u043c\u043e\u0434", "Vaileks - Cooldown mod"), 211.0f, 375.0f, 13.0f, -6775902);
+        BloodHelperScreen.label(g, "Vaileks \u2014 WorldLyrics / AbilityTrails / LootHighlight", 211.0f, 399.0f, 13.0f, -6775902);
+        BloodHelperScreen.label(g, "Vaileks \u2014 Better Name Visibility (MIT)", 211.0f, 423.0f, 13.0f, -6775902);
         this.button(g, "about.boosty", 211, 447, 258, 26, this.tr("\u041f\u043e\u0434\u0434\u0435\u0440\u0436\u0430\u0442\u044c \u043d\u0430 Boosty", "Support on Boosty"), () -> ConfirmLinkScreen.confirmLinkNow((Screen)this, (URI)URI.create("")));
         this.button(g, "about.discord", 479, 447, 258, 26, "Discord BloodstoneHelperVL", () -> ConfirmLinkScreen.confirmLinkNow((Screen)this, (URI)URI.create("https://discord.gg/9kE6HNJEnZ")));
         this.button(g, "policy.releases", 540, 272, 195, 26, this.tr("\u041e\u0431\u043d\u043e\u0432\u043b\u0435\u043d\u0438\u044f \u043d\u0430 Modrinth", "Updates on Modrinth"), () -> ConfirmLinkScreen.confirmLinkNow((Screen)this, (URI)URI.create("")));
@@ -4618,81 +4619,6 @@ implements BackgroundMenuScreen {
             set.accept(!get.getAsBoolean());
             this.save();
         });
-    }
-
-    private static enum Module {
-        HOTBAR_MARKERS("hotbarMarkers"),
-        HOTBAR_KEYS("hotbarKeys"),
-        TOTEM_ANIMATION("totemAnimation"),
-        SCOREBOARD_CONTROL("scoreboardControl"),
-        HEALTH_DISPLAY("healthDisplay"),
-        TITLES_CONTROL("titlesControl"),
-        ACTIONBAR_CONTROL("actionbarControl"),
-        CHAT_CALCULATOR("chatCalculator"),
-        TIME_CHANGER("timeChanger"),
-        WEATHER_CHANGER("weatherChanger"),
-        FULL_BRIGHT("fullBright"),
-        AMBIENCE("ambience"),
-        COMMAND_LAYOUT("commandLayout"),
-        CROSSHAIR("crosshair"),
-        GENERAL_HUD("generalHud"),
-        REACH_DISPLAY("reachDisplay"),
-        COMBO_COUNTER("comboCounter"),
-        SATURATION("saturation"),
-        HITBOXES("hitboxes"),
-        FREE_LOOK("freeLook"),
-        OTHER_TIERS("otherTiers"),
-        AI_ASSISTANT("aiAssistant"),
-        ASPECT_RATIO("aspectRatio"),
-        MOTION_BLUR("motionBlur"),
-        BETTER_NAME_VISIBILITY("betterNameVisibility"),
-        OPTIMIZER("optimizer"),
-        LEGENDARY_VISUALS("legendaryVisuals"),
-        SIZE_TIMER("sizeTimer"),
-        SKINS("skins"),
-        INVENTORY_PROFILES("inventoryProfiles"),
-        INVENTORY_SEARCH("inventorySearch"),
-        SCREENSHOT_ACTIONS("screenshotActions"),
-        COMBAT_HUD("combatHud"),
-        COOLDOWNS("cooldowns"),
-        MUSIC("music"),
-        ARMOR("armor"),
-        ITEM_COUNTER("itemCounter"),
-        NOTIFICATIONS("notifications"),
-        PERFORMANCE("performance"),
-        SESSION("session"),
-        DEATH_RECAP("deathRecap"),
-        CHAT_TOOLS("chatTools"),
-        EFFECTS("effects"),
-        OPPONENT_COOLDOWNS("opponentCooldowns"),
-        LEGENDARY_SOUNDS("legendarySounds"),
-        BLOODSTONE_PACK("resourcePack"),
-        ABILITY_GUIDE("abilityGuide"),
-        QUICK_COMMANDS("quickCommands"),
-        WAYPOINTS("waypoints"),
-        STREAMER("streamer"),
-        ZOOM("zoom"),
-        DEATH_SCREENSHOT("deathScreenshot"),
-        CHAT_MENTIONS("chatMentions"),
-        COOLDOWN_READY("cooldownReady"),
-        MUSIC_DUCKING("musicDucking"),
-        DROP_GUARD("dropGuard"),
-        SLOT_LOCKS("slotLocks"),
-        SHULKER_PREVIEW("shulkerPreview"),
-        CHAT_DRAFTS("chatDrafts"),
-        COORDINATE_LINKS("coordinateLinks"),
-        BACKGROUND_ALERTS("backgroundAlerts"),
-        DISCORD_PRESENCE("discordPresence"),
-        WATERMARK("watermark"),
-        LOGIN_GUARD("loginGuard"),
-        HEADS("heads"),
-        BLOODSTONE_CIRCLES("bloodstoneCircles");
-
-        final String id;
-
-        private Module(String id) {
-            this.id = id;
-        }
     }
 }
 

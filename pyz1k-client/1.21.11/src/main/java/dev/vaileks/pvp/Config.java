@@ -18,7 +18,7 @@ public final class Config {
  public boolean manualPosition=false;
  public boolean hideScoreboard=true,hideBossbar=true,hideItemName=true,hideEffects=false;
  public double scale=0.9,x=0.03,y=0.15;
- public int color=0xFFFFFF,accent=0x78DCFF,threshold=3,mode=0,actionKey=-1,holdKey=72;
+ public int color=0xFFFFFF,accent=pyz1k.utilites.color.ClientColors.CATEGORY_ACCENT_SECOND&0xffffff,threshold=3,mode=0,actionKey=-1,holdKey=72;
  public List<SavedItem> kit=new ArrayList<>(),hotbar=new ArrayList<>();
  public Map<String,Integer> notes=new LinkedHashMap<>();
  public Map<String,Config> profiles=new LinkedHashMap<>();

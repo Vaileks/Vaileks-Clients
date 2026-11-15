@@ -1,5 +1,5 @@
 plugins { id 'net.fabricmc.fabric-loom' version '1.17.21' }
-version='1.5.0-vaileks'
+version='1.6.0-vaileks'
 group='dev.vaileks'
 base { archivesName='pyz1k-client' }
 tasks.named('jar') { archiveFileName='pyz1k-client.jar' }
@@ -54,6 +54,7 @@ tasks.register('productionSmoke', net.fabricmc.loom.task.prod.ClientProductionRu
  dependsOn tasks.named('jar'), tasks.named('smokeJar')
  mods.setFrom(files(tasks.named('jar').flatMap { it.archiveFile }, tasks.named('smokeJar').flatMap { it.archiveFile }, configurations.smokeFabric))
  jvmArgs.add('-Dpyz1k.smoke=true')
+ if(project.hasProperty('progressOnly'))jvmArgs.add('-Dpyz1k.progressOnly=true')
  if(project.hasProperty('policyOnly'))jvmArgs.add('-Dpyz1k.policyOnly=true')
  jvmArgs.add('-Duser.home=' + layout.projectDirectory.dir('production-run/home').asFile.absolutePath)
  jvmArgs.add('-Dpyz1k.testPack=' + layout.projectDirectory.file('run/fixture-pack.zip').asFile.absolutePath)

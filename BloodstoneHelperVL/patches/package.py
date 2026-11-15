@@ -29,6 +29,9 @@ for p in sorted(src.glob('BloodHelper-*.jar')):
  stripped=target.with_suffix('.without-size.jar')
  subprocess.run([j,'-cp',asm+':'+str(tool),'RemoveLegendarySize',str(target),str(stripped)],check=True)
  stripped.replace(target)
+ credits=target.with_suffix('.credits.jar')
+ subprocess.run([j,'-cp',asm+':'+str(tool),'PatchCredits',str(target),str(credits),str('lunarclient' in variant).lower()],check=True)
+ credits.replace(target)
  with zipfile.ZipFile(target) as z,zipfile.ZipFile(p) as original:
   assert z.testzip() is None
   assert all(n not in json.loads(z.read('bloodhelper.mixins.json'))['client'] for n in removed)

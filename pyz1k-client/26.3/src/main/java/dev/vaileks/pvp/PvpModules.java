@@ -11,7 +11,6 @@
 package pyz1k.extensions.pvp;
 
 import pyz1k.extensions.pvp.Feature;
-import pyz1k.extensions.pvp.HubScreen;
 import java.util.EnumMap;
 import java.util.List;
 import net.minecraft.client.Minecraft;
@@ -28,6 +27,9 @@ public final class PvpModules {
         Module m = MODULES.get((Object)f);
         return m != null && m.isEnable();
     }
+
+    public static Module module(Feature f){return MODULES.get(f);}
+    public static Feature feature(Module m){for(var e:MODULES.entrySet())if(e.getValue()==m)return e.getKey();return null;}
 
     public static boolean any() {
         return enabledCount > 0;
@@ -59,7 +61,7 @@ public final class PvpModules {
         MODULES.put(Feature.FIGHT_TIMELINE, new FightTimeline());
         MODULES.put(Feature.INVENTORY_SEARCH_FLASH, new InventorySearchFlash());
         modules.addAll(MODULES.values());
-        modules.add(new Settings());
+
     }
 
     @ModuleInfo(name="ReadyAgain", desc="\u0421\u0438\u0433\u043d\u0430\u043b, \u043a\u043e\u0433\u0434\u0430 \u0437\u0430\u043a\u0430\u043d\u0447\u0438\u0432\u0430\u0435\u0442\u0441\u044f \u043a\u0443\u043b\u0434\u0430\u0443\u043d \u043f\u0440\u0435\u0434\u043c\u0435\u0442\u0430.", category=Category.VISUALS)
@@ -145,15 +147,6 @@ public final class PvpModules {
     @ModuleInfo(name="InventorySearchFlash", desc="\u041f\u043e\u0434\u0441\u0432\u0435\u0442\u043a\u0430 \u0432\u044b\u0431\u0440\u0430\u043d\u043d\u043e\u0439 \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u0438 \u043f\u0440\u0438 \u043e\u0442\u043a\u0440\u044b\u0442\u0438\u0438 \u0438\u043d\u0432\u0435\u043d\u0442\u0430\u0440\u044f.", category=Category.VISUALS)
     public static final class InventorySearchFlash
     extends FeatureModule {
-    }
-
-    @ModuleInfo(name="PvPTools", desc="\u041d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0438 PvP-\u043c\u043e\u0434\u0443\u043b\u0435\u0439, \u043a\u043e\u043c\u043f\u043b\u0435\u043a\u0442\u044b, \u043e\u0442\u0447\u0451\u0442\u044b \u0438 \u0437\u0430\u043c\u0435\u0442\u043a\u0438", category=Category.VISUALS)
-    public static final class Settings
-    extends Module {
-        public void toggle() {
-            Minecraft mc = Minecraft.getInstance();
-            mc.gui.setScreen((Screen)new HubScreen(mc.gui.screen()));
-        }
     }
 
     public static abstract class FeatureModule

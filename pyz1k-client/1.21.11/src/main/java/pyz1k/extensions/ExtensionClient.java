@@ -8,14 +8,15 @@ import org.slf4j.*;
 public final class ExtensionClient implements ClientModInitializer {
     public static final Logger LOG=LoggerFactory.getLogger("Pyz1k-Vaileks");
     public static final BloodSwordHud BLOOD_HUD=new BloodSwordHud();
+    public static final BlastProtectionHud BLAST_HUD=new BlastProtectionHud();
     private static boolean ready;
     private static ClientPlayNetworkHandler connection;
     @Override public void onInitializeClient(){
-        ExtensionConfig.load();ServerProfiles.initialize();
+        ExtensionConfig.load();ServerProfiles.initialize();ServerPlaytime.initialize();
         var resources=MinecraftClient.getInstance().getResourceManager();
         if(resources instanceof ReloadableResourceManagerImpl reloadable)reloadable.registerReloader((SynchronousResourceReloader)SkinCatalog::reload);
         net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientLifecycleEvents.CLIENT_STOPPING.register(mc->{
-            if(ExtensionConfig.get().automaticProfiles)ServerProfiles.save();ScreenshotMode.reset();
+            if(ExtensionConfig.get().automaticProfiles)ServerProfiles.save();ServerPlaytime.stop();ScreenshotMode.reset();
         });
         new pyz1k.extensions.pvp.Core().onInitializeClient();
         ready=true;LOG.info("Pyz1k extensions by Vaileks ready");
@@ -29,6 +30,7 @@ public final class ExtensionClient implements ClientModInitializer {
             ServerProfiles.switchServer(key);SkinCatalog.session(key);FeatureAlerts.reset();BloodSwordCooldownTracker.clear();
             if(current==null)WelcomeOverlay.disconnected();else WelcomeOverlay.joined();
         }
+        ServerPlaytime.tick();BlastProtectionHud.tick();
         pyz1k.extensions.pvp.Core.tick();
         WelcomeOverlay.tick();
         FeatureAlerts.tick();BloodSwordCooldownTracker.tick();

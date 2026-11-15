@@ -16,14 +16,16 @@ public final class FeatureModules {
     public static Skins skins;
     public static Durability durability;
     public static BloodSwordCooldown blood;
+    public static BlastIndicator blast;
 
     public static void register(List<Module> modules) {
         loot = new LootGloow(); oldMirror = new OldMirrorSword();
         names = new BetterNames(); skins = new Skins();
-        durability=new Durability();blood=new BloodSwordCooldown();
-        modules.addAll(List.of(loot, oldMirror, names, skins, new Extras(), durability, new Screenshot(),blood));
+        durability=new Durability();blood=new BloodSwordCooldown();blast=new BlastIndicator();
+        modules.addAll(List.of(loot, oldMirror, names, skins, new Extras(), durability, new Screenshot(),blood,blast,new Playtime(),new Advancements()));
         pyz1k.extensions.pvp.PvpModules.register(modules);
         pyz1k.module.impl.visuals.Interface.registerExternalHudElement(ExtensionClient.BLOOD_HUD);
+        pyz1k.module.impl.visuals.Interface.registerExternalHudElement(ExtensionClient.BLAST_HUD);
     }
 
     @ModuleInfo(name="LootGloow", desc="Обычный лут и эпики из белого списка; легендарки исключены", category=Category.VISUALS)
@@ -79,5 +81,20 @@ public final class FeatureModules {
             MinecraftClient mc=MinecraftClient.getInstance();
             mc.setScreen(new ExtensionScreen(mc.currentScreen));
         }
+    }
+
+    @ModuleInfo(name="ServerPlaytime",desc="Локальная история времени на серверах",category=Category.VISUALS)
+    public static final class Playtime extends Module {
+        @Override public void toggle(){UnifiedMenu.open(this);}
+    }
+    @ModuleInfo(name="AdvancementProgress",desc="Выполненные и оставшиеся критерии достижений",category=Category.VISUALS)
+    public static final class Advancements extends Module {
+        @Override public void toggle(){UnifiedMenu.open(this);}
+    }
+    @ModuleInfo(name="BlastProtectionIndicator",desc="Индикатор Взрывоустойчивости на твоей броне",category=Category.VISUALS)
+    public static final class BlastIndicator extends Module {
+        public final BooleanSetting leggingsOnly=registerSetting(new BooleanSetting("Только поножи",false));
+        public final BooleanSetting text=registerSetting(new BooleanSetting("Текст",true));
+        public final SliderSetting scale=registerSetting(new SliderSetting("Размер индикатора",1,.5f,2,.05f));
     }
 }

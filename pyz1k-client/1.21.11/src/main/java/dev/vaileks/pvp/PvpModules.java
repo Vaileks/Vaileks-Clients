@@ -8,6 +8,8 @@ public final class PvpModules {
  private static final EnumMap<Feature,Module> MODULES=new EnumMap<>(Feature.class);
  private static int enabledCount;
  public static boolean enabled(Feature f){Module m=MODULES.get(f);return m!=null&&m.isEnable();}
+ public static Module module(Feature f){return MODULES.get(f);}
+ public static Feature feature(Module m){for(var e:MODULES.entrySet())if(e.getValue()==m)return e.getKey();return null;}
  public static boolean any(){return enabledCount>0;}
  public static void enable(Feature f,boolean value){Module m=MODULES.get(f);if(m!=null)m.setEnable(value);}
  public static void register(List<Module> modules){
@@ -28,7 +30,7 @@ public final class PvpModules {
   MODULES.put(Feature.HUD_ON_DEMAND,new HudOnDemand());
   MODULES.put(Feature.FIGHT_TIMELINE,new FightTimeline());
   MODULES.put(Feature.INVENTORY_SEARCH_FLASH,new InventorySearchFlash());
-  modules.addAll(MODULES.values());modules.add(new Settings());
+  modules.addAll(MODULES.values());
  }
  public abstract static class FeatureModule extends Module {
   @Override public void onEnable(){super.onEnable();enabledCount++;}
@@ -69,8 +71,4 @@ super.onDisable();enabledCount=Math.max(0,enabledCount-1);}
  public static final class FightTimeline extends FeatureModule {}
  @ModuleInfo(name="InventorySearchFlash",desc="Подсветка выбранной категории при открытии инвентаря.",category=Category.VISUALS)
  public static final class InventorySearchFlash extends FeatureModule {}
- @ModuleInfo(name="PvPTools",desc="Настройки PvP-модулей, комплекты, отчёты и заметки",category=Category.VISUALS)
- public static final class Settings extends Module {
-  @Override public void toggle(){var mc=MinecraftClient.getInstance();mc.setScreen(new HubScreen(mc.currentScreen));}
- }
 }

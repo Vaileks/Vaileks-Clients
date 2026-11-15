@@ -13,10 +13,10 @@ public abstract class InterfaceMixin {
     private void vaileks$hideHud(EventScreenRender event,CallbackInfo ci){if(ScreenshotMode.active())ci.cancel();}
     @Inject(method="getVisibleElements",at=@At("RETURN"),cancellable=true,remap=false)
     private void vaileks$hud(CallbackInfoReturnable<Set<String>> cir){
-        if(FeatureModules.blood==null||!FeatureModules.blood.isEnable())return;
-        Set<String> original=cir.getReturnValue();
-        if(original.contains("BloodSwordCooldown"))return;
-        Set<String> visible=new LinkedHashSet<>(original);
-        visible.add("BloodSwordCooldown");cir.setReturnValue(visible);
+        if((FeatureModules.blood==null||!FeatureModules.blood.isEnable())&&(FeatureModules.blast==null||!FeatureModules.blast.isEnable()))return;
+        Set<String> visible=new LinkedHashSet<>(cir.getReturnValue());
+        if(FeatureModules.blood!=null&&FeatureModules.blood.isEnable())visible.add("BloodSwordCooldown");
+        if(FeatureModules.blast!=null&&FeatureModules.blast.isEnable())visible.add("BlastProtectionIndicator");
+        cir.setReturnValue(visible);
     }
 }

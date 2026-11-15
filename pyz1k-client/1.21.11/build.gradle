@@ -1,5 +1,5 @@
 plugins { id 'fabric-loom' version '1.14.10' }
-version = '1.5.0-vaileks'
+version = '1.6.0-vaileks'
 group = 'dev.vaileks'
 base { archivesName = 'pyz1k-additions' }
 repositories { mavenCentral() }
@@ -73,6 +73,7 @@ tasks.register('productionSmoke', net.fabricmc.loom.task.prod.ClientProductionRu
  mods.from(tasks.named('remapSmokeJar').flatMap { it.archiveFile })
  mods.from(configurations.smokeFabric)
  jvmArgs.add('-Dpyz1k.smoke=true')
+ if(project.hasProperty('progressOnly'))jvmArgs.add('-Dpyz1k.progressOnly=true')
  jvmArgs.add('-Duser.home=' + layout.projectDirectory.dir('production-run/home').asFile.absolutePath)
  jvmArgs.add('-Dpyz1k.testPack=' + layout.projectDirectory.file('run/fixture-pack.zip').asFile.absolutePath)
  useXVFB.set(false)

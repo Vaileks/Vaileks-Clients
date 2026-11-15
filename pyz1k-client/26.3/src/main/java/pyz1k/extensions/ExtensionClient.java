@@ -40,12 +40,13 @@ public final class ExtensionClient
 implements ClientModInitializer {
     public static final Logger LOG = LoggerFactory.getLogger((String)"Pyz1k-Vaileks");
     public static final BloodSwordHud BLOOD_HUD = new BloodSwordHud();
+    public static final BlastProtectionHud BLAST_HUD=new BlastProtectionHud();
     private static boolean ready;
     private static ClientPacketListener connection;
 
     public void onInitializeClient() {
         ExtensionConfig.load();
-        ServerProfiles.initialize();
+        ServerProfiles.initialize();ServerPlaytime.initialize();
         ResourceManager resources = Minecraft.getInstance().getResourceManager();
         if (resources instanceof ReloadableResourceManager) {
             ReloadableResourceManager reloadable = (ReloadableResourceManager)resources;
@@ -55,7 +56,7 @@ implements ClientModInitializer {
             if (ExtensionConfig.get().automaticProfiles) {
                 ServerProfiles.save();
             }
-            ScreenshotMode.reset();
+            ServerPlaytime.stop();ScreenshotMode.reset();
         });
         new pyz1k.extensions.pvp.Core().onInitializeClient();
         ready = true;
@@ -82,6 +83,7 @@ implements ClientModInitializer {
                 WelcomeOverlay.joined();
             }
         }
+        ServerPlaytime.tick();BlastProtectionHud.tick();
         pyz1k.extensions.pvp.Core.tick();
         WelcomeOverlay.tick();
         FeatureAlerts.tick();

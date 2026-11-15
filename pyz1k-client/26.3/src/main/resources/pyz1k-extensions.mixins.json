@@ -16,7 +16,10 @@
     "GroundLootRendererMixin",
     "ModuleDescriptionMixin",
     "MenuHelpMixin",
-    "ModuleHelpMixin"
+    "ModuleHelpMixin",
+    "UnifiedMenuAccess",
+    "UnifiedGridMixin",
+    "UnifiedInputMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -10,6 +10,7 @@ import pyz1k.screen.menu.sections.CategoryBarSection;
 import pyz1k.screen.menu.sections.ModuleGridSection;
 import pyz1k.extensions.*;
 import pyz1k.render.RenderUtil;
+import pyz1k.utilites.color.ClientColors;
 import pyz1k.render.font.GFonts;
 import java.util.*;
 @Mixin(value=ModuleGridSection.class,remap=false)
@@ -37,9 +38,9 @@ public abstract class ModuleHelpMixin {
   if(help$lines.isEmpty()||help$width!=width){help$width=width;help$lines=FeatureHelpScreen.wrap(help$candidate.getDesc(),width-16,7);}
   int visible=Math.min(help$lines.size(),Math.max(1,(window.getScaledHeight()-65)/10));
   float height=34+visible*10,x=Math.max(5,Math.min(mx+10,window.getScaledWidth()-width-5)),y=Math.max(5,Math.min(my+15,window.getScaledHeight()-height-5));
-  RenderUtil.drawRoundRect(c,x,y,width,height,4,0xf219202c);
-  RenderUtil.drawText(c,help$candidate.getName(),x+8,y+7,0xffa5d5ff,GFonts.SEMIBOLD,8);
-  for(int i=0;i<visible;i++)RenderUtil.drawText(c,help$lines.get(i),x+8,y+22+i*10,0xffeef1f7,GFonts.MEDIUM,7);
-  RenderUtil.drawText(c,"F1 — открыть справку",x+8,y+height-10,0xffaab7cb,GFonts.MEDIUM,6);
+  RenderUtil.drawRoundRect(c,x,y,width,height,4,ClientColors.MENU_BACKGROUND);
+  RenderUtil.drawText(c,help$candidate.getName(),x+8,y+7,ClientColors.CATEGORY_ACCENT_SECOND,GFonts.SEMIBOLD,8);
+  for(int i=0;i<visible;i++)RenderUtil.drawText(c,help$lines.get(i),x+8,y+22+i*10,ClientColors.TEXT_PRIMARY,GFonts.MEDIUM,7);
+  RenderUtil.drawText(c,"F1 — открыть справку",x+8,y+height-10,ClientColors.CATEGORY_INACTIVE,GFonts.MEDIUM,6);
  }
 }

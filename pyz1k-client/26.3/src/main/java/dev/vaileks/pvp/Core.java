@@ -43,14 +43,13 @@
  *  pyz1k.extensions.ScreenshotMode
  */
 package pyz1k.extensions.pvp;
+import pyz1k.render.RenderUtil;
+import pyz1k.render.font.GFonts;
+import pyz1k.utilites.color.ClientColors;
 
 import pyz1k.extensions.pvp.Config;
 import pyz1k.extensions.pvp.Feature;
-import pyz1k.extensions.pvp.HubScreen;
-import pyz1k.extensions.pvp.NotesScreen;
 import pyz1k.extensions.pvp.PvpModules;
-import pyz1k.extensions.pvp.ReportScreen;
-import pyz1k.extensions.pvp.SettingsScreen;
 import java.nio.file.Files;
 import java.nio.file.OpenOption;
 import java.nio.file.Path;
@@ -263,7 +262,7 @@ implements ClientModInitializer {
         for (Feature f : roots.keySet()) {
             boolean hit;
             Config cfg = Core.config(f);
-            if (cfg.actionKey <= 0 || !(hit = Core.edge(cfg.actionKey)) || !Core.on(f) || c.gui.screen() instanceof SettingsScreen || c.gui.screen() != null && f != Feature.INVENTORY_SEARCH_FLASH) continue;
+            if (cfg.actionKey <= 0 || !(hit = Core.edge(cfg.actionKey)) || !Core.on(f) || c.gui.screen() instanceof pyz1k.screen.menu.MenuScreen || c.gui.screen() != null && f != Feature.INVENTORY_SEARCH_FLASH) continue;
             Core.action(f);
         }
         boolean dead = c.player.isDeadOrDying();
@@ -757,13 +756,13 @@ implements ClientModInitializer {
         switch (f) {
             case KIT_CHECK: {
                 Core.updateRows();
-                Core.mc().gui.setScreen((Screen)new ReportScreen(Core.mc().gui.screen(), "\u041f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u043a\u043e\u043c\u043f\u043b\u0435\u043a\u0442\u0430", Core.reportRows(Core.list(f))));
+                pyz1k.extensions.UnifiedMenu.actions(f);
                 break;
             }
             case RESUPPLY_LIST: {
                 resupplyPending = true;
                 Core.updateRows();
-                Core.mc().gui.setScreen((Screen)new ReportScreen(Core.mc().gui.screen(), "\u041f\u043e\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u0435 \u043a\u043e\u043c\u043f\u043b\u0435\u043a\u0442\u0430", Core.reportRows(Core.missing(Core.config(f), false))));
+                pyz1k.extensions.UnifiedMenu.actions(f);
                 break;
             }
             case FIGHT_RECAP: 
@@ -777,7 +776,7 @@ implements ClientModInitializer {
                 break;
             }
             case DUEL_NOTES: {
-                Core.mc().gui.setScreen((Screen)new NotesScreen(Core.mc().gui.screen()));
+                pyz1k.extensions.UnifiedMenu.actions(f);
                 break;
             }
             case INVENTORY_SEARCH_FLASH: {
@@ -789,7 +788,7 @@ implements ClientModInitializer {
                 break;
             }
             case PEARL_LANDING_TIMER: {
-                Core.mc().gui.setScreen((Screen)new ReportScreen(Core.mc().gui.screen(), "\u0418\u0441\u0442\u043e\u0440\u0438\u044f \u0431\u0440\u043e\u0441\u043a\u043e\u0432", new ArrayList<String>(pearlResults)));
+                pyz1k.extensions.UnifiedMenu.actions(f);
                 break;
             }
             default: {
@@ -842,7 +841,7 @@ implements ClientModInitializer {
     }
 
     public static void render(GuiGraphicsExtractor ctx) {
-        if (!initialized || !Core.any() || ScreenshotMode.active() || Core.mc().player == null || Core.mc().gui.hud.isHidden() || Core.mc().gui.screen() instanceof SettingsScreen || Core.mc().gui.screen() instanceof HubScreen) {
+        if (!initialized || !Core.any() || ScreenshotMode.active() || Core.mc().player == null || Core.mc().gui.hud.isHidden() || Core.mc().gui.screen() instanceof pyz1k.screen.menu.MenuScreen) {
             return;
         }
         int autoY = 8;
@@ -918,48 +917,26 @@ implements ClientModInitializer {
         return !Core.on(Feature.COMBAT_FOCUS) || fightStart <= 0L || f == Feature.COMBAT_FOCUS || f == Feature.FIGHT_RECAP || f == Feature.FIGHT_TIMELINE;
     }
 
-    public static int[] panel(GuiGraphicsExtractor ctx, Feature f, Config cfg, List<Row> source, boolean preview) {
-        int max = Core.mc().font.width(f.title);
-        int lines = Math.min(source.size(), 8);
-        for (int i = 0; i < lines; ++i) {
-            Row r = source.get(i);
-            max = Math.max(max, Core.mc().font.width((String)(cfg.icons ? "" : r.label + "  ") + r.value) + (cfg.icons ? 22 : 0));
-        }
-        int w = max + 14;
-        int h = 18 + lines * 19 + (source.size() > 8 ? 12 : 0);
-        double scale = cfg.scale;
-        int sw = ctx.guiWidth();
-        int sh = ctx.guiHeight();
-        int x = (int)(cfg.x * Math.max(0.0, (double)sw - (double)w * scale));
-        int y = (int)(cfg.y * Math.max(0.0, (double)sh - (double)h * scale));
-        ctx.pose().pushMatrix();
-        ctx.pose().translate((float)x, (float)y);
-        ctx.pose().scale((float)scale, (float)scale);
-        if (cfg.background || preview) {
-            ctx.fill(0, 0, w, h, -870900958);
-            ctx.outline(0, 0, w, h, -9405552);
-        }
-        ctx.text(Core.mc().font, f.title, 7, 5, 0xFF000000 | cfg.accent, cfg.shadow);
-        int cy = 18;
-        for (int i = 0; i < lines; ++i) {
-            Row row = source.get(i);
-            int color = 0xFF000000 | (row.critical ? cfg.accent : cfg.color);
-            if (cfg.icons && !row.icon.isEmpty()) {
-                ctx.item(row.icon, 6, cy);
-                ctx.text(Core.mc().font, row.value, 28, cy + 4, color, cfg.shadow);
-            } else {
-                ctx.text(Core.mc().font, row.label + "  " + row.value, 7, cy + 4, color, cfg.shadow);
-            }
-            cy += 19;
-        }
-        if (source.size() > 8) {
-            ctx.text(Core.mc().font, "\u0415\u0449\u0451 " + (source.size() - 8) + " \u00b7 \u043e\u0442\u043a\u0440\u044b\u0442\u044c \u0441\u043f\u0438\u0441\u043e\u043a", 7, cy, -5592406, cfg.shadow);
-        }
-        ctx.pose().popMatrix();
-        return preview?new int[]{x, y, (int)Math.ceil((double)w * scale), (int)Math.ceil((double)h * scale)}:null;
-    }
-
-    public static List<Row> preview(Feature f) {
+    public static int[] panel(GuiGraphicsExtractor ctx,Feature f,Config cfg,List<Row> source,boolean preview){
+  int max=(int)Math.ceil(RenderUtil.getTextWidth(f.title,GFonts.SEMIBOLD,8));int lines=Math.min(source.size(),8);
+  for(int i=0;i<lines;i++){Row r=source.get(i);max=Math.max(max,(int)Math.ceil(RenderUtil.getTextWidth((cfg.icons?"":r.label+"  ")+r.value,GFonts.MEDIUM,7))+(cfg.icons?22:0));}
+  int w=max+14,h=18+lines*19+(source.size()>8?12:0);
+  double scale=cfg.scale;int sw=ctx.guiWidth(),sh=ctx.guiHeight();
+  int x=(int)(cfg.x*Math.max(0,sw-w*scale)),y=(int)(cfg.y*Math.max(0,sh-h*scale));
+  ctx.pose().pushMatrix();ctx.pose().translate(x,y);ctx.pose().scale((float)scale,(float)scale);
+  if(cfg.background||preview){RenderUtil.drawRoundRect(ctx,0,0,w,h,4,ClientColors.HUD_BACKGROUND);RenderUtil.drawBorder(ctx,0,0,w,h,4,ClientColors.HUD_OUTLINE,0,.5f,1);}
+  RenderUtil.drawText(ctx,f.title,7,5,0xff000000|cfg.accent,GFonts.SEMIBOLD,8);
+  int cy=18;
+  for(int i=0;i<lines;i++){
+   Row row=source.get(i);int color=0xff000000|(row.critical?cfg.accent:cfg.color);String text=(cfg.icons?"":row.label+"  ")+row.value;float tx=cfg.icons?28:7;
+   if(cfg.icons&&!row.icon.isEmpty())ctx.item(row.icon,6,cy);
+   if(cfg.shadow)RenderUtil.drawText(ctx,text,tx+.5f,cy+4.5f,0x99000000,GFonts.MEDIUM,7);
+   RenderUtil.drawText(ctx,text,tx,cy+4,color,GFonts.MEDIUM,7);cy+=19;
+  }
+  if(source.size()>8)RenderUtil.drawText(ctx,"Ещё "+(source.size()-8)+" · открыть список",7,cy,ClientColors.HUD_SECONDARY_TEXT,GFonts.MEDIUM,6);
+  ctx.pose().popMatrix();return preview?new int[]{x,y,(int)Math.ceil(w*scale),(int)Math.ceil(h*scale)}:null;
+ }
+ public static List<Row> preview(Feature f) {
         if (rows.containsKey((Object)f) && !rows.get((Object)f).isEmpty()) {
             return rows.get((Object)f);
         }

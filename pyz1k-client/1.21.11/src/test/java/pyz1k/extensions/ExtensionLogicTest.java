@@ -11,6 +11,7 @@ public final class ExtensionLogicTest {
     private static void check(boolean value,String why){checks++;if(!value)throw new AssertionError(why);}
     private static JsonObject json(String s){return JsonParser.parseString(s).getAsJsonObject();}
     public static void main(String[] args)throws Exception{
+        ProgressLogicTest.main(args);
         check(LootPolicy.classify("minecraft:diamond_sword","minecraft:diamond_sword",false,List.of(),false,false)==LootPolicy.Kind.ORDINARY,"vanilla loot allowed");
         for(String item:List.of("minecraft:diamond_sword","minecraft:mace")){
             check(LootPolicy.classify(item,"other:custom",true,List.of(),false,false)==LootPolicy.Kind.NONE,"unknown custom models denied");
@@ -62,7 +63,7 @@ public final class ExtensionLogicTest {
         check(!new InventorySearchQuery("").matches("Sword","minecraft:diamond_sword"),"empty search selects nothing");
         check(!new InventorySearchQuery("diamond bow").matches("Sword","minecraft:diamond_sword"),"all search words required");
         check(InventorySearchQuery.armor("minecraft:diamond_chestplate")&&!InventorySearchQuery.armor("minecraft:carved_pumpkin")&&!InventorySearchQuery.armor("minecraft:elytra"),"armor excludes wearable nonarmor");
-        check(FunctionDescriptions.all().size()==40&&FunctionDescriptions.all().stream().allMatch(e->e.text().length()>150),"complete detailed function explanations");
+        check(FunctionDescriptions.all().size()==42&&FunctionDescriptions.all().stream().allMatch(e->e.text().length()>150),"complete detailed function explanations");
         for(String name:List.of("Tukisg","Trard","DarkCake","darkcake"))check(WelcomeOverlay.matches(name),"targeted greeting "+name);
         check(!WelcomeOverlay.matches("Vaileks")&&!WelcomeOverlay.matches("DarkCake2")&&!WelcomeOverlay.matches(null),"greeting exact allowlist only");
         for(String material:List.of("diamond_sword","netherite_sword","bow","crossbow","totem_of_undying","mace")){

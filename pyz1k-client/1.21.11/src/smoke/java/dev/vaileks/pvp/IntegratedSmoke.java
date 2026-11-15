@@ -16,9 +16,9 @@ public final class IntegratedSmoke {
   }
  }
  public static void open(int index,int page){
-  var f=new ArrayList<>(Core.roots.keySet()).get(index);var screen=new SettingsScreen(null,f);
-  Core.mc().setScreen(screen);screen.page=page;screen.refresh();
+  var f=new ArrayList<>(Core.roots.keySet()).get(index);UnifiedMenu.open(PvpModules.module(f));if(page==3)panel().actions();
  }
+ public static UnifiedFeaturePanel panel(){return ((UnifiedMenu.Section)(Object)((pyz1k.extensions.mixin.UnifiedMenuAccess)(Object)Core.mc().currentScreen).pyz1k$grid()).pyz1k$panel();}
  public static void world(){
   var p=Core.mc().player;if(p==null)throw new AssertionError("No player for PvP behavior checks");
   for(Feature f:Core.roots.keySet())PvpModules.enable(f,false);

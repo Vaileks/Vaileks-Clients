@@ -1,4 +1,7 @@
 package pyz1k.extensions.pvp;
+import pyz1k.render.RenderUtil;
+import pyz1k.render.font.GFonts;
+import pyz1k.utilites.color.ClientColors;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
@@ -92,7 +95,7 @@ public final class Core implements ClientModInitializer {
   if(on(INVENTORY_SEARCH_FLASH)&&inv&&!wasInventory){searchUntil=now()+(long)config(INVENTORY_SEARCH_FLASH).threshold*1000;}
   wasInventory=inv;
   for(Feature f:roots.keySet()){
-   Config cfg=config(f);if(cfg.actionKey>0){boolean hit=edge(cfg.actionKey);if(hit&&on(f)&&!(c.currentScreen instanceof SettingsScreen)&&(c.currentScreen==null||f==INVENTORY_SEARCH_FLASH))action(f);}
+   Config cfg=config(f);if(cfg.actionKey>0){boolean hit=edge(cfg.actionKey);if(hit&&on(f)&&!(c.currentScreen instanceof pyz1k.screen.menu.MenuScreen)&&(c.currentScreen==null||(f==INVENTORY_SEARCH_FLASH&&c.currentScreen instanceof net.minecraft.client.gui.screen.ingame.HandledScreen<?>)))action(f);}
   }
   boolean dead=c.player.isDead();
   if(dead&&!wasDead){event("Смерть");resupplyPending=true;finishFight();}
@@ -267,12 +270,12 @@ public final class Core implements ClientModInitializer {
  public static void action(Feature f){
   if(mc().player==null){notice("Эта функция доступна в мире");return;}
   switch(f){
-   case KIT_CHECK -> {updateRows();mc().setScreen(new ReportScreen(mc().currentScreen,"Проверка комплекта",reportRows(list(f))));}
-   case RESUPPLY_LIST -> {resupplyPending=true;updateRows();mc().setScreen(new ReportScreen(mc().currentScreen,"Пополнение комплекта",reportRows(missing(config(f),false))));}
+   case KIT_CHECK -> {updateRows();pyz1k.extensions.UnifiedMenu.actions(f);}
+   case RESUPPLY_LIST -> {resupplyPending=true;updateRows();pyz1k.extensions.UnifiedMenu.actions(f);}
    case FIGHT_RECAP,FIGHT_TIMELINE -> {if(fightStart==0)startFight("Ручная запись");else{finishFight();notice("Запись боя сохранена");}}
-   case DUEL_NOTES -> mc().setScreen(new NotesScreen(mc().currentScreen));
+   case DUEL_NOTES -> pyz1k.extensions.UnifiedMenu.actions(f);
    case INVENTORY_SEARCH_FLASH -> {Config cfg=config(f);cfg.mode=(cfg.mode+1)%4;save(f,cfg);searchUntil=now()+cfg.threshold*1000L;notice("Поиск: "+searchCategory(cfg.mode));}
-   case PEARL_LANDING_TIMER -> mc().setScreen(new ReportScreen(mc().currentScreen,"История бросков",new ArrayList<>(pearlResults)));
+   case PEARL_LANDING_TIMER -> pyz1k.extensions.UnifiedMenu.actions(f);
    default -> {Config cfg=config(f);cfg.enabled=!cfg.enabled;save(f,cfg);notice(f.title+": "+(cfg.enabled?"вкл.":"выкл."));}
   }
  }
@@ -287,7 +290,7 @@ public final class Core implements ClientModInitializer {
   }catch(Exception e){LOG.error("Report export failed",e);notice("Не удалось сохранить отчёт");}
  }
  public static void render(DrawContext ctx){
-  if(!initialized||!any()||pyz1k.extensions.ScreenshotMode.active()||mc().player==null||mc().options.hudHidden||mc().currentScreen instanceof SettingsScreen||mc().currentScreen instanceof HubScreen)return;
+  if(!initialized||!any()||pyz1k.extensions.ScreenshotMode.active()||mc().player==null||mc().options.hudHidden||mc().currentScreen instanceof pyz1k.screen.menu.MenuScreen)return;
   int autoY=8,autoColumn=0;
   for(Feature f:roots.keySet())if(on(f)){
    List<Row> source=rows.get(f);if(source==null||source.isEmpty())continue;
@@ -317,22 +320,22 @@ public final class Core implements ClientModInitializer {
   return !(on(COMBAT_FOCUS)&&fightStart>0&&f!=COMBAT_FOCUS&&f!=FIGHT_RECAP&&f!=FIGHT_TIMELINE);
  }
  public static int[] panel(DrawContext ctx,Feature f,Config cfg,List<Row> source,boolean preview){
-  int max=mc().textRenderer.getWidth(f.title);int lines=Math.min(source.size(),8);
-  for(int i=0;i<lines;i++){Row r=source.get(i);max=Math.max(max,mc().textRenderer.getWidth((cfg.icons?"":r.label+"  ")+r.value)+(cfg.icons?22:0));}
+  int max=(int)Math.ceil(RenderUtil.getTextWidth(f.title,GFonts.SEMIBOLD,8));int lines=Math.min(source.size(),8);
+  for(int i=0;i<lines;i++){Row r=source.get(i);max=Math.max(max,(int)Math.ceil(RenderUtil.getTextWidth((cfg.icons?"":r.label+"  ")+r.value,GFonts.MEDIUM,7))+(cfg.icons?22:0));}
   int w=max+14,h=18+lines*19+(source.size()>8?12:0);
   double scale=cfg.scale;int sw=ctx.getScaledWindowWidth(),sh=ctx.getScaledWindowHeight();
   int x=(int)(cfg.x*Math.max(0,sw-w*scale)),y=(int)(cfg.y*Math.max(0,sh-h*scale));
   ctx.getMatrices().pushMatrix();ctx.getMatrices().translate(x,y);ctx.getMatrices().scale((float)scale,(float)scale);
-  if(cfg.background||preview){ctx.fill(0,0,w,h,0xCC171B22);ctx.drawStrokedRectangle(0,0,w,h,0xFF707B90);}
-  ctx.drawText(mc().textRenderer,f.title,7,5,0xFF000000|cfg.accent,cfg.shadow);
+  if(cfg.background||preview){RenderUtil.drawRoundRect(ctx,0,0,w,h,4,ClientColors.HUD_BACKGROUND);RenderUtil.drawBorder(ctx,0,0,w,h,4,ClientColors.HUD_OUTLINE,0,.5f,1);}
+  RenderUtil.drawText(ctx,f.title,7,5,0xff000000|cfg.accent,GFonts.SEMIBOLD,8);
   int cy=18;
   for(int i=0;i<lines;i++){
-   Row row=source.get(i);int color=0xFF000000|(row.critical?cfg.accent:cfg.color);
-   if(cfg.icons&&!row.icon.isEmpty()){ctx.drawItem(row.icon,6,cy);ctx.drawText(mc().textRenderer,row.value,28,cy+4,color,cfg.shadow);}
-   else ctx.drawText(mc().textRenderer,row.label+"  "+row.value,7,cy+4,color,cfg.shadow);
-   cy+=19;
+   Row row=source.get(i);int color=0xff000000|(row.critical?cfg.accent:cfg.color);String text=(cfg.icons?"":row.label+"  ")+row.value;float tx=cfg.icons?28:7;
+   if(cfg.icons&&!row.icon.isEmpty())ctx.drawItem(row.icon,6,cy);
+   if(cfg.shadow)RenderUtil.drawText(ctx,text,tx+.5f,cy+4.5f,0x99000000,GFonts.MEDIUM,7);
+   RenderUtil.drawText(ctx,text,tx,cy+4,color,GFonts.MEDIUM,7);cy+=19;
   }
-  if(source.size()>8)ctx.drawText(mc().textRenderer,"Ещё "+(source.size()-8)+" · открыть список",7,cy,0xFFAAAAAA,cfg.shadow);
+  if(source.size()>8)RenderUtil.drawText(ctx,"Ещё "+(source.size()-8)+" · открыть список",7,cy,ClientColors.HUD_SECONDARY_TEXT,GFonts.MEDIUM,6);
   ctx.getMatrices().popMatrix();return preview?new int[]{x,y,(int)Math.ceil(w*scale),(int)Math.ceil(h*scale)}:null;
  }
  public static List<Row> preview(Feature f){
