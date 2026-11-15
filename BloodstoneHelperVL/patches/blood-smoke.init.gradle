@@ -23,6 +23,7 @@ gradle.projectsEvaluated {
   dependsOn ready
   mods.setFrom(p.files(new File(base,'dist/'+variant+'/BloodstoneHelperVL.jar'),ready.flatMap{it.archiveFile},p.configurations.smokeFabric))
   if(p.hasProperty('personalTest'))jvmArgs.add('-Dvl.personalTest=true')
+  if(p.hasProperty('lunarTest'))jvmArgs.add('-Dvl.lunarTest=true')
   jvmArgs.add('-Duser.home='+new File(base,'runs/'+variant+'/home').absolutePath)
   useXVFB=false;runDir.set(new File(base,'runs/'+variant))
   javaLauncher.set(p.javaToolchains.launcherFor {languageVersion.set(JavaLanguageVersion.of(nativeVersion?25:23))})

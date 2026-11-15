@@ -13,6 +13,12 @@ public final class BloodSmoke implements ClientModInitializer {
  static void check(boolean good,String message){if(!good)throw new AssertionError(message);}
  static void tests()throws Exception{
   Object cfg=cls("BloodHelperClient").getMethod("config").invoke(null);
+  if(Boolean.getBoolean("vl.lunarTest")){
+   Class<?> distribution=cls("compat.ClientDistribution");check((boolean)distribution.getMethod("lunarClient").invoke(null),"Not Lunar distribution");check(distribution.getMethod("defaultMenuKeyName").invoke(null).equals("Insert"),"Lunar menu binding conflict");
+   Class<?> hooks=cls("compat.OptionalMixinHooks");check((boolean)hooks.getMethod("freeLook").invoke(null),"Vanilla camera hooks lost");check((boolean)hooks.getMethod("crosshair").invoke(null),"Vanilla crosshair hook lost");
+   System.out.println("VL_SMOKE: Lunar distribution, Insert menu binding and camera/crosshair compatibility hooks passed under Fabric");
+  }
+
   Object settings=field(cfg,"legendarySize");set(settings,"enabled",true);set(settings,"scaleAllDropped",true);set(settings,"droppedScale",2.0);set(settings,"enlargeDropped",true);
   Object visual=field(cfg,"legendaryVisuals");set(visual,"enabled",true);set(visual,"loot",true);
   for(String removed:new String[]{"modules.LegendarySizeModule","modules.HandItemScaleScreen"}){try{cls(removed);throw new AssertionError("Removed implementation still exists: "+removed);}catch(ClassNotFoundException expected){}}

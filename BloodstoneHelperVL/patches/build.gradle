@@ -3,7 +3,7 @@ repositories { mavenCentral() }
 dependencies { implementation 'org.ow2.asm:asm:9.9'; implementation 'org.ow2.asm:asm-tree:9.9' }
 sourceSets.main.java {
  srcDirs = ['.', 'personal']
- include 'RemoveLegendarySize.java', 'PatchBloodHelper.java', 'VLRestrictions.java', 'PrivacyGuard.java', 'PersonalPatcher.java', 'PersonalPerformance.java', 'RenderQualitySettings.java'
+ include 'MakeLunar26.java', 'RemoveLegendarySize.java', 'PatchBloodHelper.java', 'VLRestrictions.java', 'PrivacyGuard.java', 'PersonalPatcher.java', 'PersonalPerformance.java', 'RenderQualitySettings.java'
 }
 tasks.withType(JavaCompile).configureEach { options.release = 21; options.encoding = 'UTF-8' }
 tasks.register('prepareTools') {

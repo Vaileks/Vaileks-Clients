@@ -18,6 +18,12 @@
  *  net.minecraft.class_3959$class_242
  *  net.minecraft.class_3959$class_3960
  *  net.minecraft.class_3965
+ *  ru.bloodhelper.client.BloodHelperClient
+ *  ru.bloodhelper.client.config.LegendaryVisualSettings
+ *  ru.bloodhelper.client.mixin.CooldownInstanceAccessor
+ *  ru.bloodhelper.client.mixin.ItemCooldownsAccessor
+ *  ru.bloodhelper.client.visuals.ZoneTracker$Kind
+ *  ru.bloodhelper.client.visuals.ZoneTracker$Zone
  */
 package ru.bloodhelper.client.visuals;
 
@@ -47,7 +53,7 @@ import ru.bloodhelper.client.BloodHelperClient;
 import ru.bloodhelper.client.config.LegendaryVisualSettings;
 import ru.bloodhelper.client.mixin.CooldownInstanceAccessor;
 import ru.bloodhelper.client.mixin.ItemCooldownsAccessor;
-import ru.bloodhelper.client.modules.LegendarySizeModule;
+import ru.bloodhelper.client.visuals.ZoneTracker;
 
 public final class ZoneTracker {
     public static final List<Zone> ZONES = new ArrayList<Zone>();
@@ -277,7 +283,7 @@ public final class ZoneTracker {
             class_1799 s = inv.method_5438(i);
             if (!ZoneTracker.named(s, name)) continue;
             class_2960 group = mc.field_1724.method_7357().method_62836(s);
-            for (Map.Entry<class_2960, Object> en : acc.bloodhelper$cooldowns().entrySet()) {
+            for (Map.Entry en : acc.bloodhelper$cooldowns().entrySet()) {
                 if (!en.getKey().equals(group)) continue;
                 int end = ((CooldownInstanceAccessor)en.getValue()).bloodhelper$endTime();
                 return Math.max(0.0f, (float)(end - acc.bloodhelper$tickCount()) / 20.0f);
@@ -292,7 +298,7 @@ public final class ZoneTracker {
     }
 
     private static boolean named(class_1799 stack, String name) {
-        String id = LegendarySizeModule.identify(stack);
+        String id = null;
         if (id != null) {
             String expected = switch (name) {
                 case "\u043a\u0430\u0442\u0430\u043d\u0430 \u0434\u0440\u0430\u043a\u043e\u043d\u0430" -> "dragon_katana";
@@ -313,41 +319,6 @@ public final class ZoneTracker {
     }
 
     private ZoneTracker() {
-    }
-
-    public static final class Zone {
-        public final Kind kind;
-        public final boolean self;
-        public final String owner;
-        public final long start = System.nanoTime() / 1000000L;
-        public class_243 center;
-        public class_243 from;
-        public double radius;
-        public long fadeAt;
-        final Set<class_2338> blocks = new HashSet<class_2338>();
-        boolean hadBlocks;
-
-        Zone(Kind kind, boolean self, String owner, class_243 center, double radius) {
-            this.kind = kind;
-            this.self = self;
-            this.owner = owner;
-            this.center = center;
-            this.radius = radius;
-        }
-
-        public String itemName() {
-            return this.kind == Kind.STAFF ? "\u041f\u043e\u0441\u043e\u0445 \u0416\u0438\u0442\u0435\u043b\u044f" : "\u0421\u043a\u0430\u043b\u043a\u043e\u0432\u044b\u0439 \u0410\u0440\u0431\u0430\u043b\u0435\u0442";
-        }
-
-        public float secondsLeft() {
-            return !this.self ? -1.0f : ZoneTracker.cooldownLeft(class_310.method_1551(), this.kind == Kind.STAFF ? ZoneTracker.STAFF : ZoneTracker.SCULK_BOW);
-        }
-    }
-
-    public static enum Kind {
-        STAFF,
-        SCULK;
-
     }
 }
 

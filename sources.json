@@ -13,6 +13,7 @@
     "1.21.11": "decompiled final sources",
     "26.3": "decompiled final sources",
     "1.21.11-lunarclient": "overrides relative to 1.21.11",
-    "personal-1.21.11": "overrides relative to 1.21.11"
+    "personal-1.21.11": "overrides relative to 1.21.11",
+    "26.3-lunarclient": "overrides relative to 26.3, with authored Lunar compatibility sources"
   }
 }

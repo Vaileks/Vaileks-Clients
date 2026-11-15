@@ -1,7 +1,7 @@
 from pathlib import Path
 import zipfile,json,hashlib
 out=Path(__file__).resolve().parent/'dist';src=Path(__import__('os').environ.get('BLOODHELPER_INPUT_DIR', 'inputs'));checks={}
-for jar in sorted(out.glob('*/BloodstoneHelperVL.jar')):
+for jar in sorted(out.glob('*/BloodstoneHelperVL*.jar')):
  if jar.parent.name not in {'1.21.11','1.21.11-lunarclient','26.3'}:continue
  variant=jar.parent.name;original=src/('BloodHelper-1.3.8+'+variant+'-privacy.jar')
  with zipfile.ZipFile(jar) as z,zipfile.ZipFile(original) as old:
@@ -16,8 +16,7 @@ for jar in sorted(out.glob('*/BloodstoneHelperVL.jar')):
   base='ru/bloodhelper/client/'
   for name in ['visuals/LegendaryVisuals','modules/OpponentCooldownTracker','modules/VisualHitboxes','modules/BetterNameVisibilityModule','circles/BloodstoneCircles','modules/BindManagerModel$Filter','access/ClientControlService','access/ServiceTransport','config/ConfigStore']:
    assert old.read(base+name+'.class')==z.read(base+name+'.class'),'Unintended change '+name
-  if variant=='26.3':
-   for removed in ['modules/LegendarySizeModule','modules/HandItemScaleScreen','modules/HandItemScaleScreen$Knob','modules/HandItemScaleScreen$Row']:assert base+removed+'.class' not in z.namelist()
+  for removed in ['modules/LegendarySizeModule','modules/HandItemScaleScreen','modules/HandItemScaleScreen$Knob','modules/HandItemScaleScreen$Row']:assert base+removed+'.class' not in z.namelist()
   screen=z.read(base+'gui/BloodHelperScreen.class')
   for url in [b'https://boosty.to/bloodhelper/',b'https://discord.gg/QWcgKf9Md7',b'https://modrinth.com/mod/bloodhelper/versions']:assert url not in screen
   assert b'https://discord.gg/9kE6HNJEnZ' in screen

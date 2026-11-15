@@ -28,8 +28,10 @@
  *  ru.bloodhelper.client.assistant.AssistantKnowledge
  *  ru.bloodhelper.client.assistant.AssistantService
  *  ru.bloodhelper.client.community.CommunityPanels
+ *  ru.bloodhelper.client.compat.ClientDistribution
  *  ru.bloodhelper.client.compat.ExternalChatPatches
  *  ru.bloodhelper.client.compat.ExternalHudMods
+ *  ru.bloodhelper.client.compat.OptionalMixinHooks
  *  ru.bloodhelper.client.config.AspectRatioSettings
  *  ru.bloodhelper.client.config.BackgroundAlertsSettings
  *  ru.bloodhelper.client.config.BlastLeggingsSettings
@@ -92,7 +94,6 @@
  *  ru.bloodhelper.client.gui.BloodHelperScreen$FieldHit
  *  ru.bloodhelper.client.gui.BloodHelperScreen$Hit
  *  ru.bloodhelper.client.gui.BloodHelperScreen$ItemPreset
- *  ru.bloodhelper.client.gui.BloodHelperScreen$Module
  *  ru.bloodhelper.client.gui.BloodHelperScreen$Page
  *  ru.bloodhelper.client.gui.BloodHelperScreen$Row
  *  ru.bloodhelper.client.gui.BloodHelperScreen$RowDraw
@@ -146,7 +147,6 @@
  *  ru.bloodhelper.client.modules.DropGuardModule
  *  ru.bloodhelper.client.modules.DroppedItemFilterScreen
  *  ru.bloodhelper.client.modules.FreeLookModule
- *  ru.bloodhelper.client.modules.HandItemScaleScreen
  *  ru.bloodhelper.client.modules.HeadsModule
  *  ru.bloodhelper.client.modules.HudItemControlsScreen
  *  ru.bloodhelper.client.modules.HudItemControlsScreen$Page
@@ -310,7 +310,6 @@ import ru.bloodhelper.client.modules.DeathScreenshotModule;
 import ru.bloodhelper.client.modules.DropGuardModule;
 import ru.bloodhelper.client.modules.DroppedItemFilterScreen;
 import ru.bloodhelper.client.modules.FreeLookModule;
-import ru.bloodhelper.client.modules.HandItemScaleScreen;
 import ru.bloodhelper.client.modules.HeadsModule;
 import ru.bloodhelper.client.modules.HudItemControlsScreen;
 import ru.bloodhelper.client.modules.ItemSearchQuery;
@@ -1581,17 +1580,17 @@ implements BackgroundMenuScreen {
         for (Module module : (Module[])VLRestrictions.visibleModules((Object[])Module.values())) {
             Iterator rows;
             if (BloodHelperScreen.nestedModule(module) || BloodHelperScreen.isStaff(module) || !this.matches(module, query)) continue;
-            boolean open = this.expanded.contains(module);
+            boolean open = this.expanded.contains((Object)module);
             if (open) {
                 rows = this.rows(module);
                 this.retainedCards.put(module, (List<Row>)((Object)rows));
             } else {
-                rows = this.retainedCards.getOrDefault(module, List.of());
+                rows = this.retainedCards.getOrDefault((Object)module, List.of());
             }
             int bodyHeight = rows.stream().mapToInt(Row::height).sum();
             int shown = (int)Math.round(this.animateLayout(module.id + ".body", open ? (double)bodyHeight : 0.0));
             if (!open && shown <= 0) {
-                this.retainedCards.remove(module);
+                this.retainedCards.remove((Object)module);
                 rows = List.of();
             }
             List description = CustomFont.regular().wrap(this.moduleDescription(module), 11.0f, 222.0f);
@@ -1660,7 +1659,7 @@ implements BackgroundMenuScreen {
         }
         int x = card.x;
         int w = 274;
-        boolean open = this.expanded.contains(card.module);
+        boolean open = this.expanded.contains((Object)card.module);
         boolean on = BloodHelperScreen.groupedModule(card.module) || this.enabled(card.module);
         String id = card.module.id;
         this.frame(g, x, y, w, card.height, 4);
@@ -1690,7 +1689,7 @@ implements BackgroundMenuScreen {
         }
         this.chevron(g, x + w - 28, y + 35, 13, opening, UiDraw.blend((int)-9275778, (int)-6775902, (double)opening));
         Runnable expand = () -> {
-            if (!this.expanded.remove(card.module)) {
+            if (!this.expanded.remove((Object)card.module)) {
                 this.expanded.add(card.module);
             }
             this.closeDropdown();
@@ -2894,7 +2893,7 @@ implements BackgroundMenuScreen {
             case 44: {
                 LegendarySizeSettings p = this.cfg().legendarySize;
                 r.add(this.info(this.tr("100% \u2014 \u043e\u0431\u044b\u0447\u043d\u044b\u0439 \u0440\u0430\u0437\u043c\u0435\u0440 \u00b7 50% \u2014 \u0432\u0434\u0432\u043e\u0435 \u043c\u0435\u043d\u044c\u0448\u0435.", "100% is original size \u00b7 50% is half size.")));
-                r.add(new Row(40, (g, x, y, w) -> this.button(g, "legendarySize.selected", x + 18, y + 2, w - 36, 29, this.tr("\u0412\u044b\u0431\u0440\u0430\u0442\u044c \u043f\u0440\u0435\u0434\u043c\u0435\u0442\u044b", "Choose items"), () -> this.field_22787.method_1507((class_437)new HandItemScaleScreen((class_437)this)))));
+                r.add(new Row(40, (g, x, y, w) -> this.button(g, "legendarySize.selected", x + 18, y + 2, w - 36, 29, this.tr("\u0412\u044b\u0431\u0440\u0430\u0442\u044c \u043f\u0440\u0435\u0434\u043c\u0435\u0442\u044b", "Choose items"), () -> {})));
                 r.add(this.info(this.tr("\u0418\u043d\u0434\u0438\u0432\u0438\u0434\u0443\u0430\u043b\u044c\u043d\u043e \u0432\u044b\u0431\u0440\u0430\u043d\u043e: ", "Individually selected: ") + p.selectedItems.size()));
                 r.add(this.bool("legendarySize.allDropped", this.tr("\u0412\u0441\u0435 \u043f\u0440\u0435\u0434\u043c\u0435\u0442\u044b \u043d\u0430 \u0437\u0435\u043c\u043b\u0435", "All dropped items"), this.tr("\u041e\u0440\u0443\u0436\u0438\u0435, \u0431\u043b\u043e\u043a\u0438, \u0435\u0434\u0430 \u0438 \u043b\u044e\u0431\u043e\u0439 \u0434\u0440\u0443\u0433\u043e\u0439 \u043b\u0443\u0442", "Weapons, blocks, food and any other loot"), () -> p.scaleAllDropped, v -> {
                     p.scaleAllDropped = v;
@@ -4613,6 +4612,81 @@ implements BackgroundMenuScreen {
             set.accept(!get.getAsBoolean());
             this.save();
         });
+    }
+
+    private static enum Module {
+        HOTBAR_MARKERS("hotbarMarkers"),
+        HOTBAR_KEYS("hotbarKeys"),
+        TOTEM_ANIMATION("totemAnimation"),
+        SCOREBOARD_CONTROL("scoreboardControl"),
+        HEALTH_DISPLAY("healthDisplay"),
+        TITLES_CONTROL("titlesControl"),
+        ACTIONBAR_CONTROL("actionbarControl"),
+        CHAT_CALCULATOR("chatCalculator"),
+        TIME_CHANGER("timeChanger"),
+        WEATHER_CHANGER("weatherChanger"),
+        FULL_BRIGHT("fullBright"),
+        AMBIENCE("ambience"),
+        COMMAND_LAYOUT("commandLayout"),
+        CROSSHAIR("crosshair"),
+        GENERAL_HUD("generalHud"),
+        REACH_DISPLAY("reachDisplay"),
+        COMBO_COUNTER("comboCounter"),
+        SATURATION("saturation"),
+        HITBOXES("hitboxes"),
+        FREE_LOOK("freeLook"),
+        OTHER_TIERS("otherTiers"),
+        AI_ASSISTANT("aiAssistant"),
+        ASPECT_RATIO("aspectRatio"),
+        MOTION_BLUR("motionBlur"),
+        BETTER_NAME_VISIBILITY("betterNameVisibility"),
+        OPTIMIZER("optimizer"),
+        LEGENDARY_VISUALS("legendaryVisuals"),
+        SIZE_TIMER("sizeTimer"),
+        SKINS("skins"),
+        INVENTORY_PROFILES("inventoryProfiles"),
+        INVENTORY_SEARCH("inventorySearch"),
+        SCREENSHOT_ACTIONS("screenshotActions"),
+        COMBAT_HUD("combatHud"),
+        COOLDOWNS("cooldowns"),
+        MUSIC("music"),
+        ARMOR("armor"),
+        ITEM_COUNTER("itemCounter"),
+        NOTIFICATIONS("notifications"),
+        PERFORMANCE("performance"),
+        SESSION("session"),
+        DEATH_RECAP("deathRecap"),
+        CHAT_TOOLS("chatTools"),
+        EFFECTS("effects"),
+        OPPONENT_COOLDOWNS("opponentCooldowns"),
+        LEGENDARY_SOUNDS("legendarySounds"),
+        BLOODSTONE_PACK("resourcePack"),
+        ABILITY_GUIDE("abilityGuide"),
+        QUICK_COMMANDS("quickCommands"),
+        WAYPOINTS("waypoints"),
+        STREAMER("streamer"),
+        ZOOM("zoom"),
+        DEATH_SCREENSHOT("deathScreenshot"),
+        CHAT_MENTIONS("chatMentions"),
+        COOLDOWN_READY("cooldownReady"),
+        MUSIC_DUCKING("musicDucking"),
+        DROP_GUARD("dropGuard"),
+        SLOT_LOCKS("slotLocks"),
+        SHULKER_PREVIEW("shulkerPreview"),
+        CHAT_DRAFTS("chatDrafts"),
+        COORDINATE_LINKS("coordinateLinks"),
+        BACKGROUND_ALERTS("backgroundAlerts"),
+        DISCORD_PRESENCE("discordPresence"),
+        WATERMARK("watermark"),
+        LOGIN_GUARD("loginGuard"),
+        HEADS("heads"),
+        BLOODSTONE_CIRCLES("bloodstoneCircles");
+
+        final String id;
+
+        private Module(String id) {
+            this.id = id;
+        }
     }
 }
 

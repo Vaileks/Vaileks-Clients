@@ -9,6 +9,11 @@
  *  net.minecraft.class_1799
  *  net.minecraft.class_238
  *  net.minecraft.class_310
+ *  ru.bloodhelper.client.BloodHelperClient
+ *  ru.bloodhelper.client.config.LegendaryVisualSettings
+ *  ru.bloodhelper.client.visuals.AbilityTracker$Kind
+ *  ru.bloodhelper.client.visuals.AbilityTracker$Mark
+ *  ru.bloodhelper.client.visuals.AbilityTracker$Seen
  */
 package ru.bloodhelper.client.visuals;
 
@@ -29,7 +34,7 @@ import net.minecraft.class_238;
 import net.minecraft.class_310;
 import ru.bloodhelper.client.BloodHelperClient;
 import ru.bloodhelper.client.config.LegendaryVisualSettings;
-import ru.bloodhelper.client.modules.LegendarySizeModule;
+import ru.bloodhelper.client.visuals.AbilityTracker;
 
 public final class AbilityTracker {
     public static final List<Mark> MARKS = new ArrayList<Mark>();
@@ -139,7 +144,7 @@ public final class AbilityTracker {
     }
 
     private static boolean named(class_1799 stack, String itemName) {
-        String id = LegendarySizeModule.identify(stack);
+        String id = null;
         if (id != null) {
             String expected = switch (itemName) {
                 case "\u043a\u0430\u0442\u0430\u043d\u0430 \u0434\u0440\u0430\u043a\u043e\u043d\u0430" -> "dragon_katana";
@@ -160,21 +165,6 @@ public final class AbilityTracker {
     }
 
     private AbilityTracker() {
-    }
-
-    private record Seen(String name, class_238 box, float yaw, float pitch, float eye, boolean invisible, long bladeHeldAt) {
-    }
-
-    public static enum Kind {
-        BLADE,
-        BOW;
-
-    }
-
-    public record Mark(Kind kind, String name, class_238 box, float yaw, float pitch, float eye, long start, long durationMs) {
-        public float remaining(long now) {
-            return Math.max(0.0f, (float)(this.start + this.durationMs - now) / 1000.0f);
-        }
     }
 }
 

@@ -8,7 +8,11 @@
  *  net.minecraft.class_1799
  *  net.minecraft.class_243
  *  net.minecraft.class_310
- *  net.minecraft.class_638
+ *  ru.bloodhelper.client.BloodHelperClient
+ *  ru.bloodhelper.client.config.LegendaryVisualSettings
+ *  ru.bloodhelper.client.visuals.TrailTracker$Kind
+ *  ru.bloodhelper.client.visuals.TrailTracker$State
+ *  ru.bloodhelper.client.visuals.TrailTracker$Trail
  */
 package ru.bloodhelper.client.visuals;
 
@@ -24,10 +28,9 @@ import net.minecraft.class_1661;
 import net.minecraft.class_1799;
 import net.minecraft.class_243;
 import net.minecraft.class_310;
-import net.minecraft.class_638;
 import ru.bloodhelper.client.BloodHelperClient;
 import ru.bloodhelper.client.config.LegendaryVisualSettings;
-import ru.bloodhelper.client.modules.LegendarySizeModule;
+import ru.bloodhelper.client.visuals.TrailTracker;
 
 public final class TrailTracker {
     public static final List<Trail> TRAILS = new ArrayList<Trail>();
@@ -93,7 +96,7 @@ public final class TrailTracker {
                 State s = STATES.computeIfAbsent(p.method_5667(), k -> new State());
                 seen.put(p.method_5667(), s);
                 class_243 pos = p.method_73189();
-                class_243 prev = s.history.isEmpty() ? pos : s.history.get(s.history.size() - 1);
+                class_243 prev = s.history.isEmpty() ? pos : (class_243)s.history.get(s.history.size() - 1);
                 s.history.add(pos);
                 while (s.history.size() > 5) {
                     s.history.remove(0);
@@ -104,10 +107,10 @@ public final class TrailTracker {
                 if (wanted) {
                     double dy;
                     double step = pos.method_1022(prev);
-                    double jump = pos.method_1022(s.history.get(0));
+                    double jump = pos.method_1022((class_243)s.history.get(0));
                     if (step > 2.5 && jump > 6.0 && jump < 26.0 && now - s.lastTeleport > 1000L) {
                         s.lastTeleport = now;
-                        s.jumpFrom = s.history.get(0);
+                        s.jumpFrom = (class_243)s.history.get(0);
                         s.jumpTo = pos;
                         s.jumpAt = now;
                         s.history.clear();
@@ -141,7 +144,7 @@ public final class TrailTracker {
                 s.maceBefore = maceNow;
                 for (Trail t : TRAILS) {
                     if (!t.recording || !t.owner.equals(p.method_5667())) continue;
-                    class_243 last = t.points.get(t.points.size() - 1);
+                    class_243 last = (class_243)t.points.get(t.points.size() - 1);
                     class_243 point = pos.method_1031(0.0, 0.2, 0.0);
                     if (t.points.size() < 96 && point.method_1022(last) > 0.6) {
                         t.points.add(point);
@@ -248,7 +251,7 @@ public final class TrailTracker {
     }
 
     private static boolean named(class_1799 stack, String itemName) {
-        String id = LegendarySizeModule.identify(stack);
+        String id = null;
         if (id != null) {
             String expected = switch (itemName) {
                 case KATANA -> "dragon_katana";
@@ -269,73 +272,6 @@ public final class TrailTracker {
     }
 
     private TrailTracker() {
-    }
-
-    private static final class State {
-        final List<class_243> history = new ArrayList<class_243>();
-        boolean katanaBefore;
-        boolean maceBefore;
-        long lastTeleport;
-        long jumpAt;
-        long boostAt;
-        class_243 jumpFrom;
-        class_243 jumpTo;
-        class_243 boostFrom;
-        class_243 boostTo;
-
-        private State() {
-        }
-    }
-
-    public static final class Trail {
-        public final Kind kind;
-        public final UUID owner;
-        public final boolean self;
-        public final long start;
-        public final List<class_243> points = new ArrayList<class_243>();
-        boolean recording;
-        boolean sawCooldown;
-        long recordStart;
-        public long fadeAt;
-        public int version;
-        float cdFirst;
-        float cdNow;
-        long cdSeenAt;
-        public final String ownerName;
-
-        Trail(Kind kind, UUID owner, boolean self) {
-            this.kind = kind;
-            this.owner = owner;
-            this.self = self;
-            this.start = System.nanoTime() / 1000000L;
-            class_638 level = class_310.method_1551().field_1687;
-            class_1657 p = level == null ? null : level.method_18470(owner);
-            this.ownerName = p == null ? "" : p.method_5477().getString();
-        }
-
-        public String itemName() {
-            return this.kind == Kind.KATANA ? "\u041a\u0430\u0442\u0430\u043d\u0430 \u0414\u0440\u0430\u043a\u043e\u043d\u0430" : "\u041b\u0451\u0433\u043a\u0430\u044f \u0411\u0443\u043b\u0430\u0432\u0430";
-        }
-
-        public long remainingMs(long now) {
-            if (this.fadeAt != 0L) {
-                return 0L;
-            }
-            if (this.recording) {
-                return -1L;
-            }
-            if (this.self && this.sawCooldown) {
-                float used = this.cdFirst - this.cdNow;
-                return !(used < 0.01f) && now - this.cdSeenAt >= 300L ? (long)(this.cdNow / (used / (float)(now - this.cdSeenAt))) : -1L;
-            }
-            return Math.max(0L, (long)(TrailTracker.settings().trailSeconds * 1000.0) - (now - this.start));
-        }
-    }
-
-    public static enum Kind {
-        KATANA,
-        MACE;
-
     }
 }
 
