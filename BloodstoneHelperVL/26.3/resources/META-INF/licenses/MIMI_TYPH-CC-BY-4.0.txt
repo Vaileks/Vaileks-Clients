@@ -1,0 +1,11 @@
+Model Information:
+* title:	Mimi
+* source:	https://sketchfab.com/3d-models/mimi-d40dd6f10a4545dc89814c56c1b0951c
+* author:	Have717 (https://sketchfab.com/Have717)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Mimi" (https://sketchfab.com/3d-models/mimi-d40dd6f10a4545dc89814c56c1b0951c) by Have717 (https://sketchfab.com/Have717) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

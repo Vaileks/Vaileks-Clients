@@ -1,0 +1,69 @@
+[
+  {
+    "id": "meetups",
+    "label": "Митапы",
+    "serverOnly": false,
+    "values": {
+      "mace_duration": 120.0,
+      "transition_duration": 0.4,
+      "cooldown": 380.0,
+      "bow_duration": 30.0,
+      "bow_cooldown": 4.0,
+      "bow_pull_cooldown": 20.0
+    },
+    "sha256": "289c53da8d0900243beee034bf0f86f5b7d1ac320fba14986d866f3506c978df",
+    "source": "meetups/uLegendary/bloodsword.yml"
+  },
+  {
+    "id": "uhc",
+    "label": "УхкМитапы",
+    "serverOnly": false,
+    "values": {
+      "mace_duration": 120.0,
+      "transition_duration": 0.4,
+      "cooldown": 380.0,
+      "bow_duration": 30.0,
+      "bow_cooldown": 4.0,
+      "bow_pull_cooldown": 20.0
+    },
+    "sha256": "8596f1fb6f3454f0922e716c2e81683c1141d2d764483317a775d959cfcb1d9e",
+    "source": "uhc/uLegendary/bloodsword.yml"
+  },
+  {
+    "id": "v1_battle_royale",
+    "label": "КастомКБ",
+    "serverOnly": false,
+    "values": {
+      "mace_duration": 120.0,
+      "transition_duration": 0.4,
+      "cooldown": 380.0,
+      "bow_duration": 30.0,
+      "bow_cooldown": 4.0,
+      "bow_pull_cooldown": 20.0
+    },
+    "sha256": "bb81dc26e8116066cc376a12f34260e1ef72a36a974d5f9051407a3f8dae8c4a",
+    "source": "v1_battle_royale/uLegendary/bloodsword.yml"
+  },
+  {
+    "id": "very_fast_battleroyale",
+    "label": "БыстраяКБ",
+    "serverOnly": false,
+    "values": {
+      "mace_duration": 120.0,
+      "transition_duration": 0.4,
+      "cooldown": 380.0,
+      "bow_duration": 30.0,
+      "bow_cooldown": 4.0,
+      "bow_pull_cooldown": 20.0
+    },
+    "sha256": "bb81dc26e8116066cc376a12f34260e1ef72a36a974d5f9051407a3f8dae8c4a",
+    "source": "very_fast_battleroyale/uLegendary/bloodsword.yml"
+  },
+  {
+    "id": "smp",
+    "label": "СМП/ФФА СМП",
+    "serverOnly": true,
+    "values": {},
+    "source": "No bloodsword.yml in smp; server-only mode explicitly requested by user."
+  }
+]

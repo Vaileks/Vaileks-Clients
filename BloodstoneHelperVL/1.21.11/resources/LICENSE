@@ -1,0 +1,41 @@
+BloodHelper Proprietary License 1.0
+Copyright (c) 2026 nomielua. All rights reserved.
+
+1. Scope
+These terms apply only to original BloodHelper code, artwork and other material
+for which nomielua owns the relevant rights, in distributions containing this
+notice. Earlier distributions retain the licenses under which they were supplied.
+Third-party software and material are excluded and remain governed by their own
+licenses, notices and corresponding-source offers.
+
+2. Permission to use
+You may download official BloodHelper builds, install and run them for personal
+use, and make copies reasonably necessary for installation and personal backup.
+This permission does not transfer ownership or grant permission to redistribute,
+sell, sublicense or publish the software or its source code.
+
+3. Restrictions
+Without prior written permission from nomielua, you may not copy or extract
+original BloodHelper code or assets for another product; incorporate them into
+other mods or projects; modify, adapt or create derivative works; redistribute,
+sell, sublicense or publish original BloodHelper material; or decompile,
+disassemble or reverse engineer it to recover its implementation.
+You may not remove or misrepresent copyright, authorship or license notices.
+
+4. Mandatory and third-party rights
+The restrictions above do not limit rights that applicable law makes mandatory,
+rights already granted under an earlier license, or rights granted by the
+licenses of third-party components. In particular, LGPL-covered components may
+be modified, replaced and relinked as their licenses require, and reverse
+engineering to debug such modifications is permitted to the extent required by
+those licenses. Corresponding source and existing third-party notices must be
+preserved and conveyed as their respective licenses require.
+
+5. Disclaimer
+The software is provided AS IS, without warranties of any kind, to the extent
+permitted by applicable law. The author is not liable for claims or damages
+arising from its use, except where applicable law does not permit that exclusion.
+
+Third-party notices are included under META-INF/licenses in the JAR, and in
+THIRD_PARTY_NOTICES.md and docs/licenses in the source distribution. This license does
+not relicense Minecraft, Fabric, bundled voice engines, fonts or other components.

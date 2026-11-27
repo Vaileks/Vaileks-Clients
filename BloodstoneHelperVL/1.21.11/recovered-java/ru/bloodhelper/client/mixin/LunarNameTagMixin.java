@@ -1,0 +1,27 @@
+package ru.bloodhelper.client.mixin;
+
+import net.minecraft.class_10055;
+import net.minecraft.class_1007;
+import net.minecraft.class_11659;
+import net.minecraft.class_12075;
+import net.minecraft.class_1299;
+import net.minecraft.class_4587;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import ru.bloodhelper.client.gui.OpponentCooldownRenderer;
+import ru.bloodhelper.client.modules.LunarNameTags;
+
+@Mixin(value={class_1007.class}, priority=1100)
+public abstract class LunarNameTagMixin {
+    @Inject(method={"method_4213(Lnet/minecraft/class_10055;Lnet/minecraft/class_4587;Lnet/minecraft/class_11659;Lnet/minecraft/class_12075;)V"}, at={@At(value="HEAD")}, cancellable=true)
+    private void bloodhelper$lunarNames(class_10055 state, class_4587 pose, class_11659 collector, class_12075 camera, CallbackInfo ci) {
+        if (state.field_58171 != class_1299.field_6097 || !LunarNameTags.ownsCurrentFrame()) {
+            return;
+        }
+        OpponentCooldownRenderer.submit(state, pose, collector, camera);
+        ci.cancel();
+    }
+}
+

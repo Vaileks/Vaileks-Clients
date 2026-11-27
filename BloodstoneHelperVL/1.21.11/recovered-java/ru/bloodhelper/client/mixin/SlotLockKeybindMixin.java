@@ -1,0 +1,20 @@
+package ru.bloodhelper.client.mixin;
+
+import net.minecraft.class_310;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import ru.bloodhelper.client.modules.SlotLockModule;
+
+@Mixin(value={class_310.class})
+abstract class SlotLockKeybindMixin {
+    SlotLockKeybindMixin() {
+    }
+
+    @Inject(method={"method_1508"}, at={@At(value="HEAD")})
+    private void bloodhelper$lockHandSwap(CallbackInfo ci) {
+        SlotLockModule.guardSwapKey();
+    }
+}
+

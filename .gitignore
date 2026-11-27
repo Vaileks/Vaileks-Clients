@@ -1,0 +1,15 @@
+.DS_Store
+**/.gradle/
+**/build/
+**/dist/
+**/run/
+**/production-run/
+**/__pycache__/
+*.class
+*.jar
+*.log
+!**/gradle/wrapper/gradle-wrapper.jar
+**/asm-path.txt
+**/inputs/
+**/originals/
+**/outputs/

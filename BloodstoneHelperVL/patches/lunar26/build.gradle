@@ -1,0 +1,9 @@
+plugins { id 'java' }
+repositories { mavenCentral(); maven { url='https://maven.fabricmc.net/' } }
+dependencies {
+ implementation 'org.ow2.asm:asm-tree:9.9'
+ implementation 'net.fabricmc:sponge-mixin:0.17.5+mixin.0.8.7'
+ implementation 'org.slf4j:slf4j-api:2.0.17'
+}
+sourceSets.main.java.srcDirs=['src']
+tasks.withType(JavaCompile).configureEach { options.release=25; options.encoding='UTF-8' }
