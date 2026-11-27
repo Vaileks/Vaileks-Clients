@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "id": "pyz1k_smoke",
+  "version": "1.0.0",
+  "name": "Pyz1k isolated smoke tests",
+  "environment": "client",
+  "entrypoints": {"client": ["pyz1k.smoke.SmokeClient"]}
+}

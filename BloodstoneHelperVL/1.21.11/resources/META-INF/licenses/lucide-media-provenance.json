@@ -1,0 +1,24 @@
+{
+  "repository": "https://github.com/lucide-icons/lucide",
+  "commit": "440a1e1dfb1e712505308da46bead3c28b1f1398",
+  "license": "ISC / MIT (upstream combined LICENSE retained verbatim)",
+  "files": [
+    {
+      "path": "icons/play.svg",
+      "sha256": "d7c34786135922a92b6896f6c2384ceeb0346afbf6041dc79982011411409833"
+    },
+    {
+      "path": "icons/pause.svg",
+      "sha256": "f122ec4ea7f5693a0b1baafa9c708b53980dc87b4aacb297c6e6f71c1a4c115c"
+    },
+    {
+      "path": "icons/skip-back.svg",
+      "sha256": "901579624a7d28036a39b3b8bd9e6da0e8cf771a79c67836d8a52b3e2287c031"
+    },
+    {
+      "path": "icons/skip-forward.svg",
+      "sha256": "f6bdc4b8d453332bafcf1366a48d5ece4bd4f15eced97c85c3676bd22c5cadf9"
+    }
+  ],
+  "adaptation": "24-unit playback geometry adapted to filled analytic distance functions; antialiasing evaluated at final framebuffer scale; no icon bitmap is sampled. Animated wave is original BLOODHELPER vector geometry."
+}
