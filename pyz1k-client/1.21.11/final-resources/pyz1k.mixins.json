@@ -1,0 +1,26 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "pyz1k.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [],
+  "client": [
+    "KeyboardMixin",
+    "InGameHudMixin",
+    "ItemCooldownsAccessor",
+    "CooldownInstanceAccessor",
+    "ItemInHandRendererMixin",
+    "AvatarRendererMixin",
+    "ChickenPlayerRenderMixin",
+    "HumanoidArmorLayerMixin",
+    "MultiPlayerGameModeMixin",
+    "BetterModelItemDisplayMixin",
+    "ServerKillSoundMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}

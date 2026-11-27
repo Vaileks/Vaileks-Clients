@@ -1,0 +1,28 @@
+{
+  "required": true,
+  "package": "pyz1k.extensions.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "ModulesMixin",
+    "InterfaceMixin",
+    "ClientMixin",
+    "NamesMixin",
+    "SkinsMixin",
+    "WelcomeMixin",
+    "ItemCooldownEntryAccessor",
+    "ItemCooldownManagerAccessor",
+    "LootEntityMixin",
+    "GroundLootStateMixin",
+    "GroundLootRendererMixin",
+    "ModuleDescriptionMixin",
+    "MenuHelpMixin",
+    "ModuleHelpMixin",
+    "AdvancementProgressAccessor",
+    "UnifiedMenuAccess",
+    "UnifiedGridMixin",
+    "UnifiedInputMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

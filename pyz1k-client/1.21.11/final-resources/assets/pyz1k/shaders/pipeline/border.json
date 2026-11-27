@@ -1,0 +1,25 @@
+{
+  "vertex": "pyz1k:core/border",
+  "fragment": "pyz1k:core/border",
+  "samplers": [],
+  "attributes": [
+    "Position",
+    "UV0",
+    "Color",
+    "UV1",
+    "RadiusXY",
+    "RadiusZW",
+    "BorderData1",
+    "BorderData2"
+  ],
+  "uniforms": {
+    "ModelViewMat": {
+      "type": "matrix4x4",
+      "count": 1
+    },
+    "ProjMat": {
+      "type": "matrix4x4",
+      "count": 1
+    }
+  }
+}

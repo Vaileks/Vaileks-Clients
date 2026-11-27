@@ -1,0 +1,41 @@
+{
+  "date": "2026-11-11",
+  "baseJarSha256": "ab637a8e0378baebfcc9d68d4d4e211e3504aa16d0728372757aa244253ee063",
+  "repositories": {
+    "LootGlow": {
+      "url": "https://github.com/Vaileks/LootGlow",
+      "commit": "bfd4eef1063b6bde735f6025af2338f212180443"
+    },
+    "RunesLegendary": {
+      "url": "https://github.com/Vaileks/RunesLegendary",
+      "commit": "37d85917a9efd2d4e41b4453427bd575448b1d0c"
+    },
+    "RunesLegendaryV": {
+      "url": "https://github.com/Vaileks/RunesLegendaryV",
+      "commit": "5437e8aee907faa6cc60c60b43f4ad7c2559fbf8"
+    },
+    "LegendaryDopPlugin": {
+      "url": "https://github.com/Vaileks/LegendaryDopPlugin",
+      "commit": "3f8a397ca6d17a2a2096846c3aebadaabe31e6e7"
+    },
+    "LegendaryAltarSMP": {
+      "url": "https://github.com/Vaileks/LegendaryAltarSMP",
+      "commit": "6bf4b24d86ebd27ef47ec6936dbfb25deaeabc03"
+    },
+    "CustomMaces": {
+      "url": "https://github.com/Vaileks/CustomMaces",
+      "commit": "268f4a6d5e3f8cd82daf8bf9047ed629720a75aa"
+    }
+  },
+  "localSources": {
+    "BloodSwordCooldown": {
+      "project": "blood-sword-cooldown",
+      "author": "Vaileks",
+      "integration": "Vanilla cooldown accessors and form/tracker logic adapted to the existing client HUD"
+    },
+    "BloodSwordPresets": {
+      "fields": "src/main/resources/bloodsword-presets.json",
+      "SMP": "server-only by explicit user choice"
+    }
+  }
+}

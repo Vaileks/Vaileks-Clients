@@ -1,0 +1,5 @@
+import org.objectweb.asm.*;import org.objectweb.asm.tree.*;import java.nio.file.*;import java.util.*;import java.util.zip.*;
+public final class VerifyCredits {
+ public static void main(String[] jars)throws Exception{for(String path:jars){try(var jar=new ZipFile(path)){ClassNode screen=new ClassNode();new ClassReader(jar.getInputStream(jar.getEntry("ru/bloodhelper/client/gui/BloodHelperScreen.class"))).accept(screen,0);int names=0,links=0;for(MethodNode m:screen.methods)for(var ins:m.instructions.toArray())if(ins instanceof LdcInsnNode ldc&&ldc.cst instanceof String s){if(m.name.equals("about")){for(String old:List.of("Trard","Yz1kk","Minions_","Hoetty"))if(s.contains(old))throw new AssertionError("Old credit "+old);if(s.contains("Vaileks"))names++;}if(s.startsWith("https://discord.gg/")||s.startsWith("https://discord.com/invite/")){if(!s.equals("https://discord.gg/9kE6HNJEnZ"))throw new AssertionError("Wrong Discord invitation");links++;}}if(names<6||links<1)throw new AssertionError("Missing credit rows or invite: "+names+" / "+links);System.out.println("PASS About credits and Discord invite: "+path);}}
+ }
+}
