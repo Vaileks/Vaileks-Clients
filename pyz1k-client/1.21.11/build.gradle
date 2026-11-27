@@ -1,0 +1,88 @@
+plugins { id 'fabric-loom' version '1.14.10' }
+version = '1.5.0-vaileks'
+group = 'dev.vaileks'
+base { archivesName = 'pyz1k-additions' }
+repositories { mavenCentral() }
+dependencies {
+ minecraft 'com.mojang:minecraft:1.21.11'
+ mappings 'net.fabricmc:yarn:1.21.11+build.6:v2'
+ modImplementation 'net.fabricmc:fabric-loader:0.19.5'
+ modCompileOnly files('libs/pyz1k-base.jar')
+}
+java { sourceCompatibility = JavaVersion.VERSION_21; targetCompatibility = JavaVersion.VERSION_21 }
+tasks.withType(JavaCompile).configureEach { options.release = 21; options.encoding = 'UTF-8' }
+dependencies {
+ modLocalRuntime files('libs/pyz1k-base.jar')
+ modImplementation 'net.fabricmc.fabric-api:fabric-api:0.141.6+1.21.11'
+}
+sourceSets {
+ smoke {
+  compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath
+  runtimeClasspath += sourceSets.main.output + sourceSets.main.runtimeClasspath
+ }
+}
+loom {
+ mods {
+  additions { sourceSet sourceSets.main }
+  smoke { sourceSet sourceSets.smoke }
+ }
+ runs {
+  client {
+   vmArg '-Dpyz1k.smoke=true'
+   vmArg '-Dpyz1k.testPack=' + layout.projectDirectory.file('run/fixture-pack.zip').asFile.absolutePath
+   vmArg '-Duser.home=' + layout.projectDirectory.dir('run/home').asFile.absolutePath
+   programArg '--width'; programArg '1100'
+   programArg '--height'; programArg '760'
+  }
+ }
+}
+tasks.register('logicTest', JavaExec) {
+ dependsOn testClasses
+ classpath = sourceSets.test.runtimeClasspath
+ mainClass = 'pyz1k.extensions.ExtensionLogicTest'
+ jvmArgs '-ea'
+}
+tasks.named('test') { enabled = false }
+tasks.named('check') { dependsOn 'logicTest' }
+tasks.named('runClient') { dependsOn tasks.named('smokeClasses') }
+tasks.named('runClient') { classpath += sourceSets.smoke.output }
+tasks.register('fixturePack', Exec) {
+ commandLine 'python3', 'tests/create_fixture_pack.py'
+}
+tasks.named('runClient') { dependsOn tasks.named('fixturePack') }
+tasks.register('packageClient', Exec) {
+ dependsOn tasks.named('remapJar')
+ commandLine 'python3', 'package_client.py'
+}
+tasks.register('smokeJar', Jar) {
+ dependsOn tasks.named('smokeClasses')
+ from sourceSets.smoke.output
+ archiveClassifier = 'smoke-named'
+}
+tasks.register('remapSmokeJar', net.fabricmc.loom.task.RemapJarTask) {
+ dependsOn tasks.named('smokeJar')
+ inputFile = tasks.named('smokeJar', Jar).flatMap { it.archiveFile }
+ archiveClassifier = 'smoke'
+ addNestedDependencies = false
+}
+configurations { smokeFabric }
+dependencies { smokeFabric('net.fabricmc.fabric-api:fabric-api:0.141.6+1.21.11') { transitive = false } }
+tasks.register('productionSmoke', net.fabricmc.loom.task.prod.ClientProductionRunTask) {
+ dependsOn tasks.named('packageClient'), tasks.named('remapSmokeJar'), tasks.named('fixturePack')
+ mods.from(layout.projectDirectory.file('dist/pyz1k-client.jar'))
+ mods.from(tasks.named('remapSmokeJar').flatMap { it.archiveFile })
+ mods.from(configurations.smokeFabric)
+ jvmArgs.add('-Dpyz1k.smoke=true')
+ jvmArgs.add('-Duser.home=' + layout.projectDirectory.dir('production-run/home').asFile.absolutePath)
+ jvmArgs.add('-Dpyz1k.testPack=' + layout.projectDirectory.file('run/fixture-pack.zip').asFile.absolutePath)
+ useXVFB.set(false)
+ runDir.set(layout.projectDirectory.dir('production-run'))
+ javaLauncher.set(javaToolchains.launcherFor { languageVersion.set(JavaLanguageVersion.of(23)) })
+}
+tasks.named('productionSmoke') {
+ mods.setFrom(files(
+  layout.projectDirectory.file('dist/pyz1k-client.jar'),
+  tasks.named('remapSmokeJar').flatMap { it.archiveFile },
+  configurations.smokeFabric
+ ))
+}

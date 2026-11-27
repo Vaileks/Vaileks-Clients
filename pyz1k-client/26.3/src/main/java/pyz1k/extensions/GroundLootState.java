@@ -1,0 +1,1 @@
+package pyz1k.extensions; public interface GroundLootState { float lootGloow$getScale(); void lootGloow$setScale(float value); }

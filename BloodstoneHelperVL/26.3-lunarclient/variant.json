@@ -1,0 +1,6 @@
+{
+  "base": "../26.3",
+  "javaOverrides": "recovered-java-overrides",
+  "resourceOverrides": "resource-overrides",
+  "authoredCompatibilitySources": "../patches/lunar26/src"
+}

@@ -1,0 +1,11 @@
+Model Information:
+* title:	jenny
+* source:	https://sketchfab.com/3d-models/jenny-924d675630e14e9aa759cc89ef6123ad
+* author:	sharkdark10161 (https://sketchfab.com/sharkdark10161)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "jenny" (https://sketchfab.com/3d-models/jenny-924d675630e14e9aa759cc89ef6123ad) by sharkdark10161 (https://sketchfab.com/sharkdark10161) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
